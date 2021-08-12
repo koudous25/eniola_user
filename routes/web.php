@@ -38,14 +38,18 @@ Route::get('contact', function () {
 
 Route::get('courses','App\Http\Controllers\IndexAPIController@showAllCourses')->name('app_courses');
 
-Route::get('courses-details', function () {
-    return view('layouts.courses-details', ['titre' => 'Présentation']);
-})->name('app_courses_details');
 
+Route::get('courses-details/{title}','App\Http\Controllers\IndexAPIController@showOneCourse')->name('app_courses_details');
 
-Route::get('after-enroll', function () {
-    return view('layouts.after-enroll', ['titre' => 'Cours']);
-})->name('app_after_enroll');
+// Route::get('courses-details', function () {
+//     return view('layouts.courses-details', ['titre' => 'Présentation']);
+// })->name('app_courses_details');
+
+Route::get('after-enroll','App\Http\Controllers\IndexAPIController@showCourse')->name('app_after_enroll');
+
+// Route::get('after-enroll', function () {
+//     return view('layouts.after-enroll', ['titre' => 'Cours']);
+// })->name('app_after_enroll');
 
 // Route::get('courses', [CoursesController::class, 'allcourses']);
 

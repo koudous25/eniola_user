@@ -26,9 +26,9 @@
             <div class="page-banner-content">
                 <ul class="breadcrumb">
                     <li><a href="/">Accueil</a></li>
-                    <li class="active">Présentation de cours</li>
+                    <li class="active">Présentation du cours</li>
                 </ul>
-                <h2 class="title">Présentation de <span> cours </span></h2>
+                <h2 class="title"><span>{{ $Course['title'] }} </span></h2>
             </div>
             <!-- Page Banner End -->
         </div>
@@ -66,7 +66,7 @@
                     <div class="courses-details">
 
                         <div class="courses-details-images">
-                            <img src="{{ url('images/courses/courses-details.jpg') }}" alt="Courses Details">
+                            <img src="{{ $Course['image']['url'] }}" alt="Courses Details">
                             <span class="tags">Finance</span>
 
                             <div class="courses-play">
@@ -76,8 +76,7 @@
                             </div>
                         </div>
 
-                        <h2 class="title">Histoire de l'internet au Bénin.
-                        </h2>
+                        <h2 class="title">{{ $Course['title'] }}</h2>
 
                         <div class="courses-details-admin">
                             <div class="admin-author">
@@ -115,40 +114,7 @@
                                         <div class="tab-description">
                                             <div class="description-wrapper">
                                                 <h3 class="tab-title">Description:</h3>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem Ipsum has been the industry's standard dummy text
-                                                    ever since the 1500s when an unknown printer took a galley of type
-                                                    and scrambled it to make a type specimen book.</p>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem Ipsum has been the industry's standard dummy text
-                                                    ever since the 1500s when an unknown printer took a galley of type
-                                                    and scrambled it to make a type specimen book. It has survived not
-                                                    only five centuries, but also the leap into electronic typesetting,
-                                                    remaining essentially unchanged. It was popularsed in the 1960 with
-                                                    release containing Lorem Ipsum passages desktop publishing software.
-                                                </p>
-                                            </div>
-                                            <div class="description-wrapper">
-                                                <h3 class="tab-title">Curriculum:</h3>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem Ipsum has been the industry's standard dummy text
-                                                    ever since the 1500s when an unknown printer took a galley of type
-                                                    and scrambled it to make a type specimen book. It has survived not
-                                                    only five centuries, but also the leap into electronic typesetting,
-                                                    remaining essentially unchanged. It was popularsed in the 1960 with
-                                                    release containing Lorem Ipsum passages desktop publishing software.
-                                                </p>
-                                            </div>
-                                            <div class="description-wrapper">
-                                                <h3 class="tab-title">Certification:</h3>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem Ipsum has been the industry's standard dummy text
-                                                    ever since the 1500s when an unknown printer took a galley of type
-                                                    and scrambled it to make a type specimen book. It has survived not
-                                                    only five centuries, but also the leap into electronic typesetting,
-                                                    remaining essentially unchanged. It was popularsed in the 1960 with
-                                                    release containing Lorem Ipsum passages desktop publishing software.
-                                                </p>
+                                                <p>{{ $Course['description'] }}</p>
                                             </div>
                                         </div>
                                         <!-- Tab Description End -->
@@ -372,7 +338,8 @@
                                 </ul>
                             </div>
                             <div class="info-btn">
-                                <a href="/after-enroll" class="btn btn-primary btn-hover-dark">Inscrivez-vous</a>
+                                <a href="{{ route('app_after_enroll', ['title' => $Course['title']]) }}"
+                                    class="btn btn-primary btn-hover-dark">Inscrivez-vous</a>
                             </div>
                         </div>
                         <!-- Sidebar Widget Information End -->

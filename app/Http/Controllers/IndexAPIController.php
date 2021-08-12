@@ -31,4 +31,40 @@ class IndexAPIController extends Controller
 
         ]);
     }
+
+    
+    public function showOneCourse(Request $request)
+    {
+        $courses = Http::get('https://eniola-service.herokuapp.com/api/v_1/admin/courses');
+        $courses = $courses->collect();
+        $titre = $request -> title;
+
+        foreach( $courses as $cours ){
+            if ($cours['title'] = $titre) {
+                $course = $cours;
+            }
+        }
+        // dd($course);
+        
+        return view('layouts.courses-details',[
+            'Course' => $course
+        ]);
+    }
+
+    public function showCourse(Request $request)
+    {
+        $courses = Http::get('https://eniola-service.herokuapp.com/api/v_1/admin/courses');
+        $courses = $courses->collect();
+        $titre = $request -> title;
+
+        foreach( $courses as $cours ){
+            if ($cours['title'] = $titre) {
+                $course = $cours;
+            }
+        }
+        
+        return view('layouts.after-enroll',[
+            'Course' => $course
+        ]);
+    }
 }

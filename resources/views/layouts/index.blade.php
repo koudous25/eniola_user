@@ -133,7 +133,8 @@
                                     <!-- Single Courses Start -->
                                     <div class="single-courses">
                                         <div class="courses-images">
-                                            <a href="/courses-details">
+                                            <a
+                                                href="{{ route('app_courses_details', ['title' => $cours['title']]) }}">
                                                 {{-- <img src="{{ url('images/courses/courses-01.jpg') }}" alt="Courses"> --}}
                                                 <img src="{{ $cours['image']['url'] }}" alt="Courses">
                                             </a>
@@ -156,7 +157,8 @@
                                                 </div>
                                             </div>
 
-                                            <h4 class="title"><a href="/courses-details">{{ $cours['title'] }}</a>
+                                            <h4 class="title"><a
+                                                    href="{{ route('app_courses_details', ['title' => $cours['title']]) }}">{{ $cours['title'] }}</a>
                                             </h4>
                                             <div class="courses-meta">
                                                 <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
@@ -189,7 +191,8 @@
                                             <!-- Single Courses Start -->
                                             <div class="single-courses">
                                                 <div class="courses-images">
-                                                    <a href="/courses-details">
+                                                    <a
+                                                        href="{{ route('app_courses_details', ['title' => $cours['title']]) }}">
                                                         <img src="{{ $cours['image']['url'] }}" alt="Courses">
                                                     </a>
                                                 </div>
@@ -212,7 +215,7 @@
                                                     </div>
 
                                                     <h4 class="title"><a
-                                                            href="/courses-details">{{ $cours['title'] }}</a>
+                                                            href="{{ route('app_courses_details', ['title' => $cours['title']]) }}">{{ $cours['title'] }}</a>
                                                     </h4>
                                                     <div class="courses-meta">
                                                         <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
@@ -349,10 +352,8 @@
                 <!-- Download App Button End -->
                 <div class="download-app-btn">
                     <ul class="app-btn">
-                        <li><a href="/courses-details"><img src="{{ url('images/google-play.png') }}"
-                                    alt="Google Play"></a></li>
-                        <li><a href="/courses-details"><img src="{{ url('images/app-store.png') }}"
-                                    alt="App Store"></a></li>
+                        <li><a href="#"><img src="{{ url('images/google-play.png') }}" alt="Google Play"></a></li>
+                        <li><a href="#"><img src="{{ url('images/app-store.png') }}" alt="App Store"></a></li>
                     </ul>
                 </div>
                 <!-- Download App Button End -->
