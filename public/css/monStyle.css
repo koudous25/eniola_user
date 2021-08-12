@@ -1,0 +1,356 @@
+/*--
+/*  4.6 - COURS TEXTE CSS
+/*----------------------------------------*/
+
+
+/* 
+.textcontainer{
+    display: none;
+} */
+.coursText-wrapper {
+    padding-top: 50px;
+}
+
+.single-coursText {
+    text-align: center;
+    border: 1px solid rgba(48, 146, 85, 0.2);
+    border-radius: 10px;
+    padding: 45px 45px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 575px) {
+    .single-coursText {
+        padding: 30px 30px;
+    }
+}
+
+.single-coursText::before {
+    position: absolute;
+    content: '';
+    background-image: url(../images/shape/shape-18.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 101px;
+    height: 172px;
+    right: 100px;
+    top: -27px;
+}
+
+@media only screen and (max-width: 575px) {
+    .single-coursText::before {
+        right: 50px;
+    }
+}
+
+.single-coursText .coursText-author .author-thumb {
+    position: relative;
+}
+
+.single-coursText .coursText-author .author-thumb img {
+    display: block;
+    width: 90px;
+    border: 1px solid rgba(48, 146, 85, 0.2);
+    border-radius: 50%;
+    padding: 8px;
+    margin: 0 auto;
+}
+
+.single-coursText .coursText-author .author-thumb i {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #309255;
+    color: #fff;
+    font-size: 13px;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    bottom: -13px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.single-coursText .coursText-author .rating-star {
+    position: relative;
+    display: inline-block;
+    margin-top: 35px;
+}
+
+.single-coursText .coursText-author .rating-star::before {
+    content: '\f000 \f000 \f000 \f000 \f000';
+    font-family: IcoFont;
+    color: #d0d0d0;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .single-coursText .coursText-author .rating-star::before {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+}
+
+.single-coursText .coursText-author .rating-star .rating-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.single-coursText .coursText-author .rating-star .rating-bar::before {
+    content: '\f000 \f000 \f000 \f000 \f000';
+    font-family: IcoFont;
+    color: #ffba00;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .single-coursText .coursText-author .rating-star .rating-bar::before {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+}
+
+.single-coursText .coursText-content {
+    padding-top: 15px;
+}
+
+.single-coursText .coursText-content p {
+    font-size: 15px;
+    color: #52565b;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.single-coursText .coursText-content .name {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-top: 16px;
+}
+
+.single-coursText .coursText-content .designation {
+    font-size: 14px;
+    font-weight: 400;
+    color: #309255;
+    margin-top: 5px;
+    display: block;
+}
+
+.coursText-active .swiper-pagination {
+    position: relative;
+    bottom: 0;
+    margin-top: 43px;
+    height: 18px;
+}
+
+.coursText-active .swiper-pagination .swiper-pagination-bullet {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #d1e5d9;
+    opacity: 1;
+    margin: 0 7px;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.coursText-active .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #309255;
+}
+
+
+/* Quiz  */
+
+
+.quiz-content{
+    padding: 20px 80px;
+}
+
+.quiz-wrapper{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+
+.quiz-content p,li{
+    font-size: 15px;
+    line-height: 26px;
+    color: #333;
+}
+
+
+.quiz-content h1{
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    color: #e46d26;
+}
+
+.quiz-content h2{
+    border-top: 1px solid #BBB;
+    font-size: 24px;
+    font-weight: 400;
+    padding-top: 40px;
+    margin-bottom: 10px;
+    color: #322f2a;
+}
+
+.quiz-content li{
+    margin-bottom: 12px;
+}
+
+
+.ch-precedent{
+    float:left;
+    padding: 10px 15px;
+    margin-top:20px;
+    background-color: #333;
+    text-decoration: none;
+}
+
+.ch-suivant{
+    float:right;
+    padding: 10px 15px;
+    margin-top:20px;
+    background-color: #333;
+    text-decoration: none;
+}
+
+
+
+
+/******** TESTS ********/
+
+.container-qs{
+    background-color: #42434e;
+    border-radius: 7px;
+    color: #FFF;
+    padding: 20px 60px;
+    box-shadow: 1px 1px 1px #42434e;
+    margin-bottom: 50px;
+}
+.container-qs h2{
+    font-weight: 500;
+    font-size: 28px;
+    padding-bottom: 20px;
+    padding-top: 0px;
+    border-bottom: 1px solid #CCC;
+    border-top: none;
+    color: #fff;
+}
+.container-qs p, .container-qs li{
+    padding-bottom: 5px;
+    color: #fff;
+}
+
+.container-qs button{
+    background-color: #ec971f;
+    border-color: #d58512;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 18px;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.container-qs button a{
+    text-decoration: none;
+    color: #fff;
+}
+
+#rep{
+    background-color: #fff;
+    border-radius: 7px;
+    color: #444;
+    padding: 20px 60px;
+    margin-bottom: 10px;
+}
+
+
+
+/******** RESPONSIVE ********/
+@media screen and (max-width: 760px){
+    .quiz-wrapper{
+        width: 100%;
+        left: 100%;
+    }
+    .quiz-content{
+        padding: 20px 10px;
+        max-width: 760px;
+    }
+}
+
+
+
+/* dashboard responsable */
+.courses .rating-author img {
+    width: 70px;
+    border-radius: 50%;
+  }
+
+/* register */
+.role-select {
+    padding-top: 20px;
+}
+
+/* after enroll */
+
+.courses-quiz {
+    width: 71.8%;
+    padding-bottom: 80px;
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-width: 767px) {
+    .courses-quiz {
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .courses-quiz {
+      padding-bottom: 60px;
+    }
+  }
+  
+  .courses-video-player .textcontainer {
+    background: #ccb6b6;
+    position: relative;
+    height: 690px;
+    position: relative;
+  }
+  
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .courses-video-player .textcontainer {
+      height: 490px;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .courses-video-player .textcontainer {
+      height: 500px;
+    }
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .courses-video-player .textcontainer {
+      height: 420px;
+    }
+  }
+  
+  @media only screen and (max-width: 575px) {
+    .courses-video-player .textcontainer {
+      height: 340px;
+    }
+  }

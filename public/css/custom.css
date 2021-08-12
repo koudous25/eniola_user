@@ -1,0 +1,88 @@
+/* Form */
+.single-form input,
+.single-form select {
+    height: 50px !important;
+}
+
+.single-form {
+    margin-bottom: 20px;
+}
+
+select {
+    height: 50px !important;
+    width: 100%;
+    height: 60px;
+    padding: 0 25px;
+    font-size: 15px;
+    color: #52565b;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    border: 1px solid rgba(48, 146, 85, 0.2);
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.mm {
+    margin-top: -10px !important;
+}
+
+.naissance {
+    width: 80% !important;
+    border-top: hidden !important;
+    border-bottom: hidden !important;
+    border-left: hidden !important;
+    border-right: 1px;
+}
+
+.birth {
+    border: 1px solid rgba(48, 146, 85, 0.2);
+    border-radius: 10px;
+
+}
+
+.bouton {
+    margin-top: -15px !important;
+}
+
+/*Dashboardstudent*/
+
+.header-dash {
+    background-color: #309255 !important;
+}
+
+.flaticon-notification {
+    color: white;
+}
+
+
+.progress-bar {
+    height: 15px;
+    text-align: left;
+    transition-duration: 3s !important;
+}
+
+.skill {
+    margin-left: 10px;
+    font-size: 10px !important;
+}
+
+.datee {
+    padding-bottom: 5px !important;
+}
+
+/* Profil*/
+.pprofil {
+    text-align: justify;
+}
+
+.caseprofil {
+    padding: 3px 0px 0px !important;
+    margin-top: 15px;
+}
+
+/*Header*/
+.flash {
+    top: auto !important;
+    margin-top: 0 !important;
+}
