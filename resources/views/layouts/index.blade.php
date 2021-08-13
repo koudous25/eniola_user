@@ -13,7 +13,7 @@
 
         <!-- Slider Shape Start -->
         <div class="slider-shape">
-            <img class="shape-1 animation-round" src=" {{ url('images/shape/shape-8.png') }}" alt="Shape">
+            <img class="shape-1 animation-round" src=" {{ secure_asset('images/shape/shape-8.png') }}" alt="Shape">
         </div>
         <!-- Slider Shape End -->
 
@@ -34,7 +34,7 @@
         <!-- Slider Courses Box Start -->
         <div class="slider-courses-box">
 
-            <img class="shape-1 animation-left" src="{{ url('images/shape/shape-5.png') }}" alt="Shape">
+            <img class="shape-1 animation-left" src="{{ secure_asset('images/shape/shape-5.png') }}" alt="Shape">
 
             <div class="box-content">
                 <div class="box-wrapper">
@@ -44,7 +44,7 @@
                 </div>
             </div>
 
-            <img class="shape-2" src="{{ url('images/shape/shape-6.png') }}" alt="Shape">
+            <img class="shape-2" src="{{ secure_asset('images/shape/shape-6.png') }}" alt="Shape">
 
         </div>
         <!-- Slider Courses Box End -->
@@ -55,7 +55,7 @@
         <div class="slider-images">
             <div class="images">
 
-                <img src="{{ url('images/slider/slider-1.png') }}" alt="Slider">
+                <img src="{{ secure_asset('images/slider/slider-1.png') }}" alt="Slider">
             </div>
         </div>
         <!-- Slider Images End -->
@@ -65,7 +65,7 @@
             <img class="shape-1" src="{{ 'images/shape/shape-9.png' }}" alt="Shape">
 
             <div class="video-play">
-                <img src="{{ url('images/shape/shape-10.png') }}" alt="Shape">
+                <img src="{{ secure_asset('images/shape/shape-10.png') }}" alt="Shape">
                 <a href="https://www.youtube.com/watch?v=BRvyWfuxGuU" class="play video-popup"><i
                         class="flaticon-play"></i></a>
             </div>
@@ -135,7 +135,7 @@
                                         <div class="courses-images">
                                             <a
                                                 href="{{ route('app_courses_details', ['title' => $cours['title']]) }}">
-                                                {{-- <img src="{{ url('images/courses/courses-01.jpg') }}" alt="Courses"> --}}
+                                                {{-- <img src="{{ secure_asset('images/courses/courses-01.jpg') }}" alt="Courses"> --}}
                                                 <img src="{{ $cours['image']['url'] }}" alt="Courses">
                                             </a>
                                         </div>
@@ -144,7 +144,7 @@
                                                 <div class="author">
                                                     <div class="author-thumb">
                                                         <a href="#">
-                                                            <img src="{{ url('images/author/author-01.jpg') }}"
+                                                            <img src="{{ secure_asset('images/author/author-01.jpg') }}"
                                                                 alt="Author">
                                                         </a>
                                                     </div>
@@ -201,7 +201,7 @@
                                                         <div class="author">
                                                             <div class="author-thumb">
                                                                 <a href="#">
-                                                                    <img src="{{ url('images/author/author-01.jpg') }}"
+                                                                    <img src="{{ secure_asset('images/author/author-01.jpg') }}"
                                                                         alt="Author">
                                                                 </a>
                                                             </div>
@@ -268,7 +268,7 @@
 
                 <!-- Single Work Start -->
                 <div class="single-work">
-                    <img class="shape-1" src="{{ url('images/shape/shape-15.png') }}" alt="Shape">
+                    <img class="shape-1" src="{{ secure_asset('images/shape/shape-15.png') }}" alt="Shape">
 
                     <div class="work-icon">
                         <i class="flaticon-transparency"></i>
@@ -282,13 +282,13 @@
 
                 <!-- Single Work Start -->
                 <div class="work-arrow">
-                    <img class="arrow" src="{{ url('images/shape/shape-17.png') }}" alt="Shape">
+                    <img class="arrow" src="{{ secure_asset('images/shape/shape-17.png') }}" alt="Shape">
                 </div>
                 <!-- Single Work End -->
 
                 <!-- Single Work Start -->
                 <div class="single-work">
-                    <img class="shape-2" src="{{ url('images/shape/shape-15.png') }}" alt="Shape">
+                    <img class="shape-2" src="{{ secure_asset('images/shape/shape-15.png') }}" alt="Shape">
 
                     <div class="work-icon">
                         <i class="flaticon-forms"></i>
@@ -302,13 +302,13 @@
 
                 <!-- Single Work Start -->
                 <div class="work-arrow">
-                    <img class="arrow" src="{{ url('images/shape/shape-17.png') }}" alt="Shape">
+                    <img class="arrow" src="{{ secure_asset('images/shape/shape-17.png') }}" alt="Shape">
                 </div>
                 <!-- Single Work End -->
 
                 <!-- Single Work Start -->
                 <div class="single-work">
-                    <img class="shape-3" src="{{ url('images/shape/shape-16.png') }}" alt="Shape">
+                    <img class="shape-3" src="{{ secure_asset('images/shape/shape-16.png') }}" alt="Shape">
 
                     <div class="work-icon">
                         <i class="flaticon-badge"></i>
@@ -347,13 +347,16 @@
                 </div>
                 <!-- Section Title End -->
 
-                <img class="shape-1 animation-right" src="{{ url('images/shape/shape-14.png') }}" alt="Shape">
+                <img class="shape-1 animation-right" src="{{ secure_asset('images/shape/shape-14.png') }}"
+                    alt="Shape">
 
                 <!-- Download App Button End -->
                 <div class="download-app-btn">
                     <ul class="app-btn">
-                        <li><a href="#"><img src="{{ url('images/google-play.png') }}" alt="Google Play"></a></li>
-                        <li><a href="#"><img src="{{ url('images/app-store.png') }}" alt="App Store"></a></li>
+                        <li><a href="#"><img src="{{ secure_asset('images/google-play.png') }}"
+                                    alt="Google Play"></a></li>
+                        <li><a href="#"><img src="{{ secure_asset('images/app-store.png') }}" alt="App Store"></a>
+                        </li>
                     </ul>
                 </div>
                 <!-- Download App Button End -->
@@ -372,9 +375,10 @@
             <!-- Brand Logo Wrapper Start -->
             <div class="brand-logo-wrapper">
 
-                <img class="shape-1" src="{{ url('images/shape/shape-19.png') }}" alt="Shape">
+                <img class="shape-1" src="{{ secure_asset('images/shape/shape-19.png') }}" alt="Shape">
 
-                <img class="shape-2 animation-round" src="{{ url('images/shape/shape-20.png') }}" alt="Shape">
+                <img class="shape-2 animation-round" src="{{ secure_asset('images/shape/shape-20.png') }}"
+                    alt="Shape">
 
                 <!-- Section Title Start -->
                 <div class="section-title shape-03">
@@ -389,25 +393,25 @@
 
                             <!-- Single Brand Start -->
                             <div class="single-brand swiper-slide">
-                                <img src="{{ url('images/brand/brand-03.png') }}" alt="Brand">
+                                <img src="{{ secure_asset('images/brand/brand-03.png') }}" alt="Brand">
                             </div>
                             <!-- Single Brand End -->
 
                             <!-- Single Brand Start -->
                             <div class="single-brand swiper-slide">
-                                <img src="{{ url('images/brand/brand-04.png') }}" alt="Brand">
+                                <img src="{{ secure_asset('images/brand/brand-04.png') }}" alt="Brand">
                             </div>
                             <!-- Single Brand End -->
 
                             <!-- Single Brand Start -->
                             <div class="single-brand swiper-slide">
-                                <img src="{{ url('images/brand/brand-05.png') }}" alt="Brand">
+                                <img src="{{ secure_asset('images/brand/brand-05.png') }}" alt="Brand">
                             </div>
                             <!-- Single Brand End -->
 
                             <!-- Single Brand Start -->
                             <div class="single-brand swiper-slide">
-                                <img src="{{ url('images/brand/brand-06.png') }}" alt="Brand">
+                                <img src="{{ secure_asset('images/brand/brand-06.png') }}" alt="Brand">
                             </div>
                             <!-- Single Brand End -->
 

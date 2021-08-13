@@ -6,14 +6,14 @@
         <div class="container-fluid">
             <div class="form-wrapper">
                 <form action="#">
-                    <div class="single-faq-item row justify-content-between">
+                    <div class="row justify-content-between">
 
                         <div class="col-lg-4">
                             <div class="mb-3">
-                                <p class="text-center"><img src="{{ url('images/custom/avatar.png') }}" alt=""
-                                        class="img-thumbnail" style="border-radius: 50%;"></p>
+                                <p class="text-center"><img src="{{ secure_asset('images/custom/avatar.png') }}" alt=""
+                                        class="img-thumbnail" style="border-radius: 50%; height:300px;"></p>
                             </div>
-                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" class="mt-5">
                         </div>
                         <div class="col-lg-8">
                             <!-- Register & Login Form Start -->
@@ -21,21 +21,21 @@
 
                                 <!-- Single Form Start -->
                                 <div class="single-form">
-                                    <label for="nom">Nom</label>
-                                    <input type="text" id="nom" name="nom" placeholder="">
+                                    <input type="text" id="prenom" name="nom"
+                                        placeholder="{{ Session::get('user')['userOut']['lastname'] }}">
                                 </div>
                                 <!-- Single Form End -->
                                 <!-- Single Form Start -->
                                 <div class="single-form">
-                                    <label for="nom">Prénom</label>
-                                    <input type="text" id="nom" name="nom" placeholder="">
+                                    <input type="text" id="prenom" name="prenom"
+                                        placeholder="{{ Session::get('user')['userOut']['firstname'] }}">
                                 </div>
                                 <!-- Single Form End -->
                                 <div class="single-form mm">
-                                    <label class="mb-2">Date de naissance</label>
                                     <div class="birth">
-                                        <input disabled="true" required="true" id="datepicker" name="date"
-                                            class="naissance" />
+                                        <input readonly required="true" id="datepicker" name="birth" class="naissance"
+                                            id="date" value="{{ old('birth') }}"
+                                            placeholder="{{ Session::get('user')['userOut']['birthday'] }}" />
                                     </div>
                                 </div>
 
@@ -48,10 +48,6 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
                                         value="option2">
                                     <label class="form-check-label" for="inlineRadio2">Masculin</label>
-                                </div>
-                                <div class="single-form">
-                                    <label for="bio">Bio</label>
-                                    <textarea name="bio" id="bio" placeholder="Décris toi en quelques mots"></textarea>
                                 </div>
                                 <!-- Single Form Start -->
                                 <div class="single-form">

@@ -7,6 +7,8 @@ use App\Http\Controllers\StudentDashboardController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\IndexAPIController;
 use Illuminate\Http\Request;
+use App\Http\Middleware\SDashAuth;
+use App\Http\Middleware\MDashAuth;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,11 +31,11 @@ use Illuminate\Http\Request;
 Route::get('/','App\Http\Controllers\IndexAPIController@index',['titre' => 'Accueil'])->name('app_home');
 
 Route::get('about', function () {
-    return view('layouts.about', ['titre' => 'A propos']);
+    return view('layouts.about', ['titre' => 'A propos'])->name('app_about');
 })->name('app_about');
 
 Route::get('contact', function () {
-    return view('layouts.contact', ['titre' => 'Nous contacter']);
+    return view('layouts.contact', ['titre' => 'Nous contacter'])->name('app_contact');
 });
 
 Route::get('courses','App\Http\Controllers\IndexAPIController@showAllCourses')->name('app_courses');
@@ -41,18 +43,7 @@ Route::get('courses','App\Http\Controllers\IndexAPIController@showAllCourses')->
 
 Route::get('courses-details/{title}','App\Http\Controllers\IndexAPIController@showOneCourse')->name('app_courses_details');
 
-// Route::get('courses-details', function () {
-//     return view('layouts.courses-details', ['titre' => 'Présentation']);
-// })->name('app_courses_details');
-
 Route::get('after-enroll','App\Http\Controllers\IndexAPIController@showCourse')->name('app_after_enroll');
-
-// Route::get('after-enroll', function () {
-//     return view('layouts.after-enroll', ['titre' => 'Cours']);
-// })->name('app_after_enroll');
-
-// Route::get('courses', [CoursesController::class, 'allcourses']);
-
 
 /*Login route */
 Route::get('login', function () {
@@ -77,23 +68,27 @@ Route::post('register', [InscriptionController::class, 'traitement'])->name('app
 /*Register route end */
 
 
-/*StudentDashboard */
+/**Dashboard */
 
-Route::get('dashboard_student', [StudentDashboardController::class, 'index'])->name('app_dash_student');
+Route::middleware([SDashAuth::class])->group(function () {
+    /*StudentDashboard */
+    Route::get('dashboard_student', [StudentDashboardController::class, 'index'])->name('app_dash_student');
 
+    Route::get('dashboard_student/profile', [StudentDashboardController::class, 'profile'])->name('app_dash_student_profile');
 
-Route::get('dashboard_student/profile', [StudentDashboardController::class, 'profile'])->name('app_dash_student_profile');
+    Route::get('dashboard_student/statistique', [StudentDashboardController::class, 'statistique'])->name('app_dash_student_statistique');
 
-Route::get('dashboard_student/statistique', [StudentDashboardController::class, 'statistique'])->name('app_dash_student_statistique');
+    Route::get('dashboard_student/change_profile', [StudentDashboardController::class, 'change_profile'])->name('app_dash_student_change_profile');
 
-Route::get('dashboard_student/change_profile', [StudentDashboardController::class, 'change_profile'])->name('app_dash_student_change_profile');
+    Route::get('dashboard_student/parametre', [StudentDashboardController::class, 'parametre'])->name('app_dash_student_parametre');
 
-Route::get('dashboard_student/parametre', [StudentDashboardController::class, 'parametre'])->name('app_dash_student_parametre');
+    Route::get('dashboard_student/change_password', [StudentDashboardController::class, 'change_password_view'])->name('app_dash_student_change_password');
+    Route::post('dashboard_student/change_password', [StudentDashboardController::class, 'change_password'])->name('app_dash_student_change_password_traitement');
+});
 
-Route::get('dashboard_student/change_password', [StudentDashboardController::class, 'change_password'])->name('app_dash_student_change_password');
-
-
-
-Route::get('dashboard-mentor', function () {
-    return view('userDash.dashboard-mentor', ['titre' => 'Mon tableau de bord']);
-})->name('app_dash_mentor');
+/*Dash Mentor*/
+Route::middleware([MDashAuth::class])->group(function () {
+    Route::get('dashboard_mentor', function () {
+        return view('userDash.dashboard-mentor', ['titre' => 'Mon tableau de bord']);
+    })->name('app_dash_mentor');
+});

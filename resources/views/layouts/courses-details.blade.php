@@ -17,15 +17,15 @@
     <!-- Page Banner Start -->
     <div class="section page-banner">
 
-        <img class="shape-1 animation-round" src="{{ url('images/shape/shape-8.png') }}" alt="Shape">
+        <img class="shape-1 animation-round" src="{{ secure_asset('images/shape/shape-8.png') }}" alt="Shape">
 
-        <img class="shape-2" src="{{ url('images/shape/shape-23.png') }}" alt="Shape">
+        <img class="shape-2" src="{{ secure_asset('images/shape/shape-23.png') }}" alt="Shape">
 
         <div class="container">
             <!-- Page Banner Start -->
             <div class="page-banner-content">
                 <ul class="breadcrumb">
-                    <li><a href="/">Accueil</a></li>
+                    <li><a href="{{ route('app_home') }}">Accueil</a></li>
                     <li class="active">Présentation du cours</li>
                 </ul>
                 <h2 class="title"><span>{{ $Course['title'] }} </span></h2>
@@ -36,7 +36,7 @@
         <!-- Shape Icon Box Start -->
         <div class="shape-icon-box">
 
-            <img class="icon-shape-1 animation-left" src="{{ url('images/shape/shape-5.png') }}" alt="Shape">
+            <img class="icon-shape-1 animation-left" src="{{ secure_asset('images/shape/shape-5.png') }}" alt="Shape">
 
             <div class="box-content">
                 <div class="box-wrapper">
@@ -44,14 +44,14 @@
                 </div>
             </div>
 
-            <img class="icon-shape-2" src="{{ url('images/shape/shape-6.png') }}" alt="Shape">
+            <img class="icon-shape-2" src="{{ secure_asset('images/shape/shape-6.png') }}" alt="Shape">
 
         </div>
         <!-- Shape Icon Box End -->
 
-        <img class="shape-3" src="{{ url('images/shape/shape-24.png') }}" alt="Shape">
+        <img class="shape-3" src="{{ secure_asset('images/shape/shape-24.png') }}" alt="Shape">
 
-        <img class="shape-author" src="{{ url('images/author/author-11.jpg') }}" alt="Shape">
+        <img class="shape-author" src="{{ secure_asset('images/author/author-11.jpg') }}" alt="Shape">
 
     </div>
     <!-- Page Banner End -->
@@ -70,7 +70,7 @@
                             <span class="tags">Finance</span>
 
                             <div class="courses-play">
-                                <img src="{{ url('images/courses/circle-shape.png') }}" alt="Play">
+                                <img src="{{ secure_asset('images/courses/circle-shape.png') }}" alt="Play">
                                 <a class="play video-popup" href="https://www.youtube.com/watch?v=Wif4ZkwC0AM"><i
                                         class="flaticon-play"></i></a>
                             </div>
@@ -81,7 +81,7 @@
                         <div class="courses-details-admin">
                             <div class="admin-author">
                                 <div class="author-thumb">
-                                    <img src="{{ url('images/author/author-01.jpg') }}" alt="Author">
+                                    <img src="{{ secure_asset('images/author/author-01.jpg') }}" alt="Author">
                                 </div>
                                 <div class="author-content">
                                     <a class="name" href="#">ISOC Bénin</a>
@@ -135,7 +135,7 @@
                                                         <div class="single-review swiper-slide">
                                                             <div class="review-author">
                                                                 <div class="author-thumb">
-                                                                    <img src="{{ url('images/author/author-06.jpg') }}"
+                                                                    <img src="{{ secure_asset('images/author/author-06.jpg') }}"
                                                                         alt="Author">
                                                                     <i class="icofont-quote-left"></i>
                                                                 </div>
@@ -161,7 +161,7 @@
                                                         <div class="single-review swiper-slide">
                                                             <div class="review-author">
                                                                 <div class="author-thumb">
-                                                                    <img src="{{ url('images/author/author-07.jpg') }}"
+                                                                    <img src="{{ secure_asset('images/author/author-07.jpg') }}"
                                                                         alt="Author">
                                                                     <i class="icofont-quote-left"></i>
                                                                 </div>
@@ -187,7 +187,7 @@
                                                         <div class="single-review swiper-slide">
                                                             <div class="review-author">
                                                                 <div class="author-thumb">
-                                                                    <img src="{{ url('images/author/author-03.jpg') }}"
+                                                                    <img src="{{ secure_asset('images/author/author-03.jpg') }}"
                                                                         alt="Author">
                                                                     <i class="icofont-quote-left"></i>
                                                                 </div>
@@ -387,13 +387,16 @@
                 </div>
                 <!-- Section Title End -->
 
-                <img class="shape-1 animation-right" src="{{ url('images/shape/shape-14.png') }}" alt="Shape">
+                <img class="shape-1 animation-right" src="{{ secure_asset('images/shape/shape-14.png') }}"
+                    alt="Shape">
 
                 <!-- Download App Button End -->
                 <div class="download-app-btn">
                     <ul class="app-btn">
-                        <li><a href="#"><img src="{{ url('images/google-play.png') }}" alt="Google Play"></a></li>
-                        <li><a href="#"><img src="{{ url('images/app-store.png') }}" alt="App Store"></a></li>
+                        <li><a href="#"><img src="{{ secure_asset('images/google-play.png') }}"
+                                    alt="Google Play"></a></li>
+                        <li><a href="#"><img src="{{ secure_asset('images/app-store.png') }}" alt="App Store"></a>
+                        </li>
                     </ul>
                 </div>
                 <!-- Download App Button End -->

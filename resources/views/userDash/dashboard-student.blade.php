@@ -19,9 +19,9 @@
                     <div class="courses-list">
                         <ul>
                             <!--li>Cours</li>
-                                    <li>Inscription</li>
-                                    <li>Progression</li>
-                                    <li>Certificat</li-->
+                                                    <li>Inscription</li>
+                                                    <li>Progression</li>
+                                                    <li>Certificat</li-->
                             <li>
                                 <div class="courses">
                                     <div class="thumb">
@@ -49,7 +49,8 @@
                             <li>
                                 <div class="courses">
                                     <div class="thumb">
-                                        <img src="{{ url('/images/courses/admin-courses-01.jpg') }}" alt="Courses">
+                                        <img src="{{ secure_asset('/images/courses/admin-courses-01.jpg') }}"
+                                            alt="Courses">
                                     </div>
                                     <div class="content">
                                         <h4 class="title"><a href="#">Build An eCommerce Site With WooCommerce
@@ -68,7 +69,7 @@
                                 </div>
 
                                 <div class="button d-flex flex-column ml-auto">
-                                    <p class="text-center"><img src="{{ url('/images/custom/certificat.png') }}"
+                                    <p class="text-center"><img src="{{ secure_asset('/images/custom/certificat.png') }}"
                                             alt="certificat" style="width:70px; height:60px;"></p>
                                     <p class="text-center">18/20</p>
                                 </div>
@@ -76,7 +77,8 @@
                             <li>
                                 <div class="courses">
                                     <div class="thumb">
-                                        <img src="{{ url('/images/courses/admin-courses-01.jpg') }}" alt="Courses">
+                                        <img src="{{ secure_asset('/images/courses/admin-courses-01.jpg') }}"
+                                            alt="Courses">
                                     </div>
                                     <div class="content">
                                         <h4 class="title"><a href="#">Build An WholeSale WooCommerce Store using
@@ -100,7 +102,8 @@
                             <li>
                                 <div class="courses">
                                     <div class="thumb">
-                                        <img src="{{ url('/images/courses/admin-courses-01.jpg') }}" alt="Courses">
+                                        <img src="{{ secure_asset('/images/courses/admin-courses-01.jpg') }}"
+                                            alt="Courses">
                                     </div>
                                     <div class="content">
                                         <h4 class="title"><a href="#">Build An WholeSale WooCommerce Store using
@@ -119,7 +122,7 @@
 
                                 </div>
                                 <div class="button d-flex flex-column ml-auto">
-                                    <p class="text-center"><img src="{{ url('/images/custom/certificat.png') }}"
+                                    <p class="text-center"><img src="{{ secure_asset('/images/custom/certificat.png') }}"
                                             alt="certificat" style="width:70px; height:60px;"></p>
                                     <p class="text-center">18/20</p>
                                 </div>
@@ -142,105 +145,54 @@
                     </div>
                 </div>
                 <div class="courses-wrapper">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6">
-                            <!-- Single Courses Start -->
-                            <div class="single-courses">
-                                <div class="courses-images">
-                                    <a href="courses-details.html"><img src="{{ url('/images/courses/courses-03.jpg') }}"
-                                            alt="Courses"></a>
-                                </div>
-                                <div class="courses-content">
-                                    <div class="courses-author">
-                                        <div class="tag">
-                                            <a href="#">Science</a>
+                    @if (count($courses) !== 0)
+                        <div class="row">
+                            @for ($i = 0; $i < 3; $i++)
+                                <div class="col-lg-4 col-md-6">
+                                    <!-- Single Courses Start -->
+                                    <div class="single-courses">
+                                        <div class="courses-images">
+                                            <a href="/courses-details">
+                                                <img src="{{ $courses[rand(0, count($courses) - 1)]['image']['url'] }}"
+                                                    alt="Courses">
+                                            </a>
+                                        </div>
+                                        <div class="courses-content">
+                                            <div class="courses-author">
+                                                <div class="author">
+                                                    <div class="author-thumb">
+                                                        <a href="#">
+                                                            <img src="{{ secure_asset('images/author/author-01.jpg') }}"
+                                                                alt="Author">
+                                                        </a>
+                                                    </div>
+                                                    <div class="author-name">
+                                                        <a class="name" href="#"> </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tag">
+                                                    <a
+                                                        href="#">{{ $courses[rand(0, count($courses) - 1)]['category']['category'] }}</a>
+                                                </div>
+                                            </div>
+
+                                            <h4 class="title"><a
+                                                    href="{{ route('app_courses_details', ['title' => $courses[rand(0, count($courses) - 1)]['title']]) }}">{{ $courses[rand(0, count($courses) - 1)]['title'] }}</a>
+                                            </h4>
+                                            <div class="courses-meta">
+                                                <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
+                                                <span> <i class="icofont-read-book"></i> 9 Lectures </span>
+                                            </div>
+
                                         </div>
                                     </div>
-                                    <h4 class="title"><a href="courses-details.html">Culture & Leadership:
-                                            Strategies for a Successful Business</a></h4>
-                                    <div class="courses-meta">
-                                        <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
-                                        <span> <i class="icofont-read-book"></i> 29 Lectures </span>
-                                    </div>
-                                    <div class="courses-price-review justify-content-center">
-                                        <div class="courses-review">
-                                            <span class="rating-count">4.9</span>
-                                            <span class="rating-star">
-                                                <span class="rating-bar" style="width: 80%;"></span>
-                                            </span>
-                                        </div>
-                                    </div>
+                                    <!-- Single Courses End -->
                                 </div>
-                            </div>
-                            <!-- Single Courses End -->
+                            @endfor
                         </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <!-- Single Courses Start -->
-                            <div class="single-courses">
-                                <div class="courses-images">
-                                    <a href="courses-details.html"><img src="{{ url('/images/courses/courses-03.jpg') }}"
-                                            alt="Courses"></a>
-                                </div>
-                                <div class="courses-content">
-                                    <div class="courses-author">
-                                        <div class="tag">
-                                            <a href="#">Science</a>
-                                        </div>
-                                    </div>
-
-                                    <h4 class="title"><a href="courses-details.html">Culture & Leadership:
-                                            Strategies for a Successful Business</a></h4>
-                                    <div class="courses-meta">
-                                        <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
-                                        <span> <i class="icofont-read-book"></i> 29 Lectures </span>
-                                    </div>
-                                    <div class="courses-price-review justify-content-center">
-                                        <div class="courses-review">
-                                            <span class="rating-count">4.9</span>
-                                            <span class="rating-star">
-                                                <span class="rating-bar" style="width: 80%;"></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Courses End -->
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <!-- Single Courses Start -->
-                            <div class="single-courses">
-                                <div class="courses-images">
-                                    <a href="courses-details.html"><img src="{{ url('/images/courses/courses-03.jpg') }}"
-                                            alt="Courses"></a>
-                                </div>
-                                <div class="courses-content">
-                                    <div class="courses-author">
-                                        <div class="tag">
-                                            <a href="#">Science</a>
-                                        </div>
-                                    </div>
-
-                                    <h4 class="title"><a href="courses-details.html">Culture & Leadership:
-                                            Strategies for a Successful Business</a></h4>
-                                    <div class="courses-meta">
-                                        <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
-                                        <span> <i class="icofont-read-book"></i> 29 Lectures </span>
-                                    </div>
-                                    <div class="courses-price-review justify-content-center">
-                                        <div class="courses-review">
-                                            <span class="rating-count">4.9</span>
-                                            <span class="rating-star">
-                                                <span class="rating-bar" style="width: 80%;"></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Courses End -->
-                        </div>
-                    </div>
+                    @else
+                        <p>Pas de cours recommandés</p>
+                    @endif
                 </div>
 
             </div>

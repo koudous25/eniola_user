@@ -5,8 +5,8 @@
 
         <!-- Admin Tab Menu Start -->
         <div class="nav flex-column nav-pills admin-tab-menu">
-            <a href="/dashboard-mentor" class="active">Overview</a>
-            <a href="students.html">Etudiants</a>
+            <a href="{{ route('app_dash_mentor') }}" class="active">Overview</a>
+            <a href="{{ route('app_students') }}">Etudiants</a>
         </div>
         <!-- Admin Tab Menu End -->
 
@@ -42,7 +42,7 @@
                 <!-- Message Start -->
                 <div class="message mt-8">
                     <div class="message-icon">
-                        <img src="{{ url('images/menu-icon/icon-6.png') }}" alt="">
+                        <img src="{{ secure_asset('images/menu-icon/icon-6.png') }}" alt="">
                     </div>
                     <div class="message-content">
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
@@ -62,7 +62,7 @@
                         <!-- Courses Start -->
                         <div class="courses">
                             <div class="rating-author">
-                                <img src="{{ url('images/author/author-14.jpg') }}" alt="Author">
+                                <img src="{{ secure_asset('images/author/author-14.jpg') }}" alt="Author">
                             </div>
                             <div class="courses-content">
                                 <h4 class="title"><a href="#">Build An WholeSale WooCommerce Store using Whols Plugin</a>
@@ -82,7 +82,7 @@
                         <!-- Courses Start -->
                         <div class="courses">
                             <div class="rating-author">
-                                <img src="{{ url('images/author/author-14.jpg') }}" alt="Author">
+                                <img src="{{ secure_asset('images/author/author-14.jpg') }}" alt="Author">
                             </div>
                             <div class="courses-content">
                                 <h4 class="title"><a href="#">Build An WholeSale WooCommerce Store using Whols Plugin</a>
@@ -102,7 +102,7 @@
                         <!-- Courses Start -->
                         <div class="courses">
                             <div class="rating-author">
-                                <img src="{{ url('images/author/author-14.jpg') }}" alt="Author">
+                                <img src="{{ secure_asset('images/author/author-14.jpg') }}" alt="Author">
                             </div>
                             <div class="courses-content">
                                 <h4 class="title"><a href="#">Build An WholeSale WooCommerce Store using Whols Plugin</a>
@@ -122,7 +122,7 @@
                         <!-- Courses Start -->
                         <div class="courses">
                             <div class="rating-author">
-                                <img src="{{ url('images/author/author-14.jpg') }}" alt="Author">
+                                <img src="{{ secure_asset('images/author/author-14.jpg') }}" alt="Author">
                             </div>
                             <div class="courses-content">
                                 <h4 class="title"><a href="#">Build An WholeSale WooCommerce Store using Whols Plugin</a>

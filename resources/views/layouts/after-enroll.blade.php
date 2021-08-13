@@ -12,8 +12,10 @@
 
             <!-- Header Logo Start -->
             <div class="login-header-logo logo-2">
-                <a href="/"><img src="{{ url('images/logo-icon.png') }}" alt="Logo"></a></li>
-                <a href="/"><img src="{{ url('images/text-logo.png') }}" alt="Logo"></a></li>
+                <a href="{{ route('app_home') }}"><img src="{{ secure_asset('images/logo-icon.png') }}"
+                        alt="Logo"></a></li>
+                <a href="{{ route('app_home') }}"><img src="{{ secure_asset('images/text-logo.png') }}"
+                        alt="Logo"></a></li>
             </div>
             <!-- Header Logo End -->
 
@@ -23,7 +25,7 @@
 
                 <div class="search-input dropdown-menu">
                     <form action="#">
-                        <input type="text" placeholder="Search here">
+                        <input type="text" placeholder="Rechercher un cours">
                     </form>
                 </div>
 
@@ -97,7 +99,7 @@
                 </div>
 
                 <a class="action author" href="#">
-                    <img src="{{ url('images/author/author-07.jpg') }}" alt="Author">
+                    <img src="{{ secure_asset('images/author/author-07.jpg') }}" alt="Author">
                 </a>
 
                 <div class="dropdown">
@@ -382,7 +384,7 @@
                                                 <div class="single-instructor">
                                                     <div class="review-author">
                                                         <div class="author-thumb">
-                                                            <img src="{{ url('images/author/author-06.jpg') }}"
+                                                            <img src="{{ secure_asset('images/author/author-06.jpg') }}"
                                                                 alt="Author">
                                                         </div>
                                                         <div class="author-content">
@@ -405,7 +407,7 @@
                                                 <div class="single-instructor">
                                                     <div class="review-author">
                                                         <div class="author-thumb">
-                                                            <img src="{{ url('images/author/author-07.jpg') }}"
+                                                            <img src="{{ secure_asset('images/author/author-07.jpg') }}"
                                                                 alt="Author">
                                                         </div>
                                                         <div class="author-content">
@@ -428,7 +430,7 @@
                                                 <div class="single-instructor">
                                                     <div class="review-author">
                                                         <div class="author-thumb">
-                                                            <img src="{{ url('images/author/author-03.jpg') }}"
+                                                            <img src="{{ secure_asset('images/author/author-03.jpg') }}"
                                                                 alt="Author">
                                                         </div>
                                                         <div class="author-content">
@@ -936,13 +938,16 @@
                 </div>
                 <!-- Section Title End -->
 
-                <img class="shape-1 animation-right" src="{{ url('images/shape/shape-14.png') }}" alt="Shape">
+                <img class="shape-1 animation-right" src="{{ secure_asset('images/shape/shape-14.png') }}"
+                    alt="Shape">
 
                 <!-- Download App Button End -->
                 <div class="download-app-btn">
                     <ul class="app-btn">
-                        <li><a href="#"><img src="{{ url('images/google-play.png') }}" alt="Google Play"></a></li>
-                        <li><a href="#"><img src="{{ url('images/app-store.png') }}" alt="App Store"></a></li>
+                        <li><a href="#"><img src="{{ secure_asset('images/google-play.png') }}" alt="Google Play"></a>
+                        </li>
+                        <li><a href="#"><img src="{{ secure_asset('images/app-store.png') }}" alt="App Store"></a>
+                        </li>
                     </ul>
                 </div>
                 <!-- Download App Button End -->
@@ -960,7 +965,7 @@
         <!-- Footer Widget Section Start -->
         <div class="footer-widget-section">
 
-            <img class="shape-1 animation-down" src="{{ url('images/shape/shape-21.png') }}" alt="Shape">
+            <img class="shape-1 animation-down" src="{{ secure_asset('images/shape/shape-21.png') }}" alt="Shape">
 
             <div class="container">
                 <div class="row">
@@ -969,7 +974,7 @@
                         <!-- Footer Widget Start -->
                         <div class="footer-widget">
                             <div class="widget-logo">
-                                <a href="/"><img src="{{ url('images/logo.png') }}" alt="Logo"></a>
+                                <a href="/"><img src="{{ secure_asset('images/logo.png') }}" alt="Logo"></a>
                             </div>
 
                             <div class="widget-address">
@@ -1037,7 +1042,7 @@
                 </div>
             </div>
 
-            <img class="shape-2 animation-left" src="{{ url('images/shape/shape-22.png') }}" alt="Shape">
+            <img class="shape-2 animation-left" src="{{ secure_asset('images/shape/shape-22.png') }}" alt="Shape">
 
         </div>
         <!-- Footer Widget Section End -->

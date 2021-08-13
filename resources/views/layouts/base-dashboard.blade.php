@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="noindex, follow" />
-    <title>Eniola - @yield('title')</title>
+    <title>Eniola - {{ $titre ?? null }}}</title>
 
     <!-- Fonts -->
 
@@ -19,28 +19,30 @@
  ============================================ -->
 
     <!-- Icon Font CSS -->
-    <link rel="stylesheet" href="{{ url('css/plugins/icofont.min.css') }}">
-    <link rel="stylesheet" href="{{ url('css/plugins/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ url('css/plugins/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/plugins/icofont.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/plugins/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/plugins/font-awesome.min.css') }}">
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="{{ url('css/plugins/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ url('css/plugins/swiper-bundle.min.css') }}">
-    <link rel="stylesheet" href="{{ url('css/plugins/magnific-popup.css') }}">
-    <link rel="stylesheet" href="{{ url('css/plugins/nice-select.css') }}">
-    <link rel="stylesheet" href="{{ url('css/plugins/apexcharts.css') }}">
-    <link rel="stylesheet" href="{{ url('css/plugins/jqvmap.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/plugins/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/plugins/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/plugins/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/plugins/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/plugins/apexcharts.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/plugins/jqvmap.min.css') }}">
 
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="{{ url('css/style.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
 
     {{-- Mon style --}}
-    <link rel="stylesheet" href="{{ url('css/monStyle.css') }}">
-    <link rel="stylesheet" href="{{ url('css/custom.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/monStyle.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/bootstrap-datepicker.min.css') }}">
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css">
 
     {{-- ====== Use the minified version files listed below for better performance and remove the files listed above ====== --}}
-    {{-- <link rel="stylesheet" href="{{url('css/vendor/plugins.min.css') }}">
-    <link rel="stylesheet" href="{{url('css/style.min.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{secure_asset('css/vendor/plugins.min.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/style.min.css') }}"> --}}
 
     @yield('css')
 </head>
@@ -57,7 +59,7 @@
 
                 <!-- Header Logo Start -->
                 <div class="login-header-logo">
-                    <a href="/"><img src="{{ url('images/logo-icon.png') }}" alt="Logo"></a></li>
+                    <a href="/"><img src="{{ secure_asset('images/logo-icon.png') }}" alt="Logo"></a></li>
 
                 </div>
                 <!-- Header Logo End -->
@@ -131,7 +133,7 @@
                     </div>
 
                     <a class="action author" href="#">
-                        <img src="{{ url('images/author/author-07.jpg') }}" alt="Author">
+                        <img src="{{ secure_asset('images/author/author-07.jpg') }}" alt="Author">
                     </a>
 
                     <div class="dropdown">
@@ -141,7 +143,8 @@
                             <span></span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="" href="{{ route('app_dash_student_profile') }}"><i class="icofont-user"></i>
+                            <li><a class="" href="{{ route('app_dash_student_profile') }}"><i
+                                        class="icofont-user"></i>
                                     Profile</a></li>
                             <li><a class="" href="{{ route('app_dash_student_parametre') }}"><i
                                         class="icofont-settings-alt"></i> Paramètres</a>
@@ -165,13 +168,13 @@
             <div class="sidebar-wrapper">
                 <div class="menu-list">
                     <a class="active" href="{{ route('app_dash_student') }}"><img
-                            src="{{ url('images/menu-icon/icon-1.png') }}" alt="Icon"></a>
+                            src="{{ secure_asset('images/menu-icon/icon-1.png') }}" alt="Icon"></a>
                     <a href="{{ route('app_dash_student_profile') }}"><img
-                            src="{{ url('images/menu-icon/icon-2-2.png') }}" alt="Icon"></a>
+                            src="{{ secure_asset('images/menu-icon/icon-2-2.png') }}" alt="Icon"></a>
                     <a href="{{ route('app_dash_student_statistique') }}"><img
-                            src="{{ url('images/menu-icon/icon-3.png') }}" alt="Icon"></a>
+                            src="{{ secure_asset('images/menu-icon/icon-3.png') }}" alt="Icon"></a>
                     <a href="{{ route('app_dash_student_parametre') }}"><img
-                            src="{{ url('images/menu-icon/icon-4.png') }}" alt="Icon"></a>
+                            src="{{ secure_asset('images/menu-icon/icon-4.png') }}" alt="Icon"></a>
 
                 </div>
             </div>
@@ -202,7 +205,7 @@
                             <!-- Footer Widget Start -->
                             <div class="footer-widget">
                                 <div class="widget-logo">
-                                    <a href="/"><img src="{{ url('images/logo.png') }}" alt="Logo"></a>
+                                    <a href="/"><img src="{{ secure_asset('images/logo.png') }}" alt="Logo"></a>
                                 </div>
 
                                 <div class="widget-address">
@@ -272,7 +275,8 @@
                     </div>
                 </div>
 
-                <img class="shape-2 animation-left" src="{{ url('images/shape/shape-22.png') }}" alt="Shape">
+                <img class="shape-2 animation-left" src="{{ secure_asset('images/shape/shape-22.png') }}"
+                    alt="Shape">
 
             </div>
             <!-- Footer Widget Section End -->
@@ -309,30 +313,41 @@
     ============================================ -->
 
         <!-- Modernizer & jQuery JS -->
-        <script src="{{ url('js/vendor/modernizr-3.11.2.min.js') }}"></script>
-        <script src="{{ url('js/vendor/jquery-3.5.1.min.js') }}"></script>
+        <script src="{{ secure_asset('js/vendor/modernizr-3.11.2.min.js') }}"></script>
+        <script src="{{ secure_asset('js/vendor/jquery-3.5.1.min.js') }}"></script>
 
         <!-- Bootstrap JS -->
-        <script src="{{ url('js/plugins/popper.min.js') }}"></script>
-        <script src="{{ url('js/plugins/bootstrap.min.js') }}"></script>
+        <script src="{{ secure_asset('js/plugins/popper.min.js') }}"></script>
+        <script src="{{ secure_asset('js/plugins/bootstrap.min.js') }}"></script>
 
         <!-- Plugins JS -->
-        <script src="{{ url('js/plugins/swiper-bundle.min.js') }}"></script>
-        <script src="{{ url('js/plugins/jquery.magnific-popup.min.js') }}"></script>
-        <script src="{{ url('js/plugins/video-playlist.js') }}"></script>
-        <script src="{{ url('js/plugins/jquery.nice-select.min.js') }}"></script>
-        <script src="{{ url('js/plugins/ajax-contact.js') }}"></script>
+        <script src="{{ secure_asset('js/plugins/swiper-bundle.min.js') }}"></script>
+        <script src="{{ secure_asset('js/plugins/jquery.magnific-popup.min.js') }}"></script>
+        <script src="{{ secure_asset('js/plugins/video-playlist.js') }}"></script>
+        <script src="{{ secure_asset('js/plugins/jquery.nice-select.min.js') }}"></script>
+        <script src="{{ secure_asset('js/plugins/ajax-contact.js') }}"></script>
 
         <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
-        {{-- <script src="{{url('js/plugins.min.js') }}"></script> --}}
+        {{-- <script src="{{secure_asset('js/plugins.min.js') }}"></script> --}}
 
 
         <!-- Main JS -->
-        <script src="{{ url('js/main.js') }}"></script>
+        <script src="{{ secure_asset('js/main.js') }}"></script>
 
         <!-- Mon JS -->
-        <script src="{{ url('js/bootstrap-alerts.min.js') }}"></script>
-        <script src="{{ url('js/monJs.js') }}"></script>
+        <script src="{{ secure_asset('js/bootstrap-alerts.min.js') }}"></script>
+        <script src="{{ secure_asset('js/monJs.js') }}"></script>
+
+        <script src="{{ secure_asset('js/bootstrap-datepicker.min.js') }}"></script>
+        <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+        <script>
+            $('#datepicker').datepicker({
+                uiLibrary: 'bootstrap4',
+                lang: "fr",
+                format: 'dd/mm/yyyy'
+            });
+        </script>
+
 
         @yield('scripts')
 

@@ -6,13 +6,13 @@
 
 
 
-        <img class="shape-2" src="{{ url('images/shape/shape-23.png') }}" alt="Shape">
+        <img class="shape-2" src="{{ secure_asset('images/shape/shape-23.png') }}" alt="Shape">
 
         <div class="container">
             <!-- Page Banner Start -->
             <div class="page-banner-content">
                 <ul class="breadcrumb">
-                    <li><a href="/">Accueil</a></li>
+                    <li><a href="{{ route('app_home') }}">Accueil</a></li>
                     <li class="active">Connexion</li>
                 </ul>
                 <h2 class="title">Formulaire de <span>Connexion</span></h2>
@@ -23,7 +23,7 @@
         <!-- Shape Icon Box Start -->
         <div class="shape-icon-box">
 
-            <img class="icon-shape-1 animation-left" src="{{ url('images/shape/shape-5.png') }}" alt="Shape">
+            <img class="icon-shape-1 animation-left" src="{{ secure_asset('images/shape/shape-5.png') }}" alt="Shape">
 
             <div class="box-content">
                 <div class="box-wrapper">
@@ -31,14 +31,14 @@
                 </div>
             </div>
 
-            <img class="icon-shape-2" src="{{ url('images/shape/shape-6.png') }}" alt="Shape">
+            <img class="icon-shape-2" src="{{ secure_asset('images/shape/shape-6.png') }}" alt="Shape">
 
         </div>
         <!-- Shape Icon Box End -->
 
-        <img class="shape-3" src="{{ url('images/shape/shape-24.png') }}" alt="Shape">
+        <img class="shape-3" src="{{ secure_asset('images/shape/shape-24.png') }}" alt="Shape">
 
-        <img class="shape-author" src="{{ url('images/author/author-11.jpg') }}" alt="Shape">
+        <img class="shape-author" src="{{ secure_asset('images/author/author-11.jpg') }}" alt="Shape">
 
     </div>
     <!-- Page Banner End -->
@@ -55,12 +55,12 @@
                         <!-- Register & Login Images Start -->
                         <div class="register-login-images">
                             <div class="shape-1">
-                                <img src="{{ url('images/shape/shape-26.png') }}" alt="Shape">
+                                <img src="{{ secure_asset('images/shape/shape-26.png') }}" alt="Shape">
                             </div>
 
 
                             <div class="images">
-                                <img src="{{ url('images/register-login.png') }}" alt="Register Login">
+                                <img src="{{ secure_asset('images/register-login.png') }}" alt="Register Login">
                             </div>
                         </div>
                         <!-- Register & Login Images End -->
