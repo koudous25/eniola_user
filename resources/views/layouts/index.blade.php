@@ -202,7 +202,7 @@
                                                             <div class="author-thumb">
                                                                 <a href="#">
                                                                     <img src="{{ secure_asset('images/author/author-01.jpg') }}"
-                                                                        alt="Author">
+                                                                        alt="ISOC BENIN">
                                                                 </a>
                                                             </div>
                                                             <div class="author-name">

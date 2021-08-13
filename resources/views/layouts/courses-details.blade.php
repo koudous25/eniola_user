@@ -26,7 +26,7 @@
             <div class="page-banner-content">
                 <ul class="breadcrumb">
                     <li><a href="{{ route('app_home') }}">Accueil</a></li>
-                    <li class="active">Présentation du cours</li>
+                    <li class="active">Présentation du cours </li>
                 </ul>
                 <h2 class="title"><span>{{ $Course['title'] }} </span></h2>
             </div>
@@ -71,7 +71,7 @@
 
                             <div class="courses-play">
                                 <img src="{{ secure_asset('images/courses/circle-shape.png') }}" alt="Play">
-                                <a class="play video-popup" href="https://www.youtube.com/watch?v=Wif4ZkwC0AM"><i
+                                <a class="play video-popup" href="https://www.youtube.com/watch?v=dyQSFP8y4kw"><i
                                         class="flaticon-play"></i></a>
                             </div>
                         </div>

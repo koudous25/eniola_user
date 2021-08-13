@@ -74,16 +74,28 @@
                             <div class="form-wrapper">
                                 <form action="/register" method="POST">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                                    <div class="single-form">
-                                        <label for="selector">Rôle</label>
-                                        <select name="select" id="selector" onchange="updated(this)"
-                                            class="w-100 select mb-4">
+                                    <div class="single-form select">
+                                        <!--label for="selector">Rôle</label-->
+                                        <!--select name="select" id="selector" onchange="updated(this)"
+                                                        class="w-100 select mb-4">
+                                                        <option selected>Selectionnez votre rôle</option>
+                                                        <option value="ETUDIANT">Etudiant</option>
+                                                        <option value="RESPONSABLE">Responsable</option>
+                                                        <option value="ORGANISATION">Organisation</option>
+                                                        <option value="ADMIN">Admin</option>
+                                                    </select-->
+                                        <select class="w-100  mb-4 xx" name="select">
+                                            <option selected>Selectionnez votre rôle</option>
                                             <option value="ETUDIANT">Etudiant</option>
                                             <option value="RESPONSABLE">Responsable</option>
                                             <option value="ORGANISATION">Organisation</option>
                                             <option value="ADMIN">Admin</option>
                                         </select>
                                     </div>
+                                    @if ($errors->has('select'))
+                                        <p class="text-danger mt-2">{{ $errors->first('select') }}</p>
+                                    @endif
+
                                     <!-- Single Form Start -->
                                     <div class="single-form">
                                         <input type="text" placeholder="Nom" required name="nom" id="nom"
@@ -113,10 +125,10 @@
                                     </div>
                                     <!-- Single Form End -->
                                     <div class="single-form mm">
-                                        <label class="mb-2">Date de naissance</label>
+                                        <!--label class="mb-2">Date de naissance</label-->
                                         <div class="birth">
                                             <input readonly required="true" id="datepicker" name="birth" class="naissance"
-                                                id="date" value="{{ old('birth') }}" />
+                                                id="date" value="{{ old('birth') }}" placeholder="Date de naissance" />
                                         </div>
                                         @if ($errors->has('birth'))
                                             <p class="text-danger mt-2">{{ $errors->first('birth') }}</p>
@@ -153,30 +165,32 @@
                                             <p class="text-danger mt-2">{{ $errors->first('password_confirmation') }}</p>
                                         @endif
                                     </div>
-                                    <p class="mt-3 text-center">En vous s'inscrivant, vous acceptez les termes et les
+                                    <p class="mt-3 text-center" style="font-style:italic;">En vous s'inscrivant, vous
+                                        acceptez les termes et les
                                         conditions d'utilisation</p>
                                     <!-- Single Form End -->
 
                                     <!--div class="form-check mb-2">
-                                            <input class="form-check-input" type="checkbox" id="defaultCheck1" name="terms" id="terms">
-                                            <label class="form-check-label" for="defaultCheck1">
-                                                J'accepte les termes et conditions d'utilisation
-                                            </label>
-                                            @if ($errors->has('terms'))
-                                            <p class="text-danger mt-2">{{ $errors->first('terms') }}</p>
-                                            @endif
-                                        </div-->
+                                                    <input class="form-check-input" type="checkbox" id="defaultCheck1" name="terms" id="terms">
+                                                    <label class="form-check-label" for="defaultCheck1">
+                                                        J'accepte les termes et conditions d'utilisation
+                                                    </label>
+                                                    @if ($errors->has('terms'))
+                                                    <p class="text-danger mt-2">{{ $errors->first('terms') }}</p>
+                                                    @endif
+                                                </div-->
 
                                     <!-- Single Form Start -->
                                     <div class="single-form bouton">
                                         <button class="btn btn-primary btn-hover-dark w-100"
                                             type="submit">S'inscrire</button>
-                                        <a class="btn btn-secondary btn-outline w-100" href="#">Sign up with
-                                            Google</a>
+                                        <!--a class="btn btn-secondary btn-outline w-100" href="#">Sign up with
+                                                        Google</a-->
                                     </div>
                                     <!-- Single Form End -->
                                 </form>
-                                <p class="text-center mt-2">J'ai déja un compte ? <a href="login.html">Se
+                                <p class="text-center mt-2">J'ai déja un compte ? <a style="font-weight:bold;"
+                                        href="{{ route('app_login') }}">Se
                                         connecter</a>
                                 </p>
                             </div>

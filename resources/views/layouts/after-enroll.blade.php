@@ -136,86 +136,34 @@
                         <div class="students-wrapper chap-active">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <!-- Single Student Start -->
-                                        <div class="single-chap">
-                                            <div class="student-images">
-                                                <img src="assets/images/author/author-01.jpg" alt="Author">
+                                    @foreach ($Paragraphs as $paragraph)
+                                        <div class="swiper-slide" id="Para{{ $paragraph['id'] }}">
+                                            <!-- Single Paragraph Start -->
+                                            <div class="single-chap">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-6">
+                                                        <!-- Paragraph Images Start -->
+                                                        <div class="error-images">
+                                                            <img src="{{ $paragraph['image']['url'] }}"
+                                                                alt="{{ $paragraph['title'] }}">
+                                                        </div>
+                                                        <!-- Paragraph Images End -->
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <!-- Paragraph Content Start -->
+                                                        <div class="error-content">
+                                                            <h2 class="main-title">{{ $paragraph['image']['title'] }}
+                                                            </h2>
+                                                            <p>{{ $paragraph['image']['text'] }}</p>
+                                                        </div>
+                                                        <!-- Paragraph Content End -->
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="student-content">
-                                                <h5 class="name">Margarita James</h5>
-                                                <span class="country"><img src="assets/images/flag/flag-1.png"
-                                                        alt="Flog"> Brazil</span>
-                                                <p>Data Science and Machine learning</p>
-                                                <span class="date"><i class="icofont-ui-calendar"></i> 28.03.2021</span>
-                                            </div>
+                                            <!-- Single Paragraph End -->
                                         </div>
-                                        <!-- Single Student End -->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <!-- Single Student Start -->
-                                        <div class="single-chap">
-                                            <div class="student-images">
-                                                <img src="assets/images/author/author-02.jpg" alt="Author">
-                                            </div>
-                                            <div class="student-content">
-                                                <h5 class="name">Stanley Castro</h5>
-                                                <span class="country"><img src="assets/images/flag/flag-1.png"
-                                                        alt="Flog"> Brazil</span>
-                                                <p>Data Science and Machine learning</p>
-                                                <span class="date"><i class="icofont-ui-calendar"></i> 28.03.2021</span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Student End -->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <!-- Single Student Start -->
-                                        <div class="single-chap">
-                                            <div class="student-images">
-                                                <img src="assets/images/author/author-07.jpg" alt="Author">
-                                            </div>
-                                            <div class="student-content">
-                                                <h5 class="name">Beatrice Summers</h5>
-                                                <span class="country"><img src="assets/images/flag/flag-1.png"
-                                                        alt="Flog"> Brazil</span>
-                                                <p>Data Science and Machine learning</p>
-                                                <span class="date"><i class="icofont-ui-calendar"></i> 28.03.2021</span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Student End -->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <!-- Single Student Start -->
-                                        <div class="single-chap">
-                                            <div class="student-images">
-                                                <img src="assets/images/author/author-08.jpg" alt="Author">
-                                            </div>
-                                            <div class="student-content">
-                                                <h5 class="name">Beatrice Summers</h5>
-                                                <span class="country"><img src="assets/images/flag/flag-1.png"
-                                                        alt="Flog"> Brazil</span>
-                                                <p>Data Science and Machine learning</p>
-                                                <span class="date"><i class="icofont-ui-calendar"></i> 28.03.2021</span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Student End -->
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <!-- Single Student Start -->
-                                        <div class="single-chap">
-                                            <div class="student-images">
-                                                <img src="assets/images/author/author-09.jpg" alt="Author">
-                                            </div>
-                                            <div class="student-content">
-                                                <h5 class="name">Beatrice Summers</h5>
-                                                <span class="country"><img src="assets/images/flag/flag-1.png"
-                                                        alt="Flog"> Brazil</span>
-                                                <p>Data Science and Machine learning</p>
-                                                <span class="date"><i class="icofont-ui-calendar"></i> 28.03.2021</span>
-                                            </div>
-                                        </div>
-                                        <!-- Single Student End -->
-                                    </div>
+                                    @endforeach
+
                                 </div>
 
                                 <div class="students-arrow">
@@ -236,7 +184,7 @@
                     <!-- Courses Enroll Title Start -->
                     <div class="courses-enroll-title">
                         <h2 class="title">{{ $Course['title'] }}</h2>
-                        <p><i class="icofont-eye-alt"></i> <span>8</span> Students are watching</p>
+                        {{-- <p><i class="icofont-eye-alt"></i> <span>8</span> Students are watching</p> --}}
                     </div>
                     <!-- Courses Enroll Title End -->
 
@@ -244,23 +192,24 @@
                     <div class="courses-enroll-tab">
                         <div class="enroll-tab-menu">
                             <ul class="nav">
-                                <li><button class="active" data-bs-toggle="tab" data-bs-target="#tab1">Overview</button>
+                                <li><button class="active" data-bs-toggle="tab"
+                                        data-bs-target="#tab1">Description</button>
                                 </li>
-                                <li><button data-bs-toggle="tab" data-bs-target="#tab2">Description</button></li>
-                                <li><button data-bs-toggle="tab" data-bs-target="#tab3">Certificates</button></li>
+                                <li><button data-bs-toggle="tab" data-bs-target="#tab2">Certificates</button></li>
+                                {{-- <li><button data-bs-toggle="tab" data-bs-target="#tab3"></button></li> --}}
                                 {{-- <li><button data-bs-toggle="tab" data-bs-target="#tab4">Instructor</button></li> --}}
                             </ul>
                         </div>
-                        <div class="enroll-share">
+                        {{-- <div class="enroll-share">
                             <a href="#"><i class="icofont-share-alt"></i> Share</a>
-                        </div>
+                        </div> --}}
                     </div>
                     <!-- Courses Enroll Tab End -->
 
                     <!-- Courses Enroll Tab Content Start -->
                     <div class="courses-enroll-tab-content">
                         <div class="tab-content">
-                            <div class="tab-pane fade show active" id="tab1">
+                            {{-- <div class="tab-pane fade show active" id="tab0">
 
                                 <!-- Overview Start -->
                                 <div class="overview">
@@ -326,8 +275,8 @@
                                 </div>
                                 <!-- Overview End -->
 
-                            </div>
-                            <div class="tab-pane fade" id="tab2">
+                            </div> --}}
+                            <div class="tab-pane fade" show active id="tab1">
 
                                 <!-- Description Start -->
                                 <div class="description">
@@ -347,7 +296,7 @@
                                 <!-- Description End -->
 
                             </div>
-                            <div class="tab-pane fade" id="tab3">
+                            <div class="tab-pane fade" id="tab2">
 
                                 <!-- Certificates Start -->
                                 <div class="certificates">
@@ -599,14 +548,14 @@
             </div>
             <!-- Courses Quiz response End -->
 
-            <!-- Courses Video Playlist Start -->
+            <!-- Courses paragraph Playlist Start -->
             <div class="courses-video-playlist float-right">
                 <div class="playlist-title">
-                    <h3 class="title">Sommaire</h3>
-                    <span>10 Leçons</span>
+                    <h3 class="title">{{ $Course['title'] }}</h3>
+                    <span>{{ length($Paragraphs) }} paragraphs</span>
                 </div>
 
-                <!-- Video Playlist Start  -->
+                <!-- paragraph Playlist Start  -->
                 <div class="video-playlist">
                     <div class="accordion" id="videoPlaylist">
 
@@ -614,243 +563,25 @@
                         <div class="accordion-item">
                             <button class="collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseOne">
-                                <p>Leçon-01: Mindful Growth </p>
-                                <span class="total-duration">01 hour 48 minutes</span>
+                                <p> SOMMAIRE </p>
                             </button>
 
                             <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#videoPlaylist">
                                 <nav class="vids">
-                                    <a class="link " href="#textcontainer">
-                                        <p>Slide 1</p>
-                                        <span class="total-duration">08 minutes</span>
-                                    </a>
 
-                                    <a class="link " id="textPart" href="#textPart">
-                                        <p>Slide 2</p>
-                                        <span class="total-duration">08 slides</span>
-                                    </a>
+                                    @foreach ($Paragraphs as $paragraph)
+                                        <a class="link" href="#Para{{ $paragraph['id'] }}">
+                                            <p>{{ $paragraph['id'] }}. {{ $paragraph['title'] }}
+                                            </p>
+                                        </a>
+                                    @endforeach
+
                                 </nav>
                             </div>
                         </div>
                         <!-- Accordion Items End  -->
 
-                        <!-- Accordion Items Start  -->
-                        <div class="accordion-item">
-                            <button class="collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo">
-                                <p>Leçon-02: Science Fiction & Fantasy: Creating Unique and Powerful Worlds</p>
-                                <span class="total-duration">01 hour 48 minutes</span>
-                            </button>
-
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#videoPlaylist">
-                                <nav class="vids">
-                                    <a class="link " href="#textcontainer">
-                                        <p>Slide 1</p>
-                                        <span class="total-duration">08 minutes</span>
-                                    </a>
-
-                                    <a class="link " id="textPart" href="#textPart">
-                                        <p>Slide 2</p>
-                                        <span class="total-duration">08 slides</span>
-                                    </a>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- Accordion Items End  -->
-
-                        <!-- Accordion Items Start  -->
-                        <div class="accordion-item">
-                            <button class="collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseThree">
-                                <p>Leçon-03: Autobiographical Fiction</p>
-                                <span class="total-duration">01 hour 48 minutes</span>
-                            </button>
-
-                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#videoPlaylist">
-                                <nav class="vids">
-                                    <a class="link " href="#textcontainer">
-                                        <p>Slide 1</p>
-                                        <span class="total-duration">08 minutes</span>
-                                    </a>
-
-                                    <a class="link " id="textPart" href="#textPart">
-                                        <p>Slide 2</p>
-                                        <span class="total-duration">08 slides</span>
-                                    </a>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- Accordion Items End  -->
-
-                        <!-- Accordion Items Start  -->
-                        <div class="accordion-item">
-                            <button class="collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFour">
-                                <p>Leçon-04: Writing for Self-Discovery</p>
-                                <span class="total-duration">01 hour 48 minutes</span>
-                            </button>
-
-                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#videoPlaylist">
-                                <nav class="vids">
-                                    <a class="link " href="#textcontainer">
-                                        <p>Slide 1</p>
-                                        <span class="total-duration">08 minutes</span>
-                                    </a>
-
-                                    <a class="link " id="textPart" href="#textPart">
-                                        <p>Slide 2</p>
-                                        <span class="total-duration">08 slides</span>
-                                    </a>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- Accordion Items End  -->
-
-                        <!-- Accordion Items Start  -->
-                        <div class="accordion-item">
-                            <button class="collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFive">
-                                <p>Leçon-05: Copywriting For Beginners</p>
-                                <span class="total-duration">01 hour 48 minutes</span>
-                            </button>
-
-                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#videoPlaylist">
-                                <nav class="vids">
-                                    <a class="link " href="#textcontainer">
-                                        <p>Slide 1</p>
-                                        <span class="total-duration">08 minutes</span>
-                                    </a>
-
-                                    <a class="link " id="textPart" href="#textPart">
-                                        <p>Slide 2</p>
-                                        <span class="total-duration">08 slides</span>
-                                    </a>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- Accordion Items End  -->
-
-                        <!-- Accordion Items Start  -->
-                        <div class="accordion-item">
-                            <button class="collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseSix">
-                                <p>Leçon-06: How to Write a Personal Statement </p>
-                                <span class="total-duration">01 hour 48 minutes</span>
-                            </button>
-
-                            <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#videoPlaylist">
-                                <nav class="vids">
-                                    <a class="link " href="#textcontainer">
-                                        <p>Slide 1</p>
-                                        <span class="total-duration">08 minutes</span>
-                                    </a>
-
-                                    <a class="link " id="textPart" href="#textPart">
-                                        <p>Slide 2</p>
-                                        <span class="total-duration">08 slides</span>
-                                    </a>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- Accordion Items End  -->
-
-                        <!-- Accordion Items Start  -->
-                        <div class="accordion-item">
-                            <button class="collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseSaven">
-                                <p>Leçon-07: Autobiographical Fiction </p>
-                                <span class="total-duration">01 hour 48 minutes</span>
-                            </button>
-
-                            <div id="collapseSaven" class="accordion-collapse collapse" data-bs-parent="#videoPlaylist">
-                                <nav class="vids">
-                                    <a class="link " href="#textcontainer">
-                                        <p>Slide 1</p>
-                                        <span class="total-duration">08 minutes</span>
-                                    </a>
-
-                                    <a class="link " id="textPart" href="#textPart">
-                                        <p>Slide 2</p>
-                                        <span class="total-duration">08 slides</span>
-                                    </a>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- Accordion Items End  -->
-
-                        <!-- Accordion Items Start  -->
-                        <div class="accordion-item">
-                            <button class="collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseEight">
-                                <p>Leçon-08: Writing for Self-Discovery</p>
-                                <span class="total-duration">01 hour 48 minutes</span>
-                            </button>
-
-                            <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#videoPlaylist">
-                                <nav class="vids">
-                                    <a class="link " href="#textcontainer">
-                                        <p>Slide 1</p>
-                                        <span class="total-duration">08 minutes</span>
-                                    </a>
-
-                                    <a class="link " id="textPart" href="#textPart">
-                                        <p>Slide 2</p>
-                                        <span class="total-duration">08 slides</span>
-                                    </a>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- Accordion Items End  -->
-
-                        <!-- Accordion Items Start  -->
-                        <div class="accordion-item">
-                            <button class="collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseNine">
-                                <p>Leçon-09: Copywriting For Beginners </p>
-                                <span class="total-duration">01 hour 48 minutes</span>
-                            </button>
-
-                            <div id="collapseNine" class="accordion-collapse collapse" data-bs-parent="#videoPlaylist">
-                                <nav class="vids">
-                                    <a class="link " href="#textcontainer">
-                                        <p>Slide 1</p>
-                                        <span class="total-duration">08 minutes</span>
-                                    </a>
-
-                                    <a class="link " id="textPart" href="#textPart">
-                                        <p>Slide 2</p>
-                                        <span class="total-duration">08 slides</span>
-                                    </a>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- Accordion Items End  -->
-
-                        <!-- Accordion Items Start  -->
-                        <div class="accordion-item">
-                            <button class="collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTen">
-                                <p>Leçon-10: How to Write a Personal Statement </p>
-                                <span class="total-duration">01 hour 48 minutes</span>
-                            </button>
-
-                            <div id="collapseTen" class="accordion-collapse collapse" data-bs-parent="#videoPlaylist">
-                                <nav class="vids">
-                                    <a class="link " href="#textcontainer">
-                                        <p>Slide 1</p>
-                                        <span class="total-duration">08 minutes</span>
-                                    </a>
-
-                                    <a class="link " id="textPart" href="#textPart">
-                                        <p>Slide 2</p>
-                                        <span class="total-duration">08 slides</span>
-                                    </a>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- Accordion Items End  -->
-
-                        <!-- Accordion Items Start  -->
+                        <!-- Accordion Items quiz Start  -->
                         <div class="accordion-item">
                             <button class="collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseQuiz">
@@ -902,62 +633,20 @@
                                 </nav>
                             </div>
                         </div>
-                        <!-- Accordion Items End  -->
+                        <!-- Accordion Items quiz End  -->
 
                     </div>
                 </div>
-                <!-- Video Playlist End  -->
+                <!-- Cours Playlist End  -->
 
             </div>
-            <!-- Courses Video Playlist End -->
+            <!-- Courses paragraph Playlist End -->
 
         </div>
         <!-- Courses Enroll Wrapper End -->
 
     </div>
     <!-- Courses Enroll End -->
-
-    <!-- Download App Start -->
-    <div class="section section-padding download-section">
-
-        <div class="app-shape-1"></div>
-        <div class="app-shape-2"></div>
-        <div class="app-shape-3"></div>
-        <div class="app-shape-4"></div>
-
-        <div class="container">
-
-            <!-- Download App Wrapper Start -->
-            <div class="download-app-wrapper mt-n6">
-
-                <!-- Section Title Start -->
-                <div class="section-title section-title-white">
-                    <h5 class="sub-title">Prêt à commencer ?</h5>
-                    <h2 class="main-title">Téléchargez notre application mobile. pour commencer facilement votre
-                        cours.</h2>
-                </div>
-                <!-- Section Title End -->
-
-                <img class="shape-1 animation-right" src="{{ secure_asset('images/shape/shape-14.png') }}"
-                    alt="Shape">
-
-                <!-- Download App Button End -->
-                <div class="download-app-btn">
-                    <ul class="app-btn">
-                        <li><a href="#"><img src="{{ secure_asset('images/google-play.png') }}" alt="Google Play"></a>
-                        </li>
-                        <li><a href="#"><img src="{{ secure_asset('images/app-store.png') }}" alt="App Store"></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Download App Button End -->
-
-            </div>
-            <!-- Download App Wrapper End -->
-
-        </div>
-    </div>
-    <!-- Download App End -->
 
     <!-- Footer Start  -->
     <div class="section footer-section">

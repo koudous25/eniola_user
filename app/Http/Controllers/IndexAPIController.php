@@ -64,7 +64,8 @@ class IndexAPIController extends Controller
         }
         
         return view('layouts.after-enroll',[
-            'Course' => $course
+            'Course' => $course,
+            'Paragraphs' => $course['paragraphs']->collect()
         ]);
     }
 }

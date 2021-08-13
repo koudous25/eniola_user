@@ -90,23 +90,7 @@
       height: 250px;
     }
   }
-  
-  .single-chap .student-images img {
-    width: 85px;
-    border-radius: 50%;
-    border: 1px solid rgba(48, 146, 85, 0.2);
-    padding: 7px;
-    -webkit-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-  }
-  
-  @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (max-width: 575px) {
-    .single-chap .student-images img {
-      padding: 4px;
-    }
-  }
-  
+ 
   .single-chap .student-content {
     padding-left: 30px;
     max-width: 220px;
@@ -172,13 +156,6 @@
     border-color: #309255;
   }
   
-  .single-chap:hover .student-images img {
-    border-color: #309255;
-  }
-  
-  
-
-
 
 /* Quiz  */
 
