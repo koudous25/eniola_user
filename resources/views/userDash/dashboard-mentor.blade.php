@@ -6,7 +6,7 @@
         <!-- Admin Tab Menu Start -->
         <div class="nav flex-column nav-pills admin-tab-menu">
             <a href="{{ route('app_dash_mentor') }}" class="active">Overview</a>
-            <a href="{{ route('app_students') }}">Etudiants</a>
+            {{-- <a href="{{ route('app_students') }}">Etudiants</a> --}}
         </div>
         <!-- Admin Tab Menu End -->
 

@@ -80,7 +80,8 @@
                             <li><a href="{{ route('app_home') }}">Accueil</a></li>
                             <li><a href="{{ route('app_courses') }}">Les Cours</a></li>
                             <li><a href="{{ route('app_about') }}">A propos</a></li>
-                            <li><a href="{{ route('app_contact') }}">Contact</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                            {{-- <li><a href="{{ route('app_contact') }}">Contact</a></li> --}}
                         </ul>
 
                     </div>
@@ -202,7 +203,8 @@
                 <li><a href="{{ route('app_home') }}">Accueil</a></li>
                 <li><a href="{{ route('app_courses') }}">Les Cours</a></li>
                 <li><a href="{{ route('app_about') }}">A propos</a></li>
-                <li><a href="{{ route('app_contact') }}">Contact</a></li>
+                <li><a href="/contact">Contact</a></li>
+                {{-- <li><a href="{{ route('app_contact') }}">Contact</a></li> --}}
             </ul>
 
         </div>
@@ -232,7 +234,7 @@
         <!-- Footer Widget Section Start -->
         <div class="footer-widget-section">
 
-            <!--img class="shape-1 animation-down" src="{{ secure_asset('images/shape/shape-21.png') }}" alt="Shape"-->
+            {{-- <!--img class="shape-1 animation-down" src="{{ secure_asset('images/shape/shape-21.png') }}" alt="Shape"--> --}}
 
             <div class="container">
                 <div class="row">

@@ -17,12 +17,12 @@ class ConnexionController extends Controller
 {
     public function traitement(Request $request)
     {
-        $data = $request->all();
+
         request()->validate([
             'login' => ['required', 'email'],
             'password' => ['required'],
         ]);
-
+        $data = $request->all();
         $login = $data['login'];
         $password = $data['password'];
         $client = new Client();
@@ -46,12 +46,12 @@ class ConnexionController extends Controller
             $token = $user['token'];
             $userOut = $user['userOut'];
             $request->session()->put('user', $user);
-            if ($userOut['role'] == "ETUDIANT") {
+            if ($userOut['role'] === "ETUDIANT") {
                 return redirect()->route('app_dash_student')->with('success', 'Connexion réussie!');
             } elseif ($userOut['role'] === "RESPONSABLE") {
-                return redirect()->route('app_dash_student')->with('success', 'Connexion réussie!');
+                return redirect()->route('app_dash_mentor')->with('success', 'Connexion réussie!');
             } elseif ($userOut['role'] === "ORGANISATION") {
-                return redirect()->route('app_dash_student')->with('success', 'Connexion réussie!');
+                return redirect()->route('app_dash_mentor')->with('success', 'Connexion réussie!');
             } elseif ($userOut['role'] === "ADMIN") {
                 return redirect()->route('app_dash_student')->with('success', 'Connexion réussie!');
             }
