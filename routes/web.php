@@ -73,7 +73,7 @@ Route::get('register', function () {
     return view('auth.register');
 })->name('app_register')->middleware('user');
 
-Route::get('register', function () {
+Route::get('dashboard_mentor/register', function () {
     return view('auth.register', ['titre' => 'Inscription', 'from_mentor'=>true]);
 })->name('app_register_mentor');
 
