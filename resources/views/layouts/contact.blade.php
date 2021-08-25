@@ -1,12 +1,16 @@
 @extends('layouts.base')
 
+@section('PageTitle')
+    Contact
+@endsection
+
 @section('main')
     <!-- Page Banner Start -->
     <div class="section page-banner">
 
-        <img class="shape-1 animation-round" src="{{ secure_asset('/images/shape/shape-8.png') }}" alt="Shape">
+        <img class="shape-1 animation-round" src="{{ url('/images/shape/shape-8.png') }}" alt="Shape">
 
-        <img class="shape-2" src="{{ secure_asset('/images/shape/shape-23.png') }}" alt="Shape">
+        <img class="shape-2" src="{{ url('/images/shape/shape-23.png') }}" alt="Shape">
 
         <div class="container">
             <!-- Page Banner Start -->
@@ -23,7 +27,7 @@
         <!-- Shape Icon Box Start -->
         <div class="shape-icon-box">
 
-            <img class="icon-shape-1 animation-left" src="{{ secure_asset('/images/shape/shape-5.png') }}" alt="Shape">
+            <img class="icon-shape-1 animation-left" src="{{ url('/images/shape/shape-5.png') }}" alt="Shape">
 
             <div class="box-content">
                 <div class="box-wrapper">
@@ -31,14 +35,14 @@
                 </div>
             </div>
 
-            <img class="icon-shape-2" src="{{ secure_asset('/images/shape/shape-6.png') }}" alt="Shape">
+            <img class="icon-shape-2" src="{{ url('/images/shape/shape-6.png') }}" alt="Shape">
 
         </div>
         <!-- Shape Icon Box End -->
 
-        <img class="shape-3" src="{{ secure_asset('/images/shape/shape-24.png') }}" alt="Shape">
+        <img class="shape-3" src="{{ url('/images/shape/shape-24.png') }}" alt="Shape">
 
-        <img class="shape-author" src="{{ secure_asset('/images/author/author-11.jpg') }}" alt="Shape">
+        <img class="shape-author" src="{{ url('/images/author/author-11.jpg') }}" alt="Shape">
 
     </div>
     <!-- Page Banner End -->
@@ -70,8 +74,7 @@
                         <!-- Contact Info Start -->
                         <div class="contact-info">
 
-                            <img class="shape animation-round" src="{{ secure_asset('/images/shape/shape-12.png') }}"
-                                alt="Shape">
+                            <img class="shape animation-round" src="{{ url('/images/shape/shape-12.png') }}" alt="Shape">
 
                             <!-- Single Contact Info Start -->
                             <div class="single-contact-info">

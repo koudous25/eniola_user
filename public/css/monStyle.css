@@ -5,15 +5,15 @@
 
 .chap-active {
     position: relative;
-  }
-  
-  .chap-active .students-arrow {
+}
+
+.chap-active .chap-arrow {
     text-align: center;
     margin-top: 30px;
-  }
-  
-  .chap-active .swiper-button-next,
-  .chap-active .swiper-button-prev {
+}
+
+.chap-active .swiper-button-next,
+.chap-active .swiper-button-prev {
     opacity: 1;
     width: 40px;
     height: 40px;
@@ -34,37 +34,38 @@
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  @media only screen and (max-width: 575px) {
+}
+
+@media only screen and (max-width: 575px) {
+
     .chap-active .swiper-button-next,
     .chap-active .swiper-button-prev {
-      width: 35px;
-      height: 35px;
-      line-height: 32px;
+        width: 35px;
+        height: 35px;
+        line-height: 32px;
     }
-  }
-  
-  .chap-active .swiper-button-next::after,
-  .chap-active .swiper-button-prev::after {
+}
+
+.chap-active .swiper-button-next::after,
+.chap-active .swiper-button-prev::after {
     display: none;
-  }
-  
-  .chap-active .swiper-button-next:hover,
-  .chap-active .swiper-button-prev:hover {
+}
+
+.chap-active .swiper-button-next:hover,
+.chap-active .swiper-button-prev:hover {
     background-color: #309255;
     color: #fff;
-  }
-  
-  .chap-active .swiper-button-prev {
-    left: 0;
-  }
-  
-  .chap-active .swiper-button-next {
-    right: 0;
-  }
+}
 
-  
+.chap-active .swiper-button-prev {
+    left: 0;
+}
+
+.chap-active .swiper-button-next {
+    right: 0;
+}
+
+
 .single-chap {
     display: -webkit-box;
     display: -webkit-flex;
@@ -72,63 +73,66 @@
     display: flex;
     -webkit-box-align: center;
     -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     border: 1px solid rgba(48, 146, 85, 0.2);
     border-radius: 10px;
     padding: 25px;
     margin-top: 30px;
-    height: 500px;
+    /* height: 500px; */
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-  }
-  
-  @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (max-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+only screen and (max-width: 768px) {
     .single-chap {
-      padding: 15px;
-      height: 250px;
+        padding: 15px;
+        /* height: 250px; */
     }
-  }
- 
-  .single-chap .student-content {
+}
+
+.single-chap .student-content {
     padding-left: 30px;
     max-width: 220px;
-  }
-  
-  @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (max-width: 575px) {
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+only screen and (max-width: 575px) {
     .single-chap .student-content {
-      padding-left: 15px;
-      max-width: 200px;
+        padding-left: 15px;
+        max-width: 200px;
     }
-  }
-  
-  .single-chap .student-content .name {
+}
+
+.single-chap .student-content .name {
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 0;
-  }
-  
-  @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (max-width: 575px) {
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+only screen and (max-width: 575px) {
     .single-chap .student-content .name {
-      font-size: 16px;
+        font-size: 16px;
     }
-  }
-  
-  .single-chap .student-content .country {
+}
+
+.single-chap .student-content .country {
     color: #309255;
     font-size: 13px;
     font-weight: 400;
     display: block;
     margin-top: 7px;
-  }
-  
-  .single-chap .student-content .country img {
+}
+
+.single-chap .student-content .country img {
     width: 15px;
     margin-top: -6px;
-  }
-  
-  .single-chap .student-content p {
+}
+
+.single-chap .student-content p {
     font-size: 13px;
     font-weight: 500;
     color: #212832;
@@ -136,26 +140,25 @@
     white-space: nowrap;
     overflow: hidden;
     -o-text-overflow: ellipsis;
-       text-overflow: ellipsis;
-  }
-  
-  .single-chap .student-content .date {
+    text-overflow: ellipsis;
+}
+
+.single-chap .student-content .date {
     font-size: 13px;
     font-weight: 400;
     color: #838785;
     display: block;
     margin-top: 2px;
-  }
-  
-  .single-chap .student-content .date i {
+}
+
+.single-chap .student-content .date i {
     color: #309255;
     margin-right: 5px;
-  }
-  
-  .single-chap:hover {
+}
+
+.single-chap:hover {
     border-color: #309255;
-  }
-  
+}
 
 /* Quiz  */
 
@@ -198,20 +201,11 @@ li {
     margin-bottom: 12px;
 }
 
-
-.ch-precedent {
-    float: left;
-    padding: 10px 15px;
-    margin-top: 20px;
-    background-color: #333;
-    text-decoration: none;
-}
-
 .ch-suivant {
     float: right;
     padding: 10px 15px;
     margin-top: 20px;
-    background-color: #333;
+    background-color: rgb(190, 194, 231);
     text-decoration: none;
 }
 
@@ -244,31 +238,6 @@ li {
     padding-bottom: 5px;
     color: #fff;
 }
-
-.container-qs button {
-    background-color: #ec971f;
-    border-color: #d58512;
-    border-radius: 5px;
-    padding: 15px;
-    font-size: 18px;
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.container-qs button a {
-    text-decoration: none;
-    color: #fff;
-}
-
-#rep {
-    background-color: #fff;
-    border-radius: 7px;
-    color: #444;
-    padding: 20px 60px;
-    margin-bottom: 10px;
-}
-
 
 
 /******** RESPONSIVE ********/

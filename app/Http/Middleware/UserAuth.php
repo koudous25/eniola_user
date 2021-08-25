@@ -16,18 +16,9 @@ class UserAuth
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->path() == 'login' && session()->has('user')) {
-            $user = session()->get('user');
-            $userOut = $user['userOut'];
-            if ($userOut['role'] === "ETUDIANT") {
-                return redirect()->route('app_dash_student');
-            } elseif ($userOut['role'] === "RESPONSABLE") {
-                return redirect()->route('app_dash_student');
-            } elseif ($userOut['role'] === "ORGANISATION") {
-                return redirect()->route('app_dash_student');
-            } elseif ($userOut['role'] === "ADMIN") {
-                return redirect()->route('app_dash_student');
-            }
+        if (($request->path() == 'login' || $request->path() == 'register') && session()->has('user')) {
+
+            return redirect()->route('app_home');
         }
         return $next($request);
     }

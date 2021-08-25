@@ -1,12 +1,16 @@
 @extends('layouts.base')
 
+@section('PageTitle')
+    Inscription
+@endsection
+
 
 @section('main')
     <!-- Page Banner Start -->
     <div class="section page-banner">
 
 
-        <img class="shape-2" src="{{ secure_asset('images/shape/shape-23.png') }}" alt="Shape">
+        <img class="shape-2" src="{{ url('images/shape/shape-23.png') }}" alt="Shape">
 
         <div class="container">
             <!-- Page Banner Start -->
@@ -15,7 +19,12 @@
                     <li><a href="{{ route('app_home') }}">Accueil</a></li>
                     <li class="active">Inscription</li>
                 </ul>
-                <h2 class="title">Inscrivez vous sur <span>Eniola</span> pour suivre nos cours </h2>
+                @if ($from_mentor == false)
+                    <h2 class="title">Inscrivez vous sur <span>Eniola</span> pour suivre nos cours </h2>
+                @else
+                    <h2 class="title">Inscrivez un étudiant sur <span>Eniola</span> </h2>
+                @endif
+
             </div>
             <!-- Page Banner End -->
         </div>
@@ -23,7 +32,7 @@
         <!-- Shape Icon Box Start -->
         <div class="shape-icon-box">
 
-            <img class="icon-shape-1 animation-left" src="{{ secure_asset('images/shape/shape-5.png') }}" alt="Shape">
+            <img class="icon-shape-1 animation-left" src="{{ url('images/shape/shape-5.png') }}" alt="Shape">
 
             <div class="box-content">
                 <div class="box-wrapper">
@@ -31,14 +40,14 @@
                 </div>
             </div>
 
-            <img class="icon-shape-2" src="{{ secure_asset('images/shape/shape-6.png') }}" alt="Shape">
+            <img class="icon-shape-2" src="{{ url('images/shape/shape-6.png') }}" alt="Shape">
 
         </div>
         <!-- Shape Icon Box End -->
 
-        <img class="shape-3" src="{{ secure_asset('images/shape/shape-24.png') }}" alt="Shape">
+        <img class="shape-3" src="{{ url('images/shape/shape-24.png') }}" alt="Shape">
 
-        <img class="shape-author" src="{{ secure_asset('images/author/author-11.jpg') }}" alt="Shape">
+        <img class="shape-author" src="{{ url('images/author/author-11.jpg') }}" alt="Shape">
 
     </div>
     <!-- Page Banner End -->
@@ -55,12 +64,12 @@
                         <!-- Register & Login Images Start -->
                         <div class="register-login-images">
                             <div class="shape-1">
-                                <img src="{{ secure_asset('images/shape/shape-26.png') }}" alt="Shape">
+                                <img src="{{ url('images/shape/shape-26.png') }}" alt="Shape">
                             </div>
 
 
                             <div class="images">
-                                <img src="{{ secure_asset('images/register-login.png') }}" alt="Register Login">
+                                <img src="{{ url('images/register-login.png') }}" alt="Register Login">
                             </div>
                         </div>
                         <!-- Register & Login Images End -->
@@ -74,22 +83,26 @@
                             <div class="form-wrapper">
                                 <form action="/register" method="POST">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                                    @if ($from_mentor == true)
+                                        <input type="hidden" name="from_mentor" value="true" />
+                                    @endif
                                     <div class="single-form select">
                                         <!--label for="selector">Rôle</label-->
                                         <!--select name="select" id="selector" onchange="updated(this)"
-                                                        class="w-100 select mb-4">
-                                                        <option selected>Selectionnez votre rôle</option>
-                                                        <option value="ETUDIANT">Etudiant</option>
-                                                        <option value="RESPONSABLE">Responsable</option>
-                                                        <option value="ORGANISATION">Organisation</option>
-                                                        <option value="ADMIN">Admin</option>
-                                                    </select-->
+                                                                                                                                            class="w-100 select mb-4">
+                                                                                                                                            <option selected>Selectionnez votre rôle</option>
+                                                                                                                                            <option value="ETUDIANT">Etudiant</option>
+                                                                                                                                            <option value="RESPONSABLE">Responsable</option>
+                                                                                                                                            <option value="ORGANISATION">Organisation</option>
+                                                                                                                                            <option value="ADMIN">Admin</option>
+                                                                                                                                        </select-->
                                         <select class="w-100  mb-4 xx" name="select">
                                             <option selected>Selectionnez votre rôle</option>
                                             <option value="ETUDIANT">Etudiant</option>
-                                            <option value="RESPONSABLE">Responsable</option>
-                                            <option value="ORGANISATION">Organisation</option>
-                                            <option value="ADMIN">Admin</option>
+                                            @if ($from_mentor == false)
+                                                <option value="RESPONSABLE">Responsable</option>
+                                                <option value="ORGANISATION">Organisation</option>
+                                            @endif
                                         </select>
                                     </div>
                                     @if ($errors->has('select'))
@@ -115,14 +128,16 @@
                                     </div>
                                     <!-- Single Form End -->
                                     <!-- Single Form Start -->
-                                    <div class="single-form">
-                                        <input type="email" placeholder="Email" required name="email" id="email"
-                                            value="{{ old('email') }}">
-                                        @if ($errors->has('email'))
-                                            <p class="text-danger mt-2">{{ $errors->first('email') }}</p>
-                                        @endif
+                                    @if ($from_mentor == false)
+                                        <div class="single-form">
+                                            <input type="email" placeholder="Email" required name="email" id="email"
+                                                value="{{ old('email') }}">
+                                            @if ($errors->has('email'))
+                                                <p class="text-danger mt-2">{{ $errors->first('email') }}</p>
+                                            @endif
 
-                                    </div>
+                                        </div>
+                                    @endif
                                     <!-- Single Form End -->
                                     <div class="single-form mm">
                                         <!--label class="mb-2">Date de naissance</label-->
@@ -148,51 +163,62 @@
                                     @if ($errors->has('sexe'))
                                         <p class="text-danger mt-2">{{ $errors->first('sexe') }}</p>
                                     @endif
-                                    <!-- Single Form Start -->
-                                    <div class="single-form">
-                                        <input type="password" placeholder="Mot de passe" required name="password"
-                                            id="password">
-                                        @if ($errors->has('password'))
-                                            <p class="text-danger mt-2">{{ $errors->first('password') }}</p>
-                                        @endif
-                                    </div>
-                                    <!-- Single Form End -->
-                                    <!-- Single Form Start -->
-                                    <div class="single-form">
-                                        <input type="password" placeholder="Confirmer le mot de passe" required
-                                            name="password_confirmation" id="confirm_password">
-                                        @if ($errors->has('password_confirmation'))
-                                            <p class="text-danger mt-2">{{ $errors->first('password_confirmation') }}</p>
-                                        @endif
-                                    </div>
+
+                                    @if ($from_mentor == false)
+                                        <!-- Single Form Start -->
+                                        <div class="single-form">
+                                            <input type="password" placeholder="Mot de passe" required name="password"
+                                                id="password">
+                                            @if ($errors->has('password'))
+                                                <p class="text-danger mt-2">{{ $errors->first('password') }}</p>
+                                            @endif
+                                        </div>
+                                        <!-- Single Form End -->
+                                        <!-- Single Form Start -->
+                                        <div class="single-form">
+                                            <input type="password" placeholder="Confirmer le mot de passe" required
+                                                name="password_confirmation" id="confirm_password">
+                                            @if ($errors->has('password_confirmation'))
+                                                <p class="text-danger mt-2">{{ $errors->first('password_confirmation') }}
+                                                </p>
+                                            @endif
+                                        </div>
+                                    @endif
+
                                     <p class="mt-3 text-center" style="font-style:italic;">En vous s'inscrivant, vous
                                         acceptez les termes et les
                                         conditions d'utilisation</p>
                                     <!-- Single Form End -->
 
                                     <!--div class="form-check mb-2">
-                                                    <input class="form-check-input" type="checkbox" id="defaultCheck1" name="terms" id="terms">
-                                                    <label class="form-check-label" for="defaultCheck1">
-                                                        J'accepte les termes et conditions d'utilisation
-                                                    </label>
-                                                    @if ($errors->has('terms'))
-                                                    <p class="text-danger mt-2">{{ $errors->first('terms') }}</p>
-                                                    @endif
-                                                </div-->
+                                                                                                                                        <input class="form-check-input" type="checkbox" id="defaultCheck1" name="terms" id="terms">
+                                                                                                                                        <label class="form-check-label" for="defaultCheck1">
+                                                                                                                                            J'accepte les termes et conditions d'utilisation
+                                                                                                                                        </label>
+                                                                                                                                        @if ($errors->has('terms'))
+                                                                                                                                        <p class="text-danger mt-2">{{ $errors->first('terms') }}</p>
+                                                                                                                                        @endif
+                                                                                                                                    </div-->
 
                                     <!-- Single Form Start -->
                                     <div class="single-form bouton">
-                                        <button class="btn btn-primary btn-hover-dark w-100"
-                                            type="submit">S'inscrire</button>
-                                        <!--a class="btn btn-secondary btn-outline w-100" href="#">Sign up with
-                                                        Google</a-->
+                                        @if ($from_mentor == false)
+                                            <button class="btn btn-primary btn-hover-dark w-100"
+                                                type="submit">S'inscrire</button>
+                                        @else
+                                            <button class="btn btn-primary btn-hover-dark w-100"
+                                                type="submit">Inscrire</button>
+                                        @endif
                                     </div>
                                     <!-- Single Form End -->
                                 </form>
-                                <p class="text-center mt-2">J'ai déja un compte ? <a style="font-weight:bold;"
-                                        href="{{ route('app_login') }}">Se
-                                        connecter</a>
-                                </p>
+                                @if ($from_mentor == false)
+
+                                    <p class="text-center mt-2">J'ai déja un compte ? <a style="font-weight:bold;"
+                                            href="{{ route('app_login') }}">Se
+                                            connecter</a>
+                                    </p>
+                                @endif
                             </div>
                         </div>
                         <!-- Register & Login Form End -->

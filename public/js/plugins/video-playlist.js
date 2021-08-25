@@ -23,43 +23,32 @@ $(document).ready(function ()
             event.preventDefault();
 
             // change video source
-            var lien = $(this).attr("href");
-            $('.textcontainer').show();
-            if (lien.startsWith('#')) {
-                $('.vidcontainer').hide();
-                $('.textcontainer').show();
+            $(vid).attr("src", $(this).attr("href"));
 
+            // remouve class playing from unplayed video href
+            $(".vids a").removeClass("playing");
+
+            // add class playing to video href
+            $(this).addClass("playing");
+
+            // add class paused to give the play/pause button the right look  
+            $('.btnPlay').addClass('paused');
+
+            // play the video
+            vid[0].play();
+
+            // adjust prev button state
+            if ($("a.link:first").hasClass("playing")) {
+                $(".prevvid").addClass("disabled");
             } else {
+                $(".prevvid").removeClass("disabled");
+            }
 
-                $('.textcontainer').hide();
-
-                $(vid).attr("src", lien);
-
-                // remouve class playing from unplayed video href
-                $(".vids a").removeClass("playing");
-
-                // add class playing to video href
-                $(this).addClass("playing");
-
-                // add class paused to give the play/pause button the right look  
-                $('.btnPlay').addClass('paused');
-
-                // play the video
-                vid[0].play();
-
-                // adjust prev button state
-                if ($("a.link:first").hasClass("playing")) {
-                    $(".prevvid").addClass("disabled");
-                } else {
-                    $(".prevvid").removeClass("disabled");
-                }
-
-                // adjust next button state
-                if ($("a.link:last").hasClass("playing")) {
-                    $(".nextvid").addClass("disabled");
-                } else {
-                    $(".nextvid").removeClass("disabled");
-                }
+            // adjust next button state
+            if ($("a.link:last").hasClass("playing")) {
+                $(".nextvid").addClass("disabled");
+            } else {
+                $(".nextvid").removeClass("disabled");
             }
 
         });

@@ -1,5 +1,9 @@
 @extends('layouts.base')
 
+@section('PageTitle')
+    Liste des cours
+@endsection
+
 @section('main')
     <!-- Overlay Start -->
     <div class="overlay"></div>
@@ -7,7 +11,7 @@
 
     <!-- Page Banner Start -->
     <div class="section page-banner">
-        <img class="shape-2" src="{{ secure_asset('images/shape/shape-23.png') }}" alt="Shape">
+        <img class="shape-2" src="{{ url('images/shape/shape-23.png') }}" alt="Shape">
 
         <div class="container">
             <!-- Page Banner Start -->
@@ -24,7 +28,7 @@
         <!-- Shape Icon Box Start -->
         <div class="shape-icon-box">
 
-            <img class="icon-shape-1 animation-left" src="{{ secure_asset('images/shape/shape-5.png') }}" alt="Shape">
+            <img class="icon-shape-1 animation-left" src="{{ url('images/shape/shape-5.png') }}" alt="Shape">
 
             <div class="box-content">
                 <div class="box-wrapper">
@@ -32,14 +36,14 @@
                 </div>
             </div>
 
-            <img class="icon-shape-2" src="{{ secure_asset('/images/shape/shape-6.png') }}" alt="Shape">
+            <img class="icon-shape-2" src="{{ url('/images/shape/shape-6.png') }}" alt="Shape">
 
         </div>
         <!-- Shape Icon Box End -->
 
-        <img class="shape-3" src="{{ secure_asset('/images/shape/shape-24.png') }}" alt="Shape">
+        <img class="shape-3" src="{{ url('/images/shape/shape-24.png') }}" alt="Shape">
 
-        <img class="shape-author" src="{{ secure_asset('/images/author/author-11.jpg') }}" alt="Shape">
+        <img class="shape-author" src="{{ url('/images/author/author-11.jpg') }}" alt="Shape">
 
     </div>
     <!-- Page Banner End -->
@@ -102,8 +106,8 @@
                                     <!-- Single Courses Start -->
                                     <div class="single-courses">
                                         <div class="courses-images">
-                                            <a href="{{ route('app_courses_details', ['title' => $cours['title']]) }}">
-                                                {{-- <img src="{{ secure_asset('images/courses/courses-01.jpg') }}" alt="Courses"> --}}
+                                            <a href="{{ route('app_course_detail', ['id' => $cours['id']]) }}">
+                                                {{-- <img src="{{ url('images/courses/courses-01.jpg') }}" alt="Courses"> --}}
                                                 <img src="{{ $cours['image']['url'] }}" alt="Courses">
                                             </a>
                                         </div>
@@ -112,7 +116,7 @@
                                                 <div class="author">
                                                     <div class="author-thumb">
                                                         <a href="#">
-                                                            <img src="{{ secure_asset('images/author/author-01.jpg') }}"
+                                                            <img src="{{ url('images/author/author-01.png') }}"
                                                                 alt="Author">
                                                         </a>
                                                     </div>
@@ -126,7 +130,7 @@
                                             </div>
 
                                             <h4 class="title"><a
-                                                    href="{{ route('app_courses_details', ['title' => $cours['title']]) }}">{{ $cours['title'] }}</a>
+                                                    href="{{ route('app_course_detail', ['id' => $cours['id']]) }}">{{ $cours['title'] }}</a>
                                             </h4>
                                             <div class="courses-meta">
                                                 <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
@@ -159,8 +163,7 @@
                                             <!-- Single Courses Start -->
                                             <div class="single-courses">
                                                 <div class="courses-images">
-                                                    <a
-                                                        href="{{ route('app_courses_details', ['title' => $cours['title']]) }}">
+                                                    <a href="{{ route('app_course_detail', ['id' => $cours['id']]) }}">
                                                         <img src="{{ $cours['image']['url'] }}" alt="Courses">
                                                     </a>
                                                 </div>
@@ -169,7 +172,7 @@
                                                         <div class="author">
                                                             <div class="author-thumb">
                                                                 <a href="#">
-                                                                    <img src="{{ secure_asset('images/author/author-01.jpg') }}"
+                                                                    <img src="{{ url('images/author/author-01.png') }}"
                                                                         alt="ISOC BENIN">
                                                                 </a>
                                                             </div>
@@ -183,7 +186,7 @@
                                                     </div>
 
                                                     <h4 class="title"><a
-                                                            href="{{ route('app_courses_details', ['title' => $cours['title']]) }}">{{ $cours['title'] }}</a>
+                                                            href="{{ route('app_course_detail', ['id' => $cours['id']]) }}">{{ $cours['title'] }}</a>
                                                     </h4>
                                                     <div class="courses-meta">
                                                         <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>

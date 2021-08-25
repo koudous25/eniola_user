@@ -64,5 +64,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'user' => \App\Http\Middleware\UserAuth::class,
         'logout' => \App\Http\Middleware\LogoutAuth::class,
+        'sdash' => \App\Http\Middleware\SDashAuth::class,
+        'mdash' => \App\Http\Middleware\MDashAuth::class,
     ];
 }

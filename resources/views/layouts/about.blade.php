@@ -1,5 +1,9 @@
 @extends('layouts.base')
 
+@section('PageTitle')
+    A propos
+@endsection
+
 @section('main')
     <!-- Overlay Start -->
     <div class="overlay"></div>
@@ -7,7 +11,7 @@
 
     <!-- Page Banner Start -->
     <div class="section page-banner">
-        <img class="shape-2" src="{{ secure_asset('images/shape/shape-23.png') }}" alt="Shape">
+        <img class="shape-2" src="{{ url('images/shape/shape-23.png') }}" alt="Shape">
 
         <div class="container">
             <!-- Page Banner Start -->
@@ -24,7 +28,7 @@
         <!-- Shape Icon Box Start -->
         <div class="shape-icon-box">
 
-            <img class="icon-shape-1 animation-left" src="{{ secure_asset('images/shape/shape-5.png') }}" alt="Shape">
+            <img class="icon-shape-1 animation-left" src="{{ url('images/shape/shape-5.png') }}" alt="Shape">
 
             <div class="box-content">
                 <div class="box-wrapper">
@@ -32,14 +36,14 @@
                 </div>
             </div>
 
-            <img class="icon-shape-2" src="{{ secure_asset('images/shape/shape-6.png') }}" alt="Shape">
+            <img class="icon-shape-2" src="{{ url('images/shape/shape-6.png') }}" alt="Shape">
 
         </div>
         <!-- Shape Icon Box End -->
 
-        <img class="shape-3" src="{{ secure_asset('images/shape/shape-24.png') }}" alt="Shape">
+        <img class="shape-3" src="{{ url('images/shape/shape-24.png') }}" alt="Shape">
 
-        <img class="shape-author" src="{{ secure_asset('images/author/author-11.jpg') }}" alt="Shape">
+        <img class="shape-author" src="{{ url('images/author/author-11.jpg') }}" alt="Shape">
 
     </div>
     <!-- Page Banner End -->
@@ -55,12 +59,12 @@
                         <!-- About Images Start -->
                         <div class="about-images">
                             <div class="images">
-                                <img src="{{ secure_asset('images/about.jpg') }}" alt="About">
+                                <img src="{{ url('images/about.jpg') }}" alt="About">
                             </div>
 
                             <div class="about-years">
                                 <div class="years-icon">
-                                    <img src="{{ secure_asset('images/logo-icon.png') }}" alt="About">
+                                    <img src="{{ url('images/logo-icon.png') }}" alt="About">
                                 </div>
                                 <p><strong>28+</strong> Years Experience</p>
                             </div>

@@ -91,3 +91,16 @@ select {
     top: auto !important;
     margin-top: 0 !important;
 }
+
+/*Dash Dash*/
+.dash {
+    background-color: #e5f4eb !important;
+}
+
+.notification {
+    color: #309255 !important;
+}
+
+.bb {
+    font-size: 20px;
+}

@@ -1,14 +1,11 @@
-@extends('layouts.base-dashboard')
+
+
+@extends('userDash.base.dashuser')
+
+
 
 @section('main')
-    <div class="page-content-wrapper py-0">
-
-        <!-- Admin Tab Menu Start -->
-        <div class="nav flex-column nav-pills admin-tab-menu">
-            <a href="#" class="active">A propos de moi</a>
-            <a href="#">Informations sur le compte</a>
-        </div>
-        <!-- Admin Tab Menu End -->
+    
         <div class="main-content-wrapper">
             <div class="container-fluid">
                 <!-- Single FAQ Item Start -->
@@ -16,14 +13,13 @@
                     <div class="row align-items-center">
                         <div class="col-lg-5">
                             <div>
-                                <p class="text-center"><img src="{{ secure_asset('images/custom/avatar.png') }}" alt=""
-                                        class="img-thumbnail" style="border-radius: 50%; height:300px;"></p>
+                                <p class="text-center"><img src="{{ url('https://ui-avatars.com/api/?name='.Session::get('user')['userOut']['firstname'].'+'.Session::get('user')['userOut']['lastname'].'/?rounded=true') }}" alt="Avatar" class="img-thumbnail" style="border-radius: 50%; height:300px;"></p>
                             </div>
                         </div>
                         <div class="col-lg-7">
-                            <h3 class="text-center mt-2">{{ complete_name(Session::get('user')) }}</h3>
-                            <h4 class="text-center mt-2 text-muted">{{ Session::get('user')['userOut']['birthday'] }}
-                            </h4>
+                            <p class="text-center mt-2 bb">{{ complete_name(Session::get('user'))}}</p>
+                            <p class="text-center mt-2 text-muted bb">{{ (Session::get('user')['userOut'])['birthday']}}</p>
+                            <p class="text-center mt-2 text-muted bb">Mentor: ONG RegardeEnfants</p>
                         </div>
                     </div>
                 </div>
@@ -52,14 +48,14 @@
                 </div>
 
                 <!-- Single FAQ Item End -->
-                <div class="mt-3">
-                    <a href="/change-profile" role="button" class="btn  btn-success w-100">Modifier mon profil</a>
+                <div class="mt-5">
+                    <a href="{{ route('app_dash_student_parametre')}}" role="button" class="btn  btn-success w-100">Modifier mon profil</a>
                 </div>
             </div>
         </div>
 
 
-    </div>
+   
 @endsection
 
 @section('scripts')
