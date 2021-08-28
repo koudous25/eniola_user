@@ -74,14 +74,38 @@ class MentorDashboardController extends Controller
         return view('userDash.statm', ['titre' => 'Mon tableau de bord-Statistique']);
     }
 
+    public function recommandation(Request $request, $id)
+    {   $user = $request->session()->get('user');        
+        $userOut = $user['userOut'];
+        $user_id =$userOut['userId'];
+
+        $response = Http::get('https://eniola-service.herokuapp.com/api/v_1/supervisors/'.$user_id.'/enrolls');
+        $courses=array();
+        $student=array();
+        foreach ($response->collect() as  $enroll) { 
+            //var_dump($enroll);
+            if($enroll['student']['userId']==$id){ 
+                array_push($courses, $enroll['course']);                
+            }           
+        }    
+        
+        $response = Http::get('https://eniola-service.herokuapp.com/api/v_1/commons/users/'.$id);
+        $student=$response->collect();   
+        return view('userDash.recommandation', ['titre' => 'Mon tableau de bord-Cours', 
+            'Courses' => $courses, 'student'=>$student,]);
+    }
+
+
     public function cours_recommande()
     {
-        return view('userDash.cours_recommande', ['titre' => 'Mon tableau de bord-Cours recommandés']);
+        $courses = Http::get('https://eniola-service.herokuapp.com/api/v_1/admin/courses');
+
+        return view('userDash.cours_recommande', ['titre' => 'Mon tableau de bord-Recommander un cours',
+        'Courses' => $courses->collect(),]);
     }
-    public function recommandation()
-    {
-        return view('userDash.recommandation', ['titre' => 'Mon tableau de bord-Recommander un cours']);
-    }
+
+
+
     public function recommandation_traitement()
     {
     }

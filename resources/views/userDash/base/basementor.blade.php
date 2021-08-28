@@ -174,12 +174,12 @@
                     <a href="{{ route('app_register_mentor') }}"
                         class="{{ request()->is('dashboard_mentor/add_student') ? 'active' : '' }}">Ajouter un
                         etudiant</a>
-                    <a href="{{ route('app_dash_mentor_recommandation') }}"
-                        class="{{ request()->is('dashboard_mentor/recommandation') ? 'active' : '' }}">Inscrire à un
-                        cours</a>
+                    {{-- <a href="{{ route('app_dash_mentor_recommandation') }}"
+                        class="{{ request()->is('dashboard_mentor/recommandation') ? 'active' : '' }}"> Cours de vos
+                        étudiants</a> --}}
                     <a href="{{ route('app_dash_mentor_cours_recommande') }}"
-                        class="{{ request()->is('dashboard_mentor/cours_recommande') ? 'active' : '' }}">Cours
-                        recommandés</a>
+                        class="{{ request()->is('dashboard_mentor/cours_recommande') ? 'active' : '' }}">Les
+                        cours</a>
                     {{-- <a href="{{ route('app_dash_mentor_statistique') }}"
                         class="{{ request()->is('dashboard_mentor/statistique') ? 'active' : '' }}">Statistique</a> --}}
                     <a href="{{ route('app_dash_mentor_profile') }}"

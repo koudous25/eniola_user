@@ -66,7 +66,7 @@
                                 <div class="years-icon">
                                     <img src="{{ url('images/logo-icon.png') }}" alt="About">
                                 </div>
-                                <p><strong>28+</strong> Years Experience</p>
+                                {{-- <p><strong>28+</strong> Years Experience</p> --}}
                             </div>
                         </div>
                         <!-- About Images End -->
@@ -77,11 +77,12 @@
                         <!-- About Content Start -->
                         <div class="about-content">
                             <h5 class="sub-title">Bienvenu sur Eniola.</h5>
-                            <h2 class="main-title">vous pouvez rejoindre Edule et améliorer vos compétences pour
+                            <h2 class="main-title">vous pouvez rejoindre Eniola et améliorer vos compétences pour
                                 <span>bien appréhender l'internet.</span>
                             </h2>
                             <p>Nous vous proposons des cours de qualité extremement autour de l'internet</p>
-                            <a href="/courses" class="btn btn-primary btn-hover-dark">Commencer un cours</a>
+                            <a href="{{ route('app_courses') }}" class="btn btn-primary btn-hover-dark">Commencer un
+                                cours</a>
                         </div>
                         <!-- About Content End -->
 

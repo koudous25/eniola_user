@@ -61,7 +61,10 @@
                                 </h4>
                             </div>
                             <div class="courses-btn">
-                                <a class="btn" href="#">Retirer</a>
+                                <a class="btn"
+                                    href="{{ route('app_dash_mentor_recommandation', ['id' => $item['userId']]) }}">Voir
+                                    ces
+                                    cours</a>
                             </div>
                         </div>
                         <!-- Courses End -->

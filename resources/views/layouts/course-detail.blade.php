@@ -338,9 +338,66 @@
                                     </ul>
                                 </div>
                                 <div class="info-btn">
-                                    <a href="{{ route('app_enroll', ['id' => $Course['id']]) }}"
-                                        class="btn btn-primary btn-hover-dark">Inscrivez-vous</a>
+                                    @if (Session::get('user')['userOut']['role'] == 'RESPONSABLE')
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#enrollStudent"
+                                            class="btn btn-primary btn-hover-dark">Inscrire un étudiant</a>
+                                    @else
+                                        <a href="{{ route('app_enroll', ['id' => $Course['id']]) }}"
+                                            class="btn btn-primary btn-hover-dark">Inscrivez-vous</a>
+                                    @endif
                                 </div>
+                                @if (Session::get('user')['userOut']['role'] == 'RESPONSABLE')
+                                    <!-- Reviews Form Modal Start -->
+                                    <div class="modal fade" id="enrollStudent">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Inscrire des étudiants à
+                                                        {{ $Course['title'] }}
+                                                    </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+
+                                                <!-- Reviews Form Start -->
+                                                <div class="modal-body reviews-form">
+                                                    <form action="{{ route('app_enroll2', ['id' => $Course['id']]) }}"
+                                                        method="POST">
+
+                                                        @csrf
+                                                        @foreach ($Students as $student)
+                                                            <div class="row m-5">
+                                                                <div class="col-md-2">
+                                                                    <input class="form-check-input" name="check"
+                                                                        id="<?php echo $student['userId']; ?>" type="checkbox">
+
+                                                                </div>
+                                                                <div class="col-md-10">
+
+                                                                    <h5>{{ $student['firstname'] }}
+                                                                        {{ $student['lastname'] }}
+                                                                    </h5>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
+                                                        <div class="col-md-12">
+                                                            <!-- Single Form Start -->
+                                                            <div class="single-form">
+                                                                <button
+                                                                    class="btn btn-primary btn-hover-dark">VALIDER</button>
+                                                            </div>
+                                                            <!-- Single Form End -->
+                                                        </div>
+                                                        <input name="students" type="hidden" value="" id="etuList" />
+                                                    </form>
+                                                </div>
+                                                <!-- Reviews Form End -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                                <!-- Reviews Form Modal End -->
+
                             </div>
                             <!-- Sidebar Widget Information End -->
 
@@ -418,4 +475,24 @@
 
 @section('footer')
 
+@endsection
+
+@section('scripts')
+
+    <script>
+        $('#enrollStudent').on('shown.bs.modal', function(e) {
+            $('.form-check-input').on('change', function(e) {
+                var valueCheck = $(this).val();
+                var id_Student_Check = $(this).prop('id');
+                //etuList  id_check
+                var last_ids = $('#etuList').val();
+                if (last_ids.includes(id_Student_Check)) {
+                    last_ids = last_ids.replace(id_Student_Check + ",", "");
+                } else {
+                    last_ids = last_ids + id_Student_Check + ",";
+                }
+                $('#etuList').val(last_ids);
+            });
+        })
+    </script>
 @endsection

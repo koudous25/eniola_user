@@ -17,127 +17,58 @@
                     </ul>
                 </div>
             </div>
+            @php
+                $tab = rand_no_repete(count($Courses), 10);
+            @endphp
             <div class="courses-wrapper">
-              
-                    <div class="row">
-                        
-                            <div class="col-lg-4 col-md-6">
-                                <!-- Single Courses Start -->
-                                <div class="single-courses">
-                                    <div class="courses-images">
-                                        <a href="/courses-details">
-                                            <img src="{{url('images/courses/courses-01.jpg')}}" alt="Courses">
-                                        </a>
-                                    </div>
-                                    <div class="courses-content">
-                                        <div class="courses-author">
-                                            <div class="author">
-                                                <div class="author-thumb">
-                                                    <a href="#">
-                                                        <img src="{{ url('images/author/author-01.jpg') }}"
-                                                            alt="Author">
-                                                    </a>
-                                                </div>
-                                                <div class="author-name">
-                                                    <a class="name" href="#"> </a>
-                                                </div>
-                                            </div>
-                                            <div class="tag">
-                                                <a href="#">SCIENCE</a>
-                                            </div>
-                                        </div>
 
-                                        <h4 class="title"><a
-                                                href="/courses-details">L'histoire de l'internet au Bénin</a>
-                                        </h4>
-                                        <div class="courses-meta">
-                                            <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
-                                            <span> <i class="icofont-read-book"></i> 9 Lectures </span>
-                                        </div>
+                <div class="row">
 
-                                    </div>
+                    @for ($i = 0; $i < count($tab); $i++)
+                        <div class="col-lg-4 col-md-6">
+                            <!-- Single Courses Start -->
+                            <div class="single-courses">
+                                <div class="courses-images">
+                                    <a href="{{ route('app_course_detail', ['id' => $Courses[$tab[$i]]['id']]) }}">
+                                        {{-- <img src="{{ url('images/courses/courses-01.jpg') }}" alt="Courses"> --}}
+                                        <img style="height: 200px; object-fit: cover;"
+                                            src="{{ $Courses[$tab[$i]]['image']['url'] }}" alt="Courses">
+                                    </a>
                                 </div>
-                                <!-- Single Courses End -->
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <!-- Single Courses Start -->
-                                <div class="single-courses">
-                                    <div class="courses-images">
-                                        <a href="/courses-details">
-                                            <img src="{{url('images/courses/courses-01.jpg')}}" alt="Courses">
-                                        </a>
-                                    </div>
-                                    <div class="courses-content">
-                                        <div class="courses-author">
-                                            <div class="author">
-                                                <div class="author-thumb">
-                                                    <a href="#">
-                                                        <img src="{{ url('images/author/author-01.jpg') }}"
-                                                            alt="Author">
-                                                    </a>
-                                                </div>
-                                                <div class="author-name">
-                                                    <a class="name" href="#"> </a>
-                                                </div>
+                                <div class="courses-content">
+                                    <div class="courses-author">
+                                        <div class="author">
+                                            <div class="author-thumb">
+                                                <a href="#">
+                                                    <img src="{{ url('images/author/author-01.png') }}" alt="Author">
+                                                </a>
                                             </div>
-                                            <div class="tag">
-                                                <a href="#">SCIENCE</a>
+                                            <div class="author-name">
+                                                <a class="name" href="#"> </a>
                                             </div>
                                         </div>
-
-                                        <h4 class="title"><a
-                                                href="/courses-details">L'histoire de l'internet au Bénin</a>
-                                        </h4>
-                                        <div class="courses-meta">
-                                            <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
-                                            <span> <i class="icofont-read-book"></i> 9 Lectures </span>
+                                        <div class="tag">
+                                            <a href="#">{{ $Courses[$tab[$i]]['category']['category'] }}</a>
                                         </div>
-
                                     </div>
+
+                                    <h4 class="title"><a
+                                            href="{{ route('app_course_detail', ['id' => $Courses[$tab[$i]]['id']]) }}">{{ $Courses[$tab[$i]]['title'] }}</a>
+                                    </h4>
+                                    <div class="courses-meta">
+                                        <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
+                                        <span> <i class="icofont-read-book"></i> 9 Lectures </span>
+                                    </div>
+
                                 </div>
-                                <!-- Single Courses End -->
                             </div>
-                            <div class="col-lg-4 col-md-6">
-                                <!-- Single Courses Start -->
-                                <div class="single-courses">
-                                    <div class="courses-images">
-                                        <a href="/courses-details">
-                                            <img src="{{url('images/courses/courses-01.jpg')}}" alt="Courses">
-                                        </a>
-                                    </div>
-                                    <div class="courses-content">
-                                        <div class="courses-author">
-                                            <div class="author">
-                                                <div class="author-thumb">
-                                                    <a href="#">
-                                                        <img src="{{ url('images/author/author-01.jpg') }}"
-                                                            alt="Author">
-                                                    </a>
-                                                </div>
-                                                <div class="author-name">
-                                                    <a class="name" href="#"> </a>
-                                                </div>
-                                            </div>
-                                            <div class="tag">
-                                                <a href="#">SCIENCE</a>
-                                            </div>
-                                        </div>
+                            <!-- Single Courses End -->
+                        </div>
 
-                                        <h4 class="title"><a
-                                                href="/courses-details">L'histoire de l'internet au Bénin</a>
-                                        </h4>
-                                        <div class="courses-meta">
-                                            <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
-                                            <span> <i class="icofont-read-book"></i> 9 Lectures </span>
-                                        </div>
+                    @endfor
 
-                                    </div>
-                                </div>
-                                <!-- Single Courses End -->
-                            </div>
-                         
-                    </div>
-                      
+                </div>
+
             </div>
 
         </div>

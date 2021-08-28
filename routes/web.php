@@ -50,6 +50,7 @@ Route::get('after-enroll/{id}','App\Http\Controllers\IndexAPIController@showCour
 
 
 Route::get('enroll/{id}', 'App\Http\Controllers\IndexAPIController@enroll')->name('app_enroll')->where('id', '[0-9]+');
+Route::post('enroll/{id}', 'App\Http\Controllers\IndexAPIController@enroll')->name('app_enroll2')->where('id', '[0-9]+');
 
 // Route::get('after_enroll/{id}', 'App\Http\Controllers\IndexAPIController@after_enroll')->name('app_after_enroll')->where('id', '[0-9]+');
 
@@ -70,7 +71,7 @@ Route::get('logout', function (Request $request) {
 
 /*Register route */
 Route::get('register', function () {
-    return view('auth.register');
+    return view('auth.register', ['titre' => 'Inscription', 'from_mentor'=>false]);
 })->name('app_register')->middleware('user');
 
 Route::get('dashboard_mentor/register', function () {
@@ -110,7 +111,7 @@ Route::middleware([MDashAuth::class])->group(function () {
 
     Route::get('dashboard_mentor/cours_recommande', [MentorDashboardController::class, 'cours_recommande'])->name('app_dash_mentor_cours_recommande');
 
-    Route::get('dashboard_mentor/recommandation', [MentorDashboardController::class, 'recommandation'])->name('app_dash_mentor_recommandation');
+    Route::get('dashboard_mentor/recommandation/{id}', [MentorDashboardController::class, 'recommandation'])->name('app_dash_mentor_recommandation');
 
     Route::post('dashboard_mentor/recommandation', [MentorDashboardController::class, 'recommandation_traitement'])->name('app_dash_mentor_recommandation_traitement');
 

@@ -50,18 +50,41 @@ class IndexAPIController extends Controller
         $id = $request -> id;
 
         foreach( $courses as $cours ){
-            if ($cours['id'] = $id) {
+            if ($cours['id'] == $id) {
                 $course = $cours;
-                continue;
+                break;
             }
         }
         
         if ($course == []) {
             return redirect()->back()->with('error', "Echec de l'affichage du cours");
         } else {
-            return view('layouts.course-detail',[
-                'Course' => $course,
-            ]);
+
+            if($request->session()->get('user')['userOut']['role']=='RESPONSABLE'){                
+                $response = Http::get('https://eniola-service.herokuapp.com/api/v_1/supervisors/'.$request->session()->get('user')['userOut']['userId'].'/students');
+                $students=array();
+                foreach ($response->collect() as $key => $etu) {                    
+                    $response2 = Http::get('https://eniola-service.herokuapp.com/api/v_1/students/enrolls/users/'.$etu['userId']);
+                    $dejaInscrit=false;
+                    foreach ($response2->collect() as $rep) {
+                        if($rep['course']['id']==$id){
+                            $dejaInscrit=true;
+                            break;
+                        }
+                    }
+                    if($dejaInscrit)
+                        continue;
+                    array_push($students, $etu);
+                }                
+                return view('layouts.course-detail',[
+                    'Course' => $course,
+                    'Students'=>$students,
+                ]);
+            }else{
+                return view('layouts.course-detail',[
+                    'Course' => $course,
+                ]);
+            }
         }
         
         
@@ -97,7 +120,25 @@ class IndexAPIController extends Controller
                         return redirect()->back()->with('error', "Echec de l'inscription au cours");
                     }
                 }
-            } else {
+            } else if($request->post('students')){
+                $ids= $request->post('students');
+                $ids= substr($ids, 0, strlen($ids)-1);
+                
+                $ids_int=array();
+                $ids= explode(",", $ids); 
+                for ($i=0; $i < count($ids); $i++) {  
+                    array_push($ids_int, (int)$ids[$i]);                     
+                    $response = Http::post('https://eniola-service.herokuapp.com/api/v_1/supervisors/enrolls', [
+                        'courseId' =>  $id,
+                        'parentId' =>  $request->session()->get('user')['userOut']['userId'],
+                        'studentsId' => [(int)$ids[$i]]                       
+                    ]);
+                } 
+                
+                //echo json_encode($ids_int) ;
+                //dd($response);
+                return redirect()->route('app_dash_mentor')->with('success', 'Inscription d\'étudiant au cours réussie !!');
+            }else{
                 return redirect()->back()->with('error', "Seuls les inscrits en tant qu'étudiant peuvent s'inscrire au cours!");
             }
         }
@@ -112,16 +153,16 @@ class IndexAPIController extends Controller
         $id = $request -> id;
 
         foreach( $courses as $cours ){
-            if ($cours['id'] = $id) {
+            if ($cours['id'] == $id) {
                 $course = $cours;
-                continue;
+                break;
             }
         }
         $quizf = [];
         foreach( $quizs as $quiz ){
-            if ($quiz['course']['id'] = $id) {
+            if ($quiz['course']['id'] == $id) {
                 $quizf = $quiz;
-                continue;
+                break;
             }
         }
 

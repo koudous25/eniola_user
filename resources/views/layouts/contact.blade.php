@@ -54,7 +54,9 @@
             <!-- Contact Map Wrapper Start -->
             <div class="contact-map-wrapper">
                 <iframe id="gmap_canvas"
-                    src="https://maps.google.com/maps?q=Mission%20District%2C%20San%20Francisco%2C%20CA%2C%20USA&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1982.564210377991!2d2.4424400118201715!3d6.377418920385954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smarch%C3%A9%20midombo%20akpakpa%20%C3%A0%20proximit%C3%A9%20de%20Cotonou!5e0!3m2!1sfr!2sbj!4v1630143010655!5m2!1sfr!2sbj"></iframe>
+                {{-- <iframe id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=Mission%20District%2C%20San%20Francisco%2C%20CA%2C%20USA&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe> --}}
             </div>
             <!-- Contact Map Wrapper End -->
 
@@ -94,7 +96,7 @@
                                 </div>
                                 <div class="info-content">
                                     <h6 class="title">Email Address.</h6>
-                                    <p><a href="isocbenin@gmail.com">isocbenin@gmail.com</a></p>
+                                    <p><a href="mailer@isoc.org">mailer@isoc.org</a></p>
                                 </div>
                             </div>
                             <!-- Single Contact Info End -->
