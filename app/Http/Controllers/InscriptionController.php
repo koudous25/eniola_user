@@ -19,35 +19,34 @@ class InscriptionController extends Controller
     {
         $data = $request->all();
 
-        if(isset($data['from_mentor'])){
+        if (isset($data['from_mentor'])) {
             return $this->treatment_anormal($request);
-        }else{
+        } else {
             return $this->treatment_normal($request);
         }
-         
     }
 
     private function treatment_anormal(Request $request){
-        
+
 
         request()->validate([
             'nom' => ['required', 'max:20'],
-            'prenom' => ['required', 'max:20'], 
-            'select' => ['required', 'in:ETUDIANT,RESPONSABLE,ORGANISATION'], 
+            'prenom' => ['required', 'max:20'],
+            'select' => ['required', 'in:ETUDIANT,RESPONSABLE,ORGANISATION'],
             'sexe' => ['required', 'in:FEMALE,MALE'],
             'birth' => ['required'],
         ]);
         $data = $request->all();
         $nom = $data['nom'];
-        $prenom = $data['prenom']; 
+        $prenom = $data['prenom'];
         $sexe = $data['sexe'];
         $birth = $data['birth'];
-        $role = $data['select']; 
+        $role = $data['select'];
 
         /**Recupérer le id du mentor */
-        $user = $request->session()->get('user');        
+        $user = $request->session()->get('user');
         $userOut = $user['userOut'];
-        $user_id =$userOut['userId'];
+        $user_id = $userOut['userId'];
 
         /**Envoi de la req */
         $response = Http::post(
@@ -55,28 +54,28 @@ class InscriptionController extends Controller
             [
                 'firstname' => $prenom,
                 'lastname' => $nom,
-                'birthday' => $birth, 
-                'gender' => $sexe , 
+                'birthday' => $birth,
+                'gender' => $sexe,
                 'parentId' => $user_id,
             ]
 
         );
- 
-        $answers= $response->json();
 
-        if (!isset($answers['email'])) { 
+        $answers = $response->json();
+
+        if (!isset($answers['email'])) {
             return back()->with('error', "Oups! Echec de l'inscription");
         } else {
- 
+
             $login = $answers['email'];
-            $password = $answers['password']; 
-            
-            return redirect()->route('app_dash_mentor')->with('success', 'Inscription d\'étudiant réussie ! Voici les identifiants de l\'étudiant: Email: '.$login.' Mot de passe: '.$password);
+            $password = $answers['password'];
+
+            return redirect()->route('app_dash_mentor')->with('success', 'Inscription d\'étudiant réussie ! Voici les identifiants de l\'étudiant: Email: '.$login .' Mot de passe: '.$password);
         }
     }
 
     private function treatment_normal(Request $request){
-        
+
 
         request()->validate([
             'nom' => ['required', 'max:20'],
@@ -112,7 +111,7 @@ class InscriptionController extends Controller
 
         );
         if ($response->json()['message'] == "") {
-            return back()->with('error', "Oups!Echec de l'inscription");
+            return back()->with('error', "Oups ! Echec de l'inscription");
         } else {
 
 
@@ -151,10 +150,8 @@ class InscriptionController extends Controller
                 $request->session()->put('user', $user);
                 if ($userOut['role'] == "ETUDIANT") {
                     return redirect()->route('app_dash_student')->with('success', 'Connexion réussie!');
-                } elseif ($userOut['role'] === "RESPONSABLE") {
-                    return redirect()->route('app_dash_student')->with('success', 'Connexion réussie!');
-                } elseif ($userOut['role'] === "ORGANISATION") {
-                    return redirect()->route('app_dash_student')->with('success', 'Connexion réussie!');
+                } elseif ($userOut['role'] == "RESPONSABLE" || $userOut['role'] == "ORGANISATION") {
+                    return redirect()->route('app_dash_mentor')->with('success', 'Connexion réussie!');
                 }
             }
         }

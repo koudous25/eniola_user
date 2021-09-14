@@ -19,12 +19,6 @@ class IndexAPIController extends Controller
             }
         }
 
-        /*$response =
-            Http::post('http://example.com/users', [
-                'name' => 'Miller Juma',
-                'role' => 'Laravel Contributor',
-            ]);*/
-
         return view('layouts.index', [
             'Categories' => $categories->collect(),
             'Courses' => $courses_visibles,
@@ -33,61 +27,72 @@ class IndexAPIController extends Controller
 
     public function showAllCourses()
     {
-        $categories = Http::get('https://eniola-service.herokuapp.com/api/v_1/admin/categories');
+        /*$categories = Http::get('https://eniola-service.herokuapp.com/api/v_1/admin/categories');
         $courses = Http::get('https://eniola-service.herokuapp.com/api/v_1/admin/courses');
-        
-        return view('layouts.courses',[
+
+        return view('layouts.courses', [
             'Categories' => $categories->collect(),
             'Courses' => $courses->collect(),
+        ]);*/
+
+        $categories = Http::get('https://eniola-service.herokuapp.com/api/v_1/admin/categories');
+        $courses = Http::get('https://eniola-service.herokuapp.com/api/v_1/admin/courses');
+        for ($i = 0; $i < count($courses->collect()); $i++) {
+            if ($courses->collect()[$i]["visible"] == true) {
+                $courses_visibles[] = $courses->collect()[$i];
+            }
+        }
+
+        return view('layouts.courses', [
+            'Categories' => $categories->collect(),
+            'Courses' => $courses_visibles,
         ]);
     }
 
-    
+
     public function showOneCourse(Request $request)
     {
         $courses = Http::get('https://eniola-service.herokuapp.com/api/v_1/admin/courses');
         $courses = $courses->collect();
-        $id = $request -> id;
+        $id = $request->id;
 
-        foreach( $courses as $cours ){
+        foreach ($courses as $cours) {
             if ($cours['id'] == $id) {
                 $course = $cours;
                 break;
             }
         }
-        
+
         if ($course == []) {
             return redirect()->back()->with('error', "Echec de l'affichage du cours");
         } else {
 
-            if($request->session()->get('user')['userOut']['role']=='RESPONSABLE'){                
-                $response = Http::get('https://eniola-service.herokuapp.com/api/v_1/supervisors/'.$request->session()->get('user')['userOut']['userId'].'/students');
-                $students=array();
-                foreach ($response->collect() as $key => $etu) {                    
-                    $response2 = Http::get('https://eniola-service.herokuapp.com/api/v_1/students/enrolls/users/'.$etu['userId']);
-                    $dejaInscrit=false;
+            if (($request->session()->has('user')) && $request->session()->get('user')['userOut']['role'] == 'RESPONSABLE') {
+                $response = Http::get('https://eniola-service.herokuapp.com/api/v_1/supervisors/' . $request->session()->get('user')['userOut']['userId'] . '/students');
+                $students = array();
+                foreach ($response->collect() as $key => $etu) {
+                    $response2 = Http::get('https://eniola-service.herokuapp.com/api/v_1/students/enrolls/users/' . $etu['userId']);
+                    $dejaInscrit = false;
                     foreach ($response2->collect() as $rep) {
-                        if($rep['course']['id']==$id){
-                            $dejaInscrit=true;
+                        if ($rep['course']['id'] == $id) {
+                            $dejaInscrit = true;
                             break;
                         }
                     }
-                    if($dejaInscrit)
+                    if ($dejaInscrit)
                         continue;
                     array_push($students, $etu);
-                }                
-                return view('layouts.course-detail',[
+                }
+                return view('layouts.course-detail', [
                     'Course' => $course,
-                    'Students'=>$students,
+                    'Students' => $students,
                 ]);
-            }else{
-                return view('layouts.course-detail',[
+            } else {
+                return view('layouts.course-detail', [
                     'Course' => $course,
                 ]);
             }
         }
-        
-        
     }
 
     public function enroll(Request $request, $id)
@@ -120,25 +125,25 @@ class IndexAPIController extends Controller
                         return redirect()->back()->with('error', "Echec de l'inscription au cours");
                     }
                 }
-            } else if($request->post('students')){
-                $ids= $request->post('students');
-                $ids= substr($ids, 0, strlen($ids)-1);
-                
-                $ids_int=array();
-                $ids= explode(",", $ids); 
-                for ($i=0; $i < count($ids); $i++) {  
-                    array_push($ids_int, (int)$ids[$i]);                     
+            } else if ($request->post('students')) {
+                $ids = $request->post('students');
+                $ids = substr($ids, 0, strlen($ids) - 1);
+
+                $ids_int = array();
+                $ids = explode(",", $ids);
+                for ($i = 0; $i < count($ids); $i++) {
+                    array_push($ids_int, (int)$ids[$i]);
                     $response = Http::post('https://eniola-service.herokuapp.com/api/v_1/supervisors/enrolls', [
                         'courseId' =>  $id,
                         'parentId' =>  $request->session()->get('user')['userOut']['userId'],
-                        'studentsId' => [(int)$ids[$i]]                       
+                        'studentsId' => [(int)$ids[$i]]
                     ]);
-                } 
-                
+                }
+
                 //echo json_encode($ids_int) ;
                 //dd($response);
                 return redirect()->route('app_dash_mentor')->with('success', 'Inscription d\'étudiant au cours réussie !!');
-            }else{
+            } else {
                 return redirect()->back()->with('error', "Seuls les inscrits en tant qu'étudiant peuvent s'inscrire au cours!");
             }
         }
@@ -150,16 +155,16 @@ class IndexAPIController extends Controller
         $quizs = Http::get('https://eniola-service.herokuapp.com/api/v_1/admin/quiz');
         $quizs = $quizs->collect();
         $courses = $courses->collect();
-        $id = $request -> id;
+        $id = $request->id;
 
-        foreach( $courses as $cours ){
+        foreach ($courses as $cours) {
             if ($cours['id'] == $id) {
                 $course = $cours;
                 break;
             }
         }
         $quizf = [];
-        foreach( $quizs as $quiz ){
+        foreach ($quizs as $quiz) {
             if ($quiz['course']['id'] == $id) {
                 $quizf = $quiz;
                 break;
@@ -168,7 +173,7 @@ class IndexAPIController extends Controller
 
         $Para = $course['paragraphs'];
         // dd($Para);
-        return view('layouts.after-enroll',[
+        return view('layouts.after-enroll', [
             'Course' => $course,
             'Paragraphs' => $Para,
             'Quiz' => $quizf,

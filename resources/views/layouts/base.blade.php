@@ -75,10 +75,10 @@
                     <!-- Header Menu Start -->
                     <div class="header-menu d-none d-lg-block">
                         <ul class="nav-menu">
-                            <li><a href="{{ route('app_home') }}">Accueil</a></li>
-                            <li><a href="{{ route('app_courses') }}">Les Cours</a></li>
-                            <li><a href="{{ route('app_about') }}">A propos</a></li>
-                            <li><a href="{{ route('app_contact') }}">Contact</a></li>
+                            <li><a href="{{ route('app_courses') }}">Nos parcours </a></li>
+                            <li><a href="{{ route('app_about') }}">C’est quoi Internet ?</a></li>
+                            {{-- <li><a href="{{ route('app_about') }}">A propos</a></li> --}}
+                            {{-- <li><a href="{{ route('app_contact') }}">Contact</a></li> --}}
                             {{-- <li><a href="{{ route('app_contact') }}">Contact</a></li> --}}
                         </ul>
 
@@ -87,8 +87,86 @@
 
                     <!-- Header Sing In & Up Start -->
                     @if (Session::has('user'))
-                        <div class="header-sign-in-up d-none d-lg-block">
-                            <ul>
+                        <div class="login-header-action">
+
+                            <div class="dropdown">
+                                <button class="action notification author" data-bs-toggle="dropdown">
+                                    <img src="{{ url('https://ui-avatars.com/api/?name=' . Session::get('user')['userOut']['firstname'] . '+' . Session::get('user')['userOut']['lastname'] . '/?rounded=true') }}"
+                                        alt="Author">
+                                </button>
+                                <div class="dropdown-menu dropdown-notification">
+                                    <ul class="notification-items-list">
+
+                                        @if (Session::get('user')['userOut']['role'] === 'ETUDIANT')
+                                            <li class="notification-item">
+                                                <span class="notify-icon bg-success text-white">
+                                                    <img src="{{ url('https://ui-avatars.com/api/?name=' . Session::get('user')['userOut']['firstname'] . '+' . Session::get('user')['userOut']['lastname'] . '/?rounded=true') }}"
+                                                        alt="Author">
+                                                </span>
+                                                <a class="" href=" {{ route('app_dash_student_profile') }}">
+                                                    {{ pretty_firstname(Session::get('user')) }}</a>
+                                            </li>
+                                            <li class="notification-item">
+                                                <span class="notify-icon bg-success text-white"><i
+                                                        class="icofont-user"></i></span>
+                                                <a class="" href=" {{ route('app_dash_student') }}">
+                                                    Mon tableau de bord</a>
+                                            </li>
+                                            <li class="notification-item">
+                                                <span class="notify-icon bg-success text-white"><i
+                                                        class="icofont-settings-alt"></i></span>
+                                                <a class="" href="
+                                                    {{ route('app_dash_student_parametre') }}">Paramètres</a>
+                                            </li>
+                                        @elseif(Session::get('user')['userOut']['role']==="RESPONSABLE" ||
+                                            Session::get('user')['userOut']['role']==="ORGANISATION")
+                                            <li class="notification-item">
+                                                <span class="notify-icon bg-success text-white"><img
+                                                        src="{{ url('https://ui-avatars.com/api/?name=' . Session::get('user')['userOut']['firstname'] . '+' . Session::get('user')['userOut']['lastname'] . '/?rounded=true') }}"
+                                                        alt="Author"></span>
+                                                <a class="" href=" {{ route('app_dash_mentor_profile') }}">
+                                                    {{ pretty_firstname(Session::get('user')) }}</a>
+                                            </li>
+                                            <li class="notification-item">
+                                                <span class="notify-icon bg-success text-white"><i
+                                                        class="icofont-user"></i></span>
+                                                <a class="" href=" {{ route('app_dash_mentor') }}">
+                                                    Mon tableau de bord</a>
+                                            </li>
+                                            <li class="notification-item">
+                                                <span class="notify-icon bg-success text-white"><i
+                                                        class="icofont-settings-alt"></i></span>
+                                                <a class="" href=" {{ route('app_dash_mentor_parametre') }}">
+                                                    Paramètres</a>
+                                            </li>
+                                        @elseif(Session::get('user')['userOut']['role']==="ADMIN")
+                                            <li class="notification-item">
+                                                <span></span>
+                                                <a class=""
+                                                href="
+                                                    {{ route('app_home') }}">{{ pretty_firstname(Session::get('user')) }}</a>
+                                            </li>
+                                        @else
+                                            <li class="notification-item"><a
+                                                    class=""
+                                                href="
+                                                    {{ route('app_home') }}">{{ pretty_firstname(Session::get('user')) }}</a>
+                                            </li>
+                                        @endif
+
+                                        <li class="notification-item">
+                                            <span class="notify-icon bg-success text-white"><i
+                                                    class="icofont-logout"></i></span>
+                                            <a class="" href=" {{ route('app_logout') }}">
+                                                Deconnexion</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            {{-- <ul>
+
                                 @if (Session::get('user')['userOut']['role'] === 'ETUDIANT')
                                     <li><a class="sign-in"
                                             href="{{ route('app_dash_student') }}">{{ pretty_firstname(Session::get('user')) }}</a>
@@ -107,14 +185,15 @@
                                             href="{{ route('app_home') }}">{{ pretty_firstname(Session::get('user')) }}</a>
                                     </li>
                                 @endif
+
                                 <li><a class="sign-in" href="{{ route('app_logout') }}">Deconnexion</a></li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     @else
                         <div class="header-sign-in-up d-none d-lg-block">
                             <ul>
-                                <li><a class="sign-in" href="{{ route('app_login') }}">Se Connecter</a></li>
                                 <li><a class="sign-up" href="{{ route('app_register') }}">S'inscrire</a></li>
+                                <li><a class="sign-in" href="{{ route('app_login') }}">Se connecter</a></li>
                             </ul>
                         </div>
                     @endif
@@ -150,13 +229,6 @@
         </a>
         <!-- Menu Close End -->
 
-        <!-- Mobile Top Medal Start -->
-        <div class="mobile-top">
-            <p><i class="flaticon-phone-call"></i> <a href="tel:62916946">62916946</a></p>
-            <p><i class="flaticon-email"></i> <a href="isoc@gmail.com">isoc</a></p>
-        </div>
-        <!-- Mobile Top Medal End -->
-
         <!-- Mobile Sing In & Up Start -->
         @if (Session::has('user'))
             <div class="mobile-sign-in-up">
@@ -187,7 +259,7 @@
         @else
             <div class="mobile-sign-in-up">
                 <ul>
-                    <li><a class="sign-in" href="{{ route('app_login') }}">Se Connecter</a></li>
+                    <li><a class="sign-in" href="{{ route('app_login') }}">Se connecter</a></li>
                     <li><a class="sign-up" href="{{ route('app_register') }}">S'inscrire</a></li>
                 </ul>
             </div>
@@ -198,10 +270,10 @@
         <!-- Mobile Menu Start -->
         <div class="mobile-menu-items">
             <ul class="nav-menu">
-                <li><a href="{{ route('app_home') }}">Accueil</a></li>
-                <li><a href="{{ route('app_courses') }}">Les Cours</a></li>
-                <li><a href="{{ route('app_about') }}">A propos</a></li>
-                <li><a href="{{ route('app_contact') }}">Contact</a></li>
+                <li><a href="{{ route('app_courses') }}">Nos parcours</a></li>
+                <li><a href="{{ route('app_about') }}">C’est quoi Internet ?</a></li>
+                {{-- <li><a href="{{ route('app_about') }}">A propos</a></li> --}}
+                {{-- <li><a href="{{ route('app_contact') }}">Contact</a></li> --}}
                 {{-- <li><a href="{{ route('app_contact') }}">Contact</a></li> --}}
             </ul>
 
@@ -209,14 +281,14 @@
         <!-- Mobile Menu End -->
 
         <!-- Mobile Menu End -->
-        <div class="mobile-social">
+        {{-- <div class="mobile-social">
             <ul class="social">
                 <li><a href="#"><i class="flaticon-facebook"></i></a></li>
                 <li><a href="#"><i class="flaticon-twitter"></i></a></li>
                 <li><a href="#"><i class="flaticon-skype"></i></a></li>
                 <li><a href="#"><i class="flaticon-instagram"></i></a></li>
             </ul>
-        </div>
+        </div> --}}
         <!-- Mobile Menu End -->
 
     </div>
@@ -230,9 +302,9 @@
     <div class="section footer-section">
 
         <!-- Footer Widget Section Start -->
-        <div class="footer-widget-section">
+        {{-- <div class="footer-widget-section">
 
-            {{-- <!--img class="shape-1 animation-down" src="{{ url('images/shape/shape-21.png') }}" alt="Shape"--> --}}
+            <img class="shape-1 animation-down" src="{{ url('images/shape/shape-21.png') }}" alt="Shape">
 
             <div class="container">
                 <div class="row">
@@ -312,26 +384,18 @@
 
             <img class="shape-2 animation-left" src="{{ url('images/shape/shape-22.png') }}" alt="Shape">
 
-        </div>
+        </div> --}}
         <!-- Footer Widget Section End -->
 
         <!-- Footer Copyright Start -->
         <div class="footer-copyright">
             <div class="container">
-
-                <!-- Footer Copyright Start -->
-                <div class="copyright-wrapper">
-                    <div class="copyright-link">
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Sitemap</a>
-                        <a href="#">Security</a>
+                <div class="footer-wrapper">
+                    <div>
+                        <h5>Copyright 2021 Eniola. Powered by </h5>
                     </div>
-                    <div class="copyright-text">
-                        <p>&copy; 2021 <span> Eniola </span> Tous droits reservés</p>
-                    </div>
+                    <div><img src="{{ url('images/isoc-benin-logo-bleu.png') }}" alt="logo-isoc"></div>
                 </div>
-                <!-- Footer Copyright End -->
 
             </div>
         </div>

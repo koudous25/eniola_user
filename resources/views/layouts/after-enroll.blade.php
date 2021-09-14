@@ -1,6 +1,8 @@
 @extends('layouts.base')
 
-@section('PageTitle', $Course['title'])
+@section('PageTitle')
+    {{ $Course['title'] }}
+@endsection
 
 @section('main')
 
@@ -109,8 +111,8 @@
                             <span></span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="" href="/profile"><i class="icofont-user"></i> Profile</a></li>
-                            <li><a class="" href="/login"><i class="icofont-logout"></i> Sign Out</a></li>
+                            <li><a class="" href=" /profile"><i class="icofont-user"></i> Profile</a></li>
+                            <li><a class="" href=" /login"><i class="icofont-logout"></i> Sign Out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -248,7 +250,7 @@
                             <!-- Accordion Items Start  -->
                             <div class="accordion-item">
 
-                                <div id="collapseOne" class="" data-bs-parent="#videoPlaylist">
+                                <div id="collapseOne" class="" data-bs-parent=" #videoPlaylist">
                                     <nav class="vids">
 
                                         @foreach ($Paragraphs as $paragraph)

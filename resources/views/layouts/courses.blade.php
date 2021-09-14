@@ -8,43 +8,18 @@
     <!-- Overlay Start -->
     <div class="overlay"></div>
     <!-- Overlay End -->
+    <div class="topb"></div>
 
     <!-- Page Banner Start -->
     <div class="section page-banner">
-        <img class="shape-2" src="{{ url('images/shape/shape-23.png') }}" alt="Shape">
 
         <div class="container">
             <!-- Page Banner Start -->
             <div class="page-banner-content">
-                <ul class="breadcrumb">
-                    <li><a href="{{ route('app_home') }}">Accueil</a></li>
-                    <li class="active">Tous les cours</li>
-                </ul>
-                <h2 class="title">Cours <span>Eniola</span></h2>
+                <h2 class="title"><span>Nos parcours</span></h2>
             </div>
             <!-- Page Banner End -->
         </div>
-
-        <!-- Shape Icon Box Start -->
-        <div class="shape-icon-box">
-
-            <img class="icon-shape-1 animation-left" src="{{ url('images/shape/shape-5.png') }}" alt="Shape">
-
-            <div class="box-content">
-                <div class="box-wrapper">
-                    <i class="flaticon-badge"></i>
-                </div>
-            </div>
-
-            <img class="icon-shape-2" src="{{ url('/images/shape/shape-6.png') }}" alt="Shape">
-
-        </div>
-        <!-- Shape Icon Box End -->
-
-        <img class="shape-3" src="{{ url('/images/shape/shape-24.png') }}" alt="Shape">
-
-        <img class="shape-author" src="{{ url('/images/author/author-11.jpg') }}" alt="Shape">
-
     </div>
     <!-- Page Banner End -->
 
@@ -54,13 +29,6 @@
 
             <!-- All Courses Top Start -->
             <div class="courses-top">
-
-                <!-- Section Title Start -->
-                <div class="section-title shape-01">
-                    <h2 class="main-title">Tous les <span>Cours</span> de Eniola</h2>
-                </div>
-                <!-- Section Title End -->
-
                 <!-- Courses Search Start -->
                 <div class="courses-search">
                     <form action="#">
@@ -79,7 +47,7 @@
                 <div class="swiper-container">
                     <ul class="swiper-wrapper nav">
                         @foreach ($Categories as $category)
-                            <li class="swiper-slide"><button class="" data-bs-toggle="tab"
+                            <li class="swiper-slide"><button class="" data-bs-toggle=" tab"
                                     data-bs-target="#tabs{{ $loop->iteration }}">{{ $category['categoryName'] }}</button>
                             </li>
                         @endforeach
@@ -133,8 +101,9 @@
                                                     href="{{ route('app_course_detail', ['id' => $cours['id']]) }}">{{ $cours['title'] }}</a>
                                             </h4>
                                             <div class="courses-meta">
-                                                <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
-                                                <span> <i class="icofont-read-book"></i> 9 Lectures </span>
+                                                <span></span>
+                                                <span> <i class="icofont-read-book"></i> {{ count($cours['paragraphs']) }}
+                                                    Paragraphes </span>
                                             </div>
 
                                         </div>

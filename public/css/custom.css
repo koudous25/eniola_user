@@ -4,12 +4,7 @@
     height: 50px !important;
 }
 
-.single-form {
-    margin-bottom: 20px;
-}
-
-select {
-    /*height: 100px !important;*/
+.selecte select {
     width: 100%;
     height: 60px;
     padding: 0 25px;
@@ -23,14 +18,23 @@ select {
     background-color: #fff;
 }
 
+.selecte select::-webkit-input-placeholder {
+    opacity: 1;
+}
+
+.single-form select:focus {
+    border-color: #3333ff;
+    outline: none;
+}
+
 .xx {
     height: 50px !important;
     border-radius: 10px;
 }
 
-.mm {
+/*.mm {
     margin-top: -10px !important;
-}
+}*/
 
 .naissance {
     width: 80% !important;
@@ -43,7 +47,7 @@ select {
 .birth {
     border: 1px solid rgba(48, 146, 85, 0.2);
     border-radius: 10px;
-
+    outline: none;
 }
 
 .bouton {
@@ -92,13 +96,9 @@ select {
     margin-top: 0 !important;
 }
 
-/*Dash Dash*/
-.dash {
-    background-color: #e5f4eb !important;
-}
-
 .notification {
-    color: #309255 !important;
+    /*color: #309255 !important;*/
+    color: white !important;
 }
 
 .bb {

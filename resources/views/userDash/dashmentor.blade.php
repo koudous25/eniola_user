@@ -18,8 +18,15 @@
                 <!-- Courses Search End -->
 
                 <div class="engagement-meta">
+                 
+                    @if (count($students)==1)
                     <p class="meta"><img src="{{ url('/images/icon/icon-2.png') }}" alt="Icon"> {{ count($students) }}
-                        Elèves</p>
+                        Elève</p>
+                    @else
+                    <p class="meta"><img src="{{ url('/images/icon/icon-2.png') }}" alt="Icon"> {{ count($students) }}
+                        Elèves</p> 
+                    @endif
+                    
                 </div>
                 <div class="top-bar-filter-right">
                     <div class="filter-btn">

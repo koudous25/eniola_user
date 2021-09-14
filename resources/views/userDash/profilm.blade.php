@@ -44,7 +44,7 @@
 
                 <!-- Single FAQ Item End -->
                 <div class="mt-5">
-                    <a href="/change-profile" role="button" class="btn  btn-success w-100">Modifier mon profil</a>
+                    <a href="{{ route('app_dash_mentor_parametre')}}" role="button" class="btn  bg-light w-100">Modifier mon profil</a>
                 </div>
             </div>
         </div>

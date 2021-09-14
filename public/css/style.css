@@ -10288,6 +10288,10 @@ fieldset:disabled .btn {
     text-align: center !important;
 }
 
+.text-justify {
+    text-align: justify !important;
+}
+
 .text-decoration-none {
     text-decoration: none !important;
 }
@@ -17912,7 +17916,7 @@ only screen and (max-width: 575px) {
     font-size: 15px;
     font-weight: 500;
     color: #212832;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     display: block;
     -webkit-transform: all 0.3s ease 0s;
     -ms-transform: all 0.3s ease 0s;
@@ -18477,7 +18481,7 @@ only screen and (max-width: 575px) {
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     background-color: #fff;
 }
@@ -19016,7 +19020,7 @@ only screen and (max-width: 575px) {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    border: 1px solid rgba(48, 146, 85, 0.25);
+    /* border: 1px solid rgba(48, 146, 85, 0.25); */
     padding: 16px 15px;
     border-radius: 15px;
     margin-left: -15px;
@@ -19079,7 +19083,7 @@ only screen and (max-width: 767px) {
 }
 
 .header-menu ul li a {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 500;
     text-transform: capitalize;
     color: #212832;
@@ -19374,7 +19378,7 @@ only screen and (max-width: 767px) {
 }
 
 .header-sign-in-up ul li a {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 500;
     text-transform: capitalize;
     color: #212832;
@@ -19394,24 +19398,34 @@ only screen and (max-width: 767px) {
     color: #3333ff;
 }
 
-.header-sign-in-up ul li a.sign-up {
+.header-sign-in-up ul li a.sign-in {
     height: 60px;
     line-height: 56px;
-    padding: 0 35px;
-    border: 1px solid #3333ff;
+    padding: 0 10px;
+    border: 2px solid #3399ff;
     border-radius: 10px;
     background-color: #fff;
 }
 
+
+.header-sign-in-up ul li a.sign-up {
+    height: 60px;
+    line-height: 56px;
+    padding: 0 10px;
+    border-radius: 10px;
+    background-color: rgb(219, 216, 216);
+}
+
+
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .header-sign-in-up ul li a.sign-up {
+    .header-sign-in-up ul li a.sign-in {
         height: 50px;
         line-height: 46px;
         padding: 0 25px;
     }
 }
 
-.header-sign-in-up ul li a.sign-up:hover {
+.header-sign-in-up ul li a.sign-in:hover {
     background-color: #3333ff;
     color: #fff;
 }
@@ -19589,7 +19603,7 @@ only screen and (max-width: 767px) {
 }
 
 .mobile-sign-in-up ul li {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .mobile-sign-in-up ul li:last-child {
@@ -19607,7 +19621,7 @@ only screen and (max-width: 767px) {
     display: block;
     height: 45px;
     line-height: 41px;
-    padding: 0 30px;
+    padding: 0 10px;
     border: 1px solid #3333ff;
     border-radius: 5px;
     background-color: #fff;
@@ -19746,7 +19760,7 @@ only screen and (max-width: 767px) {
 /*  3.4 - Login Header CSS
 /*----------------------------------------*/
 .login-header {
-    background-color: #212832;
+    background-color: #ff990017;
 }
 
 .login-header-wrapper.navbar {
@@ -20243,8 +20257,9 @@ only screen and (max-width: 575px) {
 /*  4.1 - Slider CSS
 /*----------------------------------------*/
 .slider-section {
-    background-color: #3399ff;
-    height: 940px;
+    /* background-color: #fff; */
+    background: #ff990017 url(/images/globe_isoc_logo_.png) top center/cover no-repeat;
+    height: 900px;
     position: relative;
     overflow: hidden;
     z-index: 2;
@@ -20261,23 +20276,52 @@ only screen and (max-width: 575px) {
 
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
     .slider-section {
-        height: 880px;
+        height: 860px;
     }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .slider-section {
-        height: 840px;
+        height: 620px;
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px),
 only screen and (max-width: 767px) {
     .slider-section {
-        height: auto;
-        padding-top: 200px;
+        height: 500px;
+        padding-top: 150px;
         display: block;
     }
+
+}
+
+
+@media only screen and (min-width: 470px) and (max-width: 660px) {
+    .slider-section {
+        height: 420px;
+        /* padding-top: 20px; */
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 470px) {
+    .slider-section {
+        height: 340px;
+        /* padding-top: 20px; */
+        display: block;
+    }
+
+}
+
+
+@media only screen and (max-width: 390px) {
+    .slider-section {
+        height: 340px;
+        /* padding-top: 20px; */
+        display: block;
+    }
+
 }
 
 .slider-section .slider-shape {
@@ -20303,36 +20347,39 @@ only screen and (max-width: 767px) {
 .slider-images {
     position: absolute;
     bottom: 0;
-    right: 0;
+    left: 0;
     width: 56%;
-    height: 100%;
-    display: -webkit-box;
+    /* height: 100%; */
+    /* display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: end;
     -webkit-align-items: flex-end;
     -ms-flex-align: end;
-    align-items: flex-end;
+    align-items: flex-end; */
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .slider-images {
-        width: 55%;
+        width: 50%;
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px),
 only screen and (max-width: 767px) {
     .slider-images {
-        position: relative;
-        width: 55%;
+        position: absolute;
+        width: 50%;
         margin-left: auto;
     }
 }
 
 .slider-content {
-    max-width: 410px;
+    /* max-width: 410px; */
+    max-width: 50%;
+    position: relative;
+    left: 40%;
 }
 
 .slider-content .sub-title {
@@ -20357,18 +20404,31 @@ only screen and (max-width: 767px) {
 }
 
 .slider-content .main-title {
-    font-size: 40px;
-    font-weight: 500;
+    /* font-size: 50px; */
+    font-weight: 700;
     line-height: 1.3;
     margin-bottom: 0;
     margin-top: 25px;
 }
 
-@media only screen and (max-width: 575px) {
+@media only screen and (min-width: 768px) {
     .slider-content .main-title {
-        font-size: 24px;
+        font-size: 50px;
     }
 }
+
+@media only screen and (min-width: 666px) and (max-width: 767px) {
+    .slider-content .main-title {
+        font-size: 40px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .slider-content .main-title {
+        font-size: 15px;
+    }
+}
+
 
 .slider-content .main-title span {
     color: #3333ff;
@@ -20412,6 +20472,27 @@ only screen and (max-width: 767px) {
 .slider-content .btn {
     margin-top: 28px;
 }
+
+@media only screen and (min-width: 768px) {
+    .slider-content .btn {
+        font-size: 28px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .slider-content .btn {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .slider-content .btn {
+        font-size: 12px;
+        padding: 0 15px;
+    }
+}
+
+
 
 .slider-courses-box {
     position: absolute;
@@ -20765,6 +20846,25 @@ only screen and (max-width: 767px) {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
+    -webkit-justify-content: center;
+    -ms-flex-pack: justify;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.courses-index {
+    background: #ff990017;
+}
+
+.courses-index-top {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -20817,7 +20917,7 @@ only screen and (max-width: 767px) {
 .courses-search input {
     width: 100%;
     height: 64px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     padding: 0 30px;
     padding-right: 90px;
@@ -20838,7 +20938,7 @@ only screen and (max-width: 767px) {
     line-height: 54px;
     text-align: center;
     border-radius: 10px;
-    background-color: #deede4;
+    background-color: #ff990017;
     border: 0;
     top: 7px;
     right: 7px;
@@ -20870,7 +20970,7 @@ only screen and (min-width: 1200px) and (max-width: 1599px) {
 }
 
 .courses-tabs-menu {
-    background-color: #3399ff;
+    background-color: #ff990017;
     padding: 40px 100px;
     border-radius: 10px;
     margin-top: 50px;
@@ -20892,7 +20992,7 @@ only screen and (min-width: 1200px) and (max-width: 1599px) {
 .courses-tabs-menu .nav li button {
     width: 100%;
     height: 60px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     background-color: #fff;
     color: #212832;
@@ -20977,7 +21077,7 @@ only screen and (min-width: 1200px) and (max-width: 1599px) {
 
 .single-courses {
     margin-top: 30px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 15px;
     padding: 20px;
     -webkit-transition: all 0.3s ease 0s;
@@ -21171,7 +21271,7 @@ only screen and (max-width: 575px) {
     width: 100px;
     /* height: 35px; */
     line-height: 35px;
-    background-color: #3399ff;
+    background-color: #3399ff59;
     border-radius: 5px;
     font-size: 14px;
     color: #3333ff;
@@ -21482,6 +21582,8 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 .courses-btn .btn {
     border: 1px solid #3333ff;
     line-height: 58px;
+    font-size: 25px;
+    color: #fff;
 }
 
 .courses-category-wrapper {
@@ -21542,7 +21644,7 @@ only screen and (max-width: 767px) {
     width: 160px;
     height: 60px;
     line-height: 58px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     text-align: center;
     border-radius: 10px;
     background-color: #fff;
@@ -21754,7 +21856,7 @@ only screen and (max-width: 767px) {
     height: 65px;
     line-height: 68px;
     text-align: center;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     background-color: #fff;
     color: #3333ff;
@@ -21820,9 +21922,11 @@ only screen and (max-width: 767px) {
 /*  4.5 - Download App CSS
 /*----------------------------------------*/
 .download-section {
-    background-color: #3333ff;
+    background-color: #fff;
     position: relative;
     overflow: hidden;
+    margin: 25px;
+    padding: 30px;
 }
 
 .download-section .app-shape-1 {
@@ -21950,9 +22054,9 @@ only screen and (max-width: 767px) {
 }
 
 .download-app-wrapper .section-title {
-    max-width: 520px;
-    margin-top: 25px;
-    padding-right: 15px;
+    /* max-width: 520px; */
+    margin-top: 5px;
+    /* padding-right: 15px; */
 }
 
 @media only screen and (max-width: 767px) {
@@ -22031,6 +22135,12 @@ only screen and (max-width: 767px) {
     box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.15);
 }
 
+.eniola-head {
+    /* height: 114px; */
+    width: 132px;
+    vertical-align: center;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .download-app-btn .app-btn li a {
         width: 150px;
@@ -22053,7 +22163,7 @@ only screen and (max-width: 767px) {
 
 .single-testimonial {
     text-align: center;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     padding: 45px 45px 40px;
     position: relative;
@@ -22092,7 +22202,7 @@ only screen and (max-width: 767px) {
 .single-testimonial .testimonial-author .author-thumb img {
     display: block;
     width: 90px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 50%;
     padding: 8px;
     margin: 0 auto;
@@ -22289,7 +22399,7 @@ only screen and (max-width: 767px) {
 
 .single-blog {
     margin-top: 30px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 15px;
     padding: 20px;
     -webkit-transition: all 0.3s ease 0s;
@@ -22460,7 +22570,7 @@ only screen and (max-width: 575px) {
     padding: 0 20px;
     height: 45px;
     line-height: 39px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     font-size: 15px;
     margin-top: 30px;
 }
@@ -22473,8 +22583,9 @@ only screen and (max-width: 575px) {
 /*  4.9 - Page Banner CSS
 /*----------------------------------------*/
 .page-banner {
-    height: 550px;
-    background-color: #3399ff;
+    height: 400px;
+    background: #ff990017 url(/images/globe_isoc_logo_.png) no-repeat top center/cover;
+    /* background-color: #3399ff; */
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -22486,6 +22597,7 @@ only screen and (max-width: 575px) {
     padding-top: 189px;
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px),
@@ -22589,6 +22701,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
     }
 }
 
+/* 
 .page-banner-content {
     max-width: 570px;
 }
@@ -22604,7 +22717,7 @@ only screen and (max-width: 767px) {
     .page-banner-content {
         max-width: 360px;
     }
-}
+} */
 
 .page-banner-content .breadcrumb {
     margin-bottom: 0;
@@ -22642,8 +22755,8 @@ only screen and (max-width: 767px) {
 }
 
 .page-banner-content .title {
-    font-size: 40px;
-    font-weight: 500;
+    font-size: 50px;
+    font-weight: 700;
     margin-bottom: 0;
     margin-top: 15px;
     padding-bottom: 15px;
@@ -22757,7 +22870,7 @@ only screen and (max-width: 767px) {
     width: 140px;
     height: 140px;
     text-align: center;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 50%;
     margin: 0 auto;
     padding: 10px;
@@ -22978,7 +23091,7 @@ only screen and (max-width: 767px) {
 }
 
 .about-item {
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     padding: 30px;
     margin-top: 30px;
@@ -23078,7 +23191,7 @@ only screen and (max-width: 575px) {
 .single-team .team-thumb img {
     border-radius: 50%;
     padding: 10px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -23400,7 +23513,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 }
 
 .courses-details-tab .details-tab-menu {
-    background-color: #3399ff;
+    /* background-color: #3399ff;S */
     border-radius: 10px;
     padding: 15px;
     padding-top: 5px;
@@ -23415,7 +23528,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
     height: 45px;
     line-height: 41px;
     text-align: center;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 5px;
     font-size: 15px;
     font-weight: 500;
@@ -23446,6 +23559,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
     color: #52565b;
     font-size: 15px;
     font-weight: 400;
+    text-align: justify;
 }
 
 .courses-details-tab .details-tab-content .tab-description .description-wrapper {
@@ -23467,7 +23581,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 .courses-details-tab .details-tab-content .tab-rating-box {
     margin-top: 45px;
     text-align: center;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     padding: 40px 30px;
 }
@@ -23572,7 +23686,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 }
 
 .courses-details-tab .details-tab-content .tab-reviews .single-review {
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     padding: 30px;
     position: relative;
@@ -23623,7 +23737,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 .courses-details-tab .details-tab-content .tab-reviews .single-review .review-author .author-thumb img {
     display: block;
     width: 90px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 50%;
     padding: 8px;
 }
@@ -24029,7 +24143,7 @@ only screen and (max-width: 575px) {
     width: 110px;
     height: 45px;
     line-height: 43px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     color: #212832;
     text-align: center;
@@ -24145,7 +24259,7 @@ only screen and (max-width: 575px) {
 
 .single-comment {
     padding: 30px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     margin-top: 30px;
     position: relative;
@@ -24173,7 +24287,7 @@ only screen and (max-width: 575px) {
     width: 90px;
     padding: 10px;
     border-radius: 50%;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
 }
 
 .single-comment .comment-author .author-content {
@@ -24294,15 +24408,15 @@ only screen and (max-width: 575px) {
 /*  4.15 - Registration & Login Form CSS
 /*----------------------------------------*/
 .register-login-wrapper {
-    padding: 70px;
-    padding-top: 20px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    padding: 20px;
+    /* padding-top: 20px; */
+    border: 1px solid #3399ff;
     border-radius: 10px;
 }
 
 @media only screen and (max-width: 575px) {
     .register-login-wrapper {
-        padding: 30px;
+        padding: 20px;
     }
 }
 
@@ -24362,9 +24476,9 @@ only screen and (max-width: 575px) {
 }
 
 .register-login-form {
-    max-width: 400px;
+    /* max-width: 400px; */
     margin-left: auto;
-    margin-top: 45px;
+    /* margin-top: 5px; */
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px),
@@ -24374,11 +24488,12 @@ only screen and (max-width: 767px) {
     }
 }
 
+/* 
 @media only screen and (max-width: 575px) {
     .register-login-form {
         margin-top: 30px;
     }
-}
+} */
 
 .register-login-form .title {
     font-size: 30px;
@@ -24427,15 +24542,16 @@ only screen and (max-width: 767px) {
     }
 }
 
+/* 
 .register-login-form .form-wrapper {
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 @media only screen and (max-width: 575px) {
     .register-login-form .form-wrapper {
         padding-top: 10px;
     }
-}
+} */
 
 .register-login-form .single-form .btn {
     margin-top: 20px;
@@ -24450,7 +24566,7 @@ only screen and (max-width: 767px) {
 }
 
 .register-login-form .single-form .btn.btn-outline {
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     line-height: 58px;
 }
 
@@ -24501,7 +24617,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 .faq-tab-menu .nav li button {
     height: 60px;
     line-height: 58px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     font-size: 15px;
     font-weight: 500;
@@ -24553,7 +24669,7 @@ only screen and (max-width: 767px) {
 }
 
 .single-faq-item {
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     padding: 10px 70px 35px;
     border-radius: 10px;
     margin-top: 20px;
@@ -24732,7 +24848,7 @@ only screen and (max-width: 767px) {
 .contact-wrapper {
     padding: 70px;
     padding-top: 20px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
 }
 
@@ -24829,7 +24945,7 @@ only screen and (max-width: 767px) {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 50%;
 }
 
@@ -24851,7 +24967,7 @@ only screen and (max-width: 767px) {
     height: 70px;
     line-height: 78px;
     background-color: #fff;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 50%;
     font-size: 30px;
     color: #3333ff;
@@ -25019,7 +25135,7 @@ only screen and (max-width: 767px) {
 }
 
 .contact-form .single-form .btn.btn-outline {
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     line-height: 58px;
 }
 
@@ -25535,7 +25651,7 @@ only screen and (max-width: 767px) {
 }
 
 .courses-enroll-content .courses-enroll-tab .enroll-tab-menu .nav li button {
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     background-color: #fff;
     border-radius: 10px;
     padding: 0 15px;
@@ -25579,7 +25695,7 @@ only screen and (max-width: 767px) {
 }
 
 .courses-enroll-content .courses-enroll-tab .enroll-share a {
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     background-color: #fff;
     border-radius: 10px;
     padding: 0 25px;
@@ -25623,7 +25739,7 @@ only screen and (max-width: 767px) {
 }
 
 .courses-enroll-content .courses-enroll-tab-content {
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     padding: 10px 50px 35px;
     border-radius: 10px;
     margin-top: 30px;
@@ -25760,7 +25876,7 @@ only screen and (max-width: 767px) {
 .courses-enroll-content .courses-enroll-tab-content .enroll-tab-content .single-instructor .review-author .author-thumb img {
     display: block;
     width: 90px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 50%;
     padding: 8px;
 }
@@ -26367,7 +26483,7 @@ only screen and (max-width: 767px) {
     height: 50px;
     line-height: 48px;
     border-radius: 10px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     font-family: "Gordita";
     font-weight: 500;
     font-size: 15px;
@@ -26421,7 +26537,7 @@ only screen and (max-width: 767px) {
     width: 50px;
     height: 50px;
     line-height: 48px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #ff990046;
     text-align: center;
     padding: 0;
     background-color: #fff;
@@ -26481,7 +26597,7 @@ only screen and (max-width: 767px) {
 }
 
 .courses-item {
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     padding: 20px;
     margin-top: 30px;
@@ -26856,7 +26972,7 @@ only screen and (max-width: 767px) {
     height: 50px;
     line-height: 48px;
     border-radius: 10px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     font-weight: 500;
     font-size: 15px;
     color: #212832;
@@ -26930,7 +27046,7 @@ only screen and (max-width: 767px) {
 }
 
 .single-resources .resources-icon {
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     display: inline-block;
     padding: 13px;
     border-radius: 50%;
@@ -27025,8 +27141,8 @@ only screen and (max-width: 767px) {
     line-height: 53px;
     border-radius: 10px;
     padding: 0 50px 0 20px;
-    border: 1px solid #c1e0cd;
-    background-color: #daeee2;
+    border: 1px solid #3399ff;
+    background-color: #ff9900;
     text-align: left;
     position: relative;
     -webkit-transition: all 0.3s ease 0s;
@@ -27071,7 +27187,7 @@ only screen and (max-width: 767px) {
     height: 25px;
     line-height: 23px;
     text-align: center;
-    background-color: #3333ff;
+    background-color: #ff990017;
     font-size: 13px;
     font-weight: 400;
     color: #fff;
@@ -27383,7 +27499,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 .graph {
     padding: 25px 70px 45px;
     border-radius: 10px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     margin-top: 40px;
 }
 
@@ -27512,7 +27628,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     padding: 25px;
     margin-top: 30px;
@@ -27531,7 +27647,7 @@ only screen and (max-width: 575px) {
 .single-student .student-images img {
     width: 85px;
     border-radius: 50%;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     padding: 7px;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
@@ -27634,7 +27750,7 @@ only screen and (max-width: 575px) {
     text-align: center;
     background-color: #fff;
     border-radius: 50%;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     color: #212832;
     cursor: pointer;
     outline: none;
@@ -27680,7 +27796,7 @@ only screen and (max-width: 575px) {
 
 .students-map {
     padding: 30px 45px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     margin-top: 50px;
 }
@@ -27965,7 +28081,7 @@ only screen and (max-width: 575px) {
 }
 
 .single-student-widget .page-pagination .pagination li a {
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
 }
 
 .single-student-widget .page-pagination .pagination li a.active,
@@ -28148,7 +28264,7 @@ only screen and (max-width: 575px) {
     height: 60px;
     line-height: 58px;
     border-radius: 10px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     font-weight: 500;
     font-size: 20px;
     color: #212832;
@@ -28214,7 +28330,7 @@ only screen and (max-width: 767px) {
     height: 50px;
     line-height: 48px;
     border-radius: 10px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     background-color: #eaf8f0;
     font-weight: 500;
     font-size: 15px;
@@ -28345,7 +28461,7 @@ only screen and (max-width: 767px) {
 .engagement-courses .courses-list ul li {
     padding: 20px;
     margin-top: 20px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -28491,7 +28607,7 @@ only screen and (max-width: 575px) {
 .engagement-courses .courses-list ul li .button .btn {
     height: 50px;
     line-height: 48px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     padding: 0 30px;
     font-size: 15px;
     white-space: nowrap;
@@ -28729,7 +28845,7 @@ only screen and (max-width: 767px) {
     height: 50px;
     line-height: 48px;
     border-radius: 10px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     font-weight: 500;
     font-size: 15px;
     color: #212832;
@@ -28771,7 +28887,7 @@ only screen and (max-width: 767px) {
 }
 
 .single-courses-rating {
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     padding: 25px;
     border-radius: 10px;
     margin-top: 25px;
@@ -28968,7 +29084,7 @@ only screen and (max-width: 767px) {
 
 .single-courses-rating .courses .courses-btn .btn {
     font-size: 15px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     padding: 0 20px;
     height: 50px;
     line-height: 48px;
@@ -29121,7 +29237,7 @@ only screen and (max-width: 767px) {
     display: -ms-flexbox;
     display: flex;
     border-radius: 10px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     position: relative;
     -webkit-box-align: center;
     -webkit-align-items: center;
@@ -29576,7 +29692,7 @@ only screen and (max-width: 767px) {
     padding: 20px 30px;
     resize: none;
     height: 200px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 5px;
     font-size: 15px;
     font-family: serif;
@@ -29788,7 +29904,7 @@ only screen and (max-width: 767px) {
     width: 100%;
     height: 55px;
     padding: 0 30px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     background-color: #fff;
     color: #212832;
@@ -29923,9 +30039,9 @@ only screen and (max-width: 767px) {
 }
 
 .widget-information {
-    background-color: #3399ff;
+    background-color: #fff;
     padding: 30px 30px 40px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
 }
 
@@ -30000,7 +30116,7 @@ only screen and (max-width: 767px) {
 .widget-search input {
     width: 100%;
     height: 60px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     padding: 0 20px;
     padding-right: 60px;
@@ -30050,7 +30166,7 @@ only screen and (max-width: 767px) {
 
 .widget-category {
     padding: 35px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     margin-top: 30px;
 }
@@ -30072,7 +30188,7 @@ only screen and (max-width: 575px) {
     line-height: 50px;
     display: block;
     color: #52565b;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     font-size: 15px;
     font-weight: 500;
@@ -30100,7 +30216,7 @@ only screen and (max-width: 575px) {
 
 .widget-post {
     padding: 35px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     margin-top: 30px;
 }
@@ -30209,7 +30325,7 @@ only screen and (max-width: 575px) {
 
 .widget-tags {
     padding: 35px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     margin-top: 30px;
 }
@@ -30246,7 +30362,7 @@ only screen and (max-width: 575px) {
     background-color: #fff;
     display: block;
     color: #52565b;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid #3399ff;
     border-radius: 10px;
     font-size: 15px;
     font-weight: 500;
@@ -30278,11 +30394,34 @@ only screen and (max-width: 575px) {
 /*  06. Footer CSS
 /*----------------------------------------*/
 .footer-section {
-    background-color: #3399ff;
+    background-color: #fff;
 }
 
 .footer-copyright {
-    background-color: #212832;
+    background-color: #ff990017;
+    border-top: 0.5px;
+    padding: 20px;
+}
+
+.footer-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: center;
+    -ms-flex-pack: justify;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.footer-wrapper img {
+    width: 150px;
 }
 
 .copyright-wrapper {
