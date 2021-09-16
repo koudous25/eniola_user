@@ -51,7 +51,7 @@
                                 </div> --}}
                             </div>
 
-                            <h2 class="title">{{ $Course['title'] }}</h2>
+                            {{-- <h2 class="title">{{ $Course['title'] }}</h2>
 
                             <div class="courses-details-admin">
                                 <div class="admin-author">
@@ -60,11 +60,11 @@
                                     </div>
                                     <div class="author-content">
                                         <a class="name" href="isoc.bj">ISOC Bénin</a>
-                                        {{-- <span class="Enroll">28 Étudiants inscrits</span> --}}
+                                        <span class="Enroll">28 Étudiants inscrits</span>
                                     </div>
                                 </div>
 
-                            </div>
+                            </div> --}}
 
                             <!-- Courses Details Tab Start -->
                             <div class="courses-details-tab">
@@ -94,6 +94,15 @@
                                             </div>
                                             <!-- Tab Description End -->
 
+                                        </div>
+                                        <div class="info-btn mt-10">
+                                            @if (Session::has('user') && Session::get('user')['userOut']['role'] == 'RESPONSABLE')
+                                                <a type="button" data-bs-toggle="modal" data-bs-target="#enrollStudent"
+                                                    class="btn btn-primary btn-hover-dark">Inscrire un étudiant</a>
+                                            @else
+                                                <a href="{{ route('app_enroll', ['id' => $Course['id']]) }}"
+                                                    class="btn btn-primary btn-hover-dark">Inscrivez-vous</a>
+                                            @endif
                                         </div>
 
                                         {{-- <div class="tab-pane fade" id="reviews">
@@ -299,20 +308,28 @@
 
                             <!-- Sidebar Widget Information Start -->
                             <div class="sidebar-widget widget-information">
-                                <div class="info-price">
+                                {{-- <div class="info-price">
                                     <span class="price">INFORMATIONS</span>
-                                </div>
+                                </div> --}}
                                 <div class="info-list">
                                     <ul>
-                                        <li><i class="icofont-clock-time"></i> <strong>Catégorie</strong>
+                                        <li><i class="icofont-man-in-glasses"></i> <strong>Proposer par</strong>
+                                            <span>Koudous ASSOGBA</span>
+                                        </li>
+                                        <li><i class="icofont-clock-time"></i> <strong>Durée</strong> <span>1 heure</span>
+                                        </li>
+                                        {{-- <li><i class="icofont-clock-time"></i> <strong>Catégorie</strong>
                                             <span>{{ $Course['category']['category'] }}</span>
+                                        </li> --}}
+                                        <li><i class="icofont-ui-video-play"></i> <strong>Lectures</strong> <span>12</span>
                                         </li>
-                                        {{-- <li><i class="icofont-ui-video-play"></i> <strong>Lectures</strong> <span>29</span> --}}
+                                        <li><i class="icofont-bars"></i> <strong>Niveau</strong> <span>Tout public</span>
                                         </li>
-                                        <li><i class="icofont-bars"></i> <strong>Niveau</strong> <span>Secondaire</span>
-                                        </li>
-                                        <li><i class="icofont-certificate-alt-1"></i> <strong>Certificat</strong>
+                                        {{-- <li><i class="icofont-certificate-alt-1"></i> <strong>Certificat</strong>
                                             <span>Oui</span>
+                                        </li> --}}
+                                        <li><i class="icofont-book-alt"></i> <strong>Langue</strong>
+                                            <span>Français</span>
                                         </li>
                                     </ul>
                                 </div>

@@ -36,7 +36,7 @@
 
             <!-- Register & Login Wrapper Start -->
             <div class="register-login-wrapper">
-                <div class="row align-items-center">
+                <div class="row align-items-center text-center">
 
                     <div class="col-lg-2"></div>
 
@@ -90,15 +90,15 @@
                                         </div>
                                     </div> --}}
                                     <div class="single-form mt-0">
-                                        <button class="btn btn-primary btn-hover-dark w-100" type="submit">Se
+                                        <button class="btn btn-secondary text-white btn-hover-dark w-100" type="submit">Se
                                             connecter</button>
                                         <!--a class="btn btn-secondary btn-outline w-100" href="#">Login with
-                                                                                                            Google</a-->
+                                                                                                                                    Google</a-->
                                     </div>
                                     <!-- Single Form End -->
                                 </form>
-                                <p class="text-center mt-2">J'ai pas de compte . <a style="font-weight: bold;"
-                                        href="{{ route('app_register') }}">S'inscrire</a>
+                                <p class="text-center mt-2">J'ai pas de compte .
+                                    <a style="font-weight: bold;" href="{{ route('app_register') }}">S'inscrire</a>
                             </div>
                         </div>
                         <!-- Register & Login Form End -->

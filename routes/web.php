@@ -31,15 +31,15 @@ use App\Http\Middleware\MDashAuth;
 
 Route::get('/','App\Http\Controllers\IndexAPIController@index')->name('app_home');
 
-Route::get('about', function () {
+Route::get('internet', function () {
     return view('layouts.about');
 })->name('app_about');
 
-Route::get('contact', function () {
+Route::get('eniola', function () {
     return view('layouts.contact');
 })->name('app_contact');
 
-Route::get('courses','App\Http\Controllers\IndexAPIController@showAllCourses')->name('app_courses');
+Route::get('parcours_eniola','App\Http\Controllers\IndexAPIController@showAllCourses')->name('app_courses');
 
 Route::get('course-detail/{id}','App\Http\Controllers\IndexAPIController@showOneCourse')->name('app_course_detail')->where('id', '[0-9]+');
 
@@ -56,21 +56,21 @@ Route::post('enroll/{id}', 'App\Http\Controllers\IndexAPIController@enroll')->na
 
 
 /*Login route */
-Route::get('login', function () {
+Route::get('connexion', function () {
     return view('auth.login');
 })->name('app_login')->middleware('user');
 
 Route::post('login', [ConnexionController::class, 'traitement'])->name('app_login_traitement');
 /*Login route end */
 
-Route::get('logout', function (Request $request) {
+Route::get('deconnexion', function (Request $request) {
     $request->session()->invalidate();
     $request->session()->regenerateToken();
     return redirect()->route('app_home')->with('success', 'Deconnexion avec succès!');
 })->name('app_logout')->middleware('logout');
 
 /*Register route */
-Route::get('register', function () {
+Route::get('inscription', function () {
     return view('auth.register', ['titre' => 'Inscription', 'from_mentor'=>false]);
 })->name('app_register')->middleware('user');
 

@@ -26,7 +26,7 @@
             <!-- Slider Content Start -->
             <div class="slider-content">
                 <h2 class="main-title"><span>Découvrons ensemble Internet</span></h2>
-                <a class="btn btn-primary btn-hover-dark" href="{{ route('app_login') }}">C'est quoi Internet ?</a>
+                <a class="btn btn-secondary btn-hover-dark" href="{{ route('app_about') }}">C'est quoi Internet ?</a>
             </div>
             <!-- Slider Content End -->
 
@@ -35,25 +35,28 @@
         <!-- Slider End -->
 
         <!-- How It Work End -->
-        <div class="section section-padding mt-n1">
+        <div class="section detail-eniola">
             <div class="container">
 
                 <!-- Section Title Start -->
-                <div class="section-title shape-03 text-center">
+                <div class="section-title text-center">
                     <h1 class="main-title">Qui suis je ?</span></h2>
                 </div>
                 <!-- Section Title End -->
 
-                <div class=" text-justify">
-                    <h4>Eniola est une application développée par le Chapitre Benin de l'internet Society, qui
-                        a pour but prononcé d'intéresser les jeunes enfants, surtout les filles en Afrique aux
-                        métiers de l'internet. A travers des parcours de cours ludiques et illustrées, elle offre un
-                        cadre d'enseignement pour les plus jeunes et rend simplela vision de l'informatique
-                        aux plus incrédules.</h4>
+                <div class="text-justify detail-content">
+                    <h4>Eniola est une plateforme développée par le
+                        Chapitre Benin de l'internet Society, dans le
+                        cadre de la mise en oeuvre du Chapterthon
+                        2021.
+                        Elle a pour but de favoriser l’inclusion numerique
+                        de tous, en commencant par proposer a travers
+                        des contenus elaborés et dudiques, des parcours
+                        sur l’Internet et comment bien l’utiliser</h4>
                 </div>
 
                 <div class="courses-btn text-center">
-                    <a href="{{ route('app_courses') }}" class="btn btn-secondary btn-hover-primary">Qui est Eniola ?</a>
+                    <a href="{{ route('app_contact') }}" class="btn btn-secondary btn-hover-primary">Qui est Eniola ?</a>
                 </div>
             </div>
         </div>

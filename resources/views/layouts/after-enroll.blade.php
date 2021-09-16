@@ -9,140 +9,43 @@
 
     <div class="main-wrapper">
 
-        <!-- Login Header Start -->
-        <div class="section login-header" style="opacity: 0; margin-bottom:10px;">
-            <!-- Login Header Wrapper Start -->
-            <div class="login-header-wrapper navbar navbar-expand">
+        <!-- Overlay Start -->
+        <div class="overlay"></div>
+        <!-- Overlay End -->
 
-                <!-- Header Logo Start -->
-                <div class="login-header-logo logo-2">
-                    <a href="{{ route('app_home') }}"><img src="{{ url('images/logo-icon.png') }}" alt="Logo"></a></li>
-                    <a href="{{ route('app_home') }}"><img src="{{ url('images/text-logo.png') }}" alt="Logo"></a></li>
+        <!-- Page Banner Start -->
+        <div class="section page-banner">
+
+            <div class="container">
+                <!-- Page Banner Start -->
+                <div class="page-banner-content">
+                    <h3>Module :</h3>
+                    <h2 class="title">{{ $Course['title'] }}</h2>
                 </div>
-                <!-- Header Logo End -->
-
-                <!-- Header Search Start -->
-                <div class="login-header-search search-2 dropdown">
-                    <button class="search-toggle" data-bs-toggle="dropdown"><i class="flaticon-loupe"></i></button>
-
-                    <div class="search-input dropdown-menu">
-                        <form action="#">
-                            <input type="text" placeholder="Rechercher un cours">
-                        </form>
-                    </div>
-
-                </div>
-                <!-- Header Search End -->
-
-                <!-- Header Action Start -->
-                <div class="login-header-action action-2 ml-auto">
-                    <div class="dropdown">
-                        <button class="action notification" data-bs-toggle="dropdown">
-                            <i class="flaticon-notification"></i>
-                            <span class="active"></span>
-                        </button>
-                        <div class="dropdown-menu dropdown-notification">
-                            <ul class="notification-items-list">
-                                <li class="notification-item">
-                                    <span class="notify-icon bg-success text-white"><i class="icofont-ui-user"></i></span>
-                                    <div class="dropdown-body">
-                                        <a href="#">
-                                            <p><strong>Martin</strong> has added a <strong>customer</strong>
-                                                Successfully
-                                            </p>
-                                        </a>
-                                    </div>
-                                    <span class="notify-time">3:20 am</span>
-                                </li>
-                                <li class="notification-item">
-                                    <span class="notify-icon bg-success text-white"><i
-                                            class="icofont-shopping-cart"></i></span>
-                                    <div class="dropdown-body">
-                                        <a href="#">
-                                            <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
-                                        </a>
-                                    </div>
-                                    <span class="notify-time">3:20 am</span>
-                                </li>
-                                <li class="notification-item">
-                                    <span class="notify-icon bg-danger text-white"><i class="icofont-book-mark"></i></span>
-                                    <div class="dropdown-body">
-                                        <a href="#">
-                                            <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
-                                            </p>
-                                        </a>
-                                    </div>
-                                    <span class="notify-time">3:20 am</span>
-                                </li>
-                                <li class="notification-item">
-                                    <span class="notify-icon bg-success text-white"><i class="icofont-heart-alt"></i></span>
-                                    <div class="dropdown-body">
-                                        <a href="#">
-                                            <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
-                                        </a>
-                                    </div>
-                                    <span class="notify-time">3:20 am</span>
-                                </li>
-                                <li class="notification-item">
-                                    <span class="notify-icon bg-success text-white"><i class="icofont-image"></i></span>
-                                    <div class="dropdown-body">
-                                        <a href="#">
-                                            <p><strong> James.</strong> has added a<strong>customer</strong>
-                                                Successfully
-                                            </p>
-                                        </a>
-                                    </div>
-                                    <span class="notify-time">3:20 am</span>
-                                </li>
-                            </ul>
-                            <a class="all-notification" href="#">See all notifications <i
-                                    class="icofont-simple-right"></i></a>
-                        </div>
-                    </div>
-
-                    <a class="action author" href="#">
-                        <img src="{{ url('images/author/author-07.jpg') }}" alt="Author">
-                    </a>
-
-                    <div class="dropdown">
-                        <button class="action more" data-bs-toggle="dropdown">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="" href=" /profile"><i class="icofont-user"></i> Profile</a></li>
-                            <li><a class="" href=" /login"><i class="icofont-logout"></i> Sign Out</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Header Action End -->
-
+                <!-- Page Banner End -->
             </div>
-            <!-- Login Header Wrapper End -->
+
         </div>
-        <!-- Login Header End -->
+        <!-- Page Banner End -->
 
         <!-- Courses Enroll Start -->
-        <div class="section">
+        <div class="section section-padding mt-n10">
 
             <!-- Courses Enroll Wrapper Start -->
-            <div class="courses-enroll-wrapper">
+            <div class=" container courses-enroll-wrapper">
 
                 <!-- Courses Video Player Start -->
                 <div class="courses-video-player">
 
                     <!-- Courses Enroll Content Start -->
-                    <div class="courses-enroll-content">
-
+                    {{-- <div class="courses-enroll-content">
                         <!-- Courses Enroll Title Start -->
                         <div class="courses-enroll-title">
                             <h2 class="title">{{ $Course['title'] }}</h2>
-                            {{-- <p><i class="icofont-eye-alt"></i> <span>8</span> Students are watching</p> --}}
+                            <p><i class="icofont-eye-alt"></i> <span>8</span> Students are watching</p>
                         </div>
                         <!-- Courses Enroll Title End -->
-
-                    </div>
+                    </div> --}}
                     <!-- Courses Enroll Content End -->
 
                     <!-- Courses text Container Start -->
@@ -240,25 +143,26 @@
                 <div class="courses-video-playlist float-right">
                     <div class="playlist-title">
                         <h3 class="title">{{ $Course['title'] }}</h3>
-                        <span>{{ count($Paragraphs) }} paragraphes</span>
+                        <span>{{ count($Paragraphs) }} leçons</span>
                     </div>
 
                     <!-- paragraph Playlist Start  -->
                     <div class="video-playlist">
-                        <div class="accordion" id="videoPlaylist">
+                        <div class="accordion" id="">
 
                             <!-- Accordion Items Start  -->
                             <div class="accordion-item">
 
-                                <div id="collapseOne" class="" data-bs-parent=" #videoPlaylist">
-                                    <nav class="vids">
+                                <div id="navigation" class="">
+                                    <nav class=" vids">
 
-                                        @foreach ($Paragraphs as $paragraph)
-                                            <a class="link" href="#Para{{ $paragraph['id'] }}">
-                                                <p>{{ $paragraph['id'] }}. {{ $paragraph['title'] }}
-                                                </p>
-                                            </a>
-                                        @endforeach
+                                    @foreach ($Paragraphs as $paragraph)
+                                        <a class="link"
+                                            href="#Para{{ $paragraph['id'] }}_{{ $paragraph['title'] }}">
+                                            <p>{{ $paragraph['id'] }}. {{ $paragraph['title'] }}
+                                            </p>
+                                        </a>
+                                    @endforeach
 
                                     </nav>
                                 </div>

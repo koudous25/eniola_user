@@ -33,7 +33,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2"></div>
 
-                    <div class="col-lg-8">
+                    <div class="col-lg-8 text-center">
 
                         <!-- Register & Login Form Start -->
                         <div class="register-login-form">
@@ -181,10 +181,10 @@
                                     <!-- Single Form Start -->
                                     <div class="single-form bouton">
                                         @if ($from_mentor == false)
-                                            <button class="btn btn-primary btn-hover-dark w-100"
+                                            <button class="btn btn-secondary text-white btn-hover-dark w-100"
                                                 type="submit">S'inscrire</button>
                                         @else
-                                            <button class="btn btn-primary btn-hover-dark w-100 mt-5"
+                                            <button class="btn btn-secondary text-white btn-hover-dark w-100 mt-5"
                                                 type="submit">Inscrire</button>
                                         @endif
                                     </div>
