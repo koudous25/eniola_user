@@ -35,10 +35,10 @@
                         <img class="bulle" src=" {{ url('/images/bulle_enioladef.png') }}" alt="eniola-bulle">
 
                         <span> &nbsp;&nbsp;&nbsp;&nbsp; Je <br> suis ENIOLA et <br> je vais t'apprendre à <br> &nbsp;
-                            &nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             bien utiliser
                             <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp; &#160; internet</span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#160; internet</span>
                     </div>
 
                     <div class="text-eniola">

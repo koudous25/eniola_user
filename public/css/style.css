@@ -20260,7 +20260,7 @@ only screen and (max-width: 575px) {
 .slider-section {
     /* background-color: #fff; */
     background: #ff990017 url(/images/globe_isoc_logo_.png) top center/cover no-repeat;
-    height: 800px;
+    height: 700px;
     position: relative;
     /* overflow: hidden; */
     z-index: 2;
@@ -20277,13 +20277,13 @@ only screen and (max-width: 575px) {
 
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
     .slider-section {
-        height: 860px;
+        height: 660px;
     }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .slider-section {
-        height: 620px;
+        height: 600px;
     }
 }
 
@@ -20370,6 +20370,7 @@ only screen and (max-width: 767px) {
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .slider-images {
         width: 50%;
+        bottom: -100px;
     }
 }
 
@@ -20444,9 +20445,15 @@ only screen and (max-width: 767px) {
     }
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 2499px) {
+@media only screen and (min-width: 1600px) and (max-width: 2499px) {
     .slider-content .main-title {
         font-size: 80px;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1599px) {
+    .slider-content .main-title {
+        font-size: 60px;
     }
 }
 
