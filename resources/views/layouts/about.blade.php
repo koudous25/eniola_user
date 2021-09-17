@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('PageTitle')
-    A propos
+    C'est quoi internet ?
 @endsection
 
 @section('main')
@@ -15,7 +15,7 @@
         <div class="container">
             <!-- Page Banner Start -->
             <div class="page-banner-content">
-                <h2 class="title">Et intrnet ?</h2>
+                <h2 class="title">Et l'internet ?</h2>
             </div>
             <!-- Page Banner End -->
         </div>
@@ -28,13 +28,13 @@
 
 
         <div class=" container">
-            <div class="row">
+            <div class="row detail-content">
                 <p class="text-justify"> <strong>Internet </strong> est un gigantesque réseau informatique qui relie entre
                     eux des millions <strong>d'ordinateurs</strong> dans
                     le monde. Il leur permet de communiquer et d'échanger des informations, à distance. Il a été conçu
                     dans ce but. <br>
-                    Dans le langage courant, on confond souvent les mots <strong>" Internet "</strong> et <strong>" Web
-                        "</strong> qui désignent pourtant
+                    Dans le langage courant, on confond souvent les mots <strong>"
+                        Internet "</strong> et <strong>" Web "</strong> qui désignent pourtant
                     deux choses différentes. <br>
                     <strong>" Internet "</strong> est le nom du réseau reliant entre eux tous les ordinateurs, dans le
                     monde, qui y sont

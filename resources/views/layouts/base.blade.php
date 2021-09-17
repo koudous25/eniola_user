@@ -394,7 +394,7 @@
                     <div>
                         <h5>Copyright 2021 Eniola. Powered by </h5>
                     </div>
-                    <div><img src="{{ url('images/isoc-benin-logo-bleu.png') }}" alt="logo-isoc"></div>
+                    <div><img src="{{ url('images/logo-isoc.png') }}" alt="logo-isoc"></div>
                 </div>
 
             </div>

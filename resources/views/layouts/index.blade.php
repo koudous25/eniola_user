@@ -25,7 +25,7 @@
 
             <!-- Slider Content Start -->
             <div class="slider-content">
-                <h2 class="main-title"><span>Découvrons ensemble Internet</span></h2>
+                <h2 class="main-title">Découvrons ensemble Internet</h2>
                 <a class="btn btn-secondary btn-hover-dark" href="{{ route('app_about') }}">C'est quoi Internet ?</a>
             </div>
             <!-- Slider Content End -->
@@ -45,14 +45,14 @@
                 <!-- Section Title End -->
 
                 <div class="text-justify detail-content">
-                    <h4>Eniola est une plateforme développée par le
+                    <p>Eniola est une plateforme développée par le
                         Chapitre Benin de l'internet Society, dans le
                         cadre de la mise en oeuvre du Chapterthon
                         2021.
                         Elle a pour but de favoriser l’inclusion numerique
                         de tous, en commencant par proposer a travers
                         des contenus elaborés et dudiques, des parcours
-                        sur l’Internet et comment bien l’utiliser</h4>
+                        sur l’Internet et comment bien l’utiliser</p>
                 </div>
 
                 <div class="courses-btn text-center">
