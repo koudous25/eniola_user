@@ -42,17 +42,12 @@
                     </div>
 
                     <div class="text-eniola">
-                        <p class=" text-justify part-1">Eniola est une plateforme
-                            développée
-                            par le
-                            Chapitre Benin de l'internet Society, dans le
-                            cadre de la mise en oeuvre du Chapterthon
-                            2021.
+                        <p class=" text-justify part-1">Eniola est une plateforme développée par le Chapitre Benin de
+                            l'internet Society, dans le cadre de la mise en oeuvre du Chapterthon 2021.
                         </p>
-                        <p class="text-justify part-2"> Elle a pour but de favoriser l’inclusion numerique
-                            de tous, en commencant par proposer a travers
-                            des contenus elabores et dudiques, des parcours
-                            sur l’Internet et comment bien l’utiliser
+                        <p class="text-justify part-2"> Elle a pour but de favoriser l’inclusion numérique de tous, en
+                            commençant par proposer à travers des contenus elaborés et ludiques, des parcours sur l’Internet
+                            et comment bien l’utiliser
                         </p>
                     </div>
 
