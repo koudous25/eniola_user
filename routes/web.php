@@ -39,6 +39,9 @@ Route::get('eniola', function () {
     return view('layouts.contact');
 })->name('app_contact');
 
+// Recherche
+Route::get('/recherche','App\Http\Controllers\IndexAPIController@search')->name('search');
+
 Route::get('parcours_eniola','App\Http\Controllers\IndexAPIController@showAllCourses')->name('app_courses');
 
 Route::get('course-detail/{id}','App\Http\Controllers\IndexAPIController@showOneCourse')->name('app_course_detail')->where('id', '[0-9]+');

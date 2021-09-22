@@ -45,7 +45,7 @@ class IndexAPIController extends Controller
 
         return view('layouts.courses', [
             'Categories' => $categories->collect(),
-            'Courses' => $courses_visibles,
+            'Courses' => collect($courses_visibles)->paginate(6),
         ]);
     }
 
@@ -178,6 +178,31 @@ class IndexAPIController extends Controller
             'Paragraphs' => $Para,
             'Quiz' => $quizf,
             'Question' => $quizf
+        ]);
+    }
+
+    // Fonction de recherche
+    public function search(Request $request)
+    {
+        $key = trim($request->get('q'));
+
+        $categories = Http::get('https://eniola-service.herokuapp.com/api/v_1/admin/categories');
+        //d(($categories->collect())[0]);
+        $courses = Http::get('https://eniola-service.herokuapp.com/api/v_1/admin/courses')->collect();
+        for ($i = 0; $i < count($courses); $i++) {
+            if ($courses[$i]["visible"] == true) {
+                $courses_visibles[] = $courses[$i];
+            }
+        }
+        
+        $Courses = collect($courses_visibles)->where('title', 'like', "{{$key}}")
+            // ->orWhere('paragraphs', 'like', "%{$key}%")
+            ->sortByDesc('id');
+
+        return view('layouts.search', [
+            'key' => $key,
+            'Courses' => $Courses,
+            'Categories' => $categories->collect(),
         ]);
     }
 }

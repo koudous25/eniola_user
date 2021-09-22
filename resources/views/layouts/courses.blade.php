@@ -31,9 +31,10 @@
             <div class="courses-top">
                 <!-- Courses Search Start -->
                 <div class="courses-search">
-                    <form action="#">
-                        <input type="text" placeholder="Rechercher un cours">
-                        <button><i class="flaticon-magnifying-glass"></i></button>
+                    <form action="{{ route('search') }}" method="GET" role="search">
+                        @csrf
+                        <input name="q" type="text" placeholder="Rechercher un cours" required>
+                        <button type="submit"><i class="flaticon-magnifying-glass"></i></button>
                     </form>
                 </div>
                 <!-- Courses Search End -->
@@ -184,15 +185,9 @@
 
         </div>
         <!-- Page Pagination End -->
-        <div class="page-pagination">
-            <ul class="pagination justify-content-center">
-                <li><a href="#"><i class="icofont-rounded-left"></i></a></li>
-                <li><a class="active" href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#"><i class="icofont-rounded-right"></i></a></li>
-            </ul>
-        </div>
+        <ul class="pagination justify-content-center mb-4">
+            {{ $Courses->links('pagination::bootstrap-4') }}
+        </ul>
         <!-- Page Pagination End -->
 
     </div>

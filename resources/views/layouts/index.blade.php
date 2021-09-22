@@ -77,9 +77,10 @@
 
                     <!-- Courses Search Start -->
                     <div class="courses-search">
-                        <form action="#">
-                            <input type="text" placeholder="Rechercher un cours">
-                            <button><i class="flaticon-magnifying-glass"></i></button>
+                        <form action="{{ route('search') }}" method="GET" role="search">
+                            @csrf
+                            <input name="q" type="text" placeholder="Rechercher un cours" required>
+                            <button type="submit"><i class="flaticon-magnifying-glass"></i></button>
                         </form>
                     </div>
                     <!-- Courses Search End -->
